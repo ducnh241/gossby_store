@@ -1,0 +1,386 @@
+.osc-time-picker {
+    display: inline-block;
+    background: #fff;
+    margin: 20px;
+    box-shadow: 0 0 3px rgba(0,0,0,.35);
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+.osc-time-picker.active {
+    cursor: pointer;
+}
+
+.osc-time-picker ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.osc-time-picker .digital-clock {
+    background: #16a085;
+    padding: 10px;
+    color: #fff;
+    font-family: arial;
+    font-size: 30px;
+    text-align: center;
+}
+
+.osc-time-picker .digital-clock .hour,
+.osc-time-picker .digital-clock .minute {
+    cursor: pointer;
+    color: rgba(255,255,255,.75);
+}
+.osc-time-picker[flag="hour"] .digital-clock .hour,
+.osc-time-picker[flag="minute"] .digital-clock .minute {
+    color: #fff;
+}
+
+.osc-time-picker .analog-clock {
+    padding: 30px;
+    margin: auto;
+}
+
+.osc-time-picker .indicator-lights {
+    width: 100%;
+    height: 10px;
+    position: relative;
+}
+
+.osc-time-picker .indicator-lights .AM-light,
+.osc-time-picker .indicator-lights .PM-light {
+    display: block;
+    position: absolute;
+    top: -10px;
+    width: 35px;
+    height: 20px;
+    border-radius: 3px;
+    line-height: 20px;
+    text-align: center;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 11px;
+    color: #fff;
+    background: #eee;
+}
+
+.osc-time-picker .indicator-lights .AM-light {
+    left: 10px;
+}
+
+.osc-time-picker .indicator-lights .PM-light {
+    right: 10px;
+}
+
+.osc-time-picker:not(.PM) .indicator-lights .AM-light,
+.osc-time-picker.PM .indicator-lights .PM-light {
+    background: #16a085;
+}
+
+.osc-time-picker .clock-face {
+    box-sizing: border-box;
+    width: 220px;
+    height: 220px;
+    background: #eee;
+    display: block;
+    border-radius: 50%;
+    position: relative;
+}
+
+.osc-time-picker .clock-face:before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #16a085;
+    position: absolute;
+    top: calc((100% - 10px)/2);
+    left: calc((100% - 10px)/2);
+    z-index: 5;
+}
+
+.osc-time-picker .clock-face .flags li {
+    position: absolute;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    top: 5px;
+    left: 5px;
+    display: block;
+    transform-origin: 50% 50%;
+}
+
+.osc-time-picker .clock-face .flags li:before {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    font-size: 13px;
+    color: #000;
+    font-family: arial;
+    left: calc((100% - 30px)/2);
+    top: 0;
+    display: block;
+    transform-origin: 50% 50%;
+}
+
+.osc-time-picker .clock-face .flags li:nth-child(1):before {
+    content: '12';
+}
+
+.osc-time-picker .clock-face .flags li:nth-child(2) {
+    transform: rotateZ(30deg);
+}
+
+.osc-time-picker .clock-face .flags li:nth-child(2):before {
+    content: '1';
+    transform: rotateZ(-30deg);
+}
+
+.osc-time-picker .clock-face .flags li:nth-child(3) {
+    transform: rotateZ(60deg);
+}
+
+.osc-time-picker .clock-face .flags li:nth-child(3):before {
+    content: '2';
+    transform: rotateZ(-60deg);
+}
+
+.osc-time-picker .clock-face .flags li:nth-child(4) {
+    transform: rotateZ(90deg);
+}
+
+.osc-time-picker .clock-face .flags li:nth-child(4):before {
+    content: '3';
+    transform: rotateZ(-90deg);
+}
+
+.osc-time-picker .clock-face .flags li:nth-child(5) {
+    transform: rotateZ(120deg);
+}
+
+.osc-time-picker .clock-face .flags li:nth-child(5):before {
+    content: '4';
+    transform: rotateZ(-120deg);
+}
+
+.osc-time-picker .clock-face .flags li:nth-child(6) {
+    transform: rotateZ(150deg);
+}
+
+.osc-time-picker .clock-face .flags li:nth-child(6):before {
+    content: '5';
+    transform: rotateZ(-150deg);
+}
+
+.osc-time-picker .clock-face .flags li:nth-child(7) {
+    transform: rotateZ(180deg);
+}
+
+.osc-time-picker .clock-face .flags li:nth-child(7):before {
+    content: '6';
+    transform: rotateZ(-180deg);
+}
+
+.osc-time-picker .clock-face .flags li:nth-child(8) {
+    transform: rotateZ(210deg);
+}
+
+.osc-time-picker .clock-face .flags li:nth-child(8):before {
+    content: '7';
+    transform: rotateZ(-210deg);
+}
+
+.osc-time-picker .clock-face .flags li:nth-child(9) {
+    transform: rotateZ(240deg);
+}
+
+.osc-time-picker .clock-face .flags li:nth-child(9):before {
+    content: '8';
+    transform: rotateZ(-240deg);
+}
+
+.osc-time-picker .clock-face .flags li:nth-child(10) {
+    transform: rotateZ(270deg);
+}
+
+.osc-time-picker .clock-face .flags li:nth-child(10):before {
+    content: '9';
+    transform: rotateZ(-270deg);
+}
+
+.osc-time-picker .clock-face .flags li:nth-child(11) {
+    transform: rotateZ(300deg);
+}
+
+.osc-time-picker .clock-face .flags li:nth-child(11):before {
+    content: '10';
+    transform: rotateZ(-300deg);
+}
+
+.osc-time-picker .clock-face .flags li:nth-child(12) {
+    transform: rotateZ(330deg);
+}
+
+.osc-time-picker .clock-face .flags li:nth-child(12):before {
+    content: '11';
+    transform: rotateZ(-330deg);
+}
+
+.osc-time-picker[flag="hour"] .clock-face.active .flags li:nth-child(1):before {
+    content: '0';
+}
+
+.osc-time-picker[flag="hour"].PM .clock-face.active .flags li:nth-child(1):before {
+    content: '12';
+}
+
+.osc-time-picker[flag="hour"].PM .clock-face.active .flags li:nth-child(2):before {
+    content: '13';
+}
+
+.osc-time-picker[flag="hour"].PM .clock-face.active .flags li:nth-child(3):before {
+    content: '14';
+}
+
+.osc-time-picker[flag="hour"].PM .clock-face.active .flags li:nth-child(4):before {
+    content: '15';
+}
+
+.osc-time-picker[flag="hour"].PM .clock-face.active .flags li:nth-child(5):before {
+    content: '16';
+}
+
+.osc-time-picker[flag="hour"].PM .clock-face.active .flags li:nth-child(6):before {
+    content: '17';
+}
+
+.osc-time-picker[flag="hour"].PM .clock-face.active .flags li:nth-child(7):before {
+    content: '18';
+}
+
+.osc-time-picker[flag="hour"].PM .clock-face.active .flags li:nth-child(8):before {
+    content: '19';
+}
+
+.osc-time-picker[flag="hour"].PM .clock-face.active .flags li:nth-child(9):before {
+    content: '20';
+}
+
+.osc-time-picker[flag="hour"].PM .clock-face.active .flags li:nth-child(10):before {
+    content: '21';
+}
+
+.osc-time-picker[flag="hour"].PM .clock-face.active .flags li:nth-child(11):before {
+    content: '22';
+}
+
+.osc-time-picker[flag="hour"].PM .clock-face.active .flags li:nth-child(12):before {
+    content: '23';
+}
+
+.osc-time-picker[flag="minute"] .clock-face.active .flags li:nth-child(1):before {
+    content: '0';
+}
+
+.osc-time-picker[flag="minute"] .clock-face.active .flags li:nth-child(2):before {
+    content: '5';
+}
+
+.osc-time-picker[flag="minute"] .clock-face.active .flags li:nth-child(3):before {
+    content: '10';
+}
+
+.osc-time-picker[flag="minute"] .clock-face.active .flags li:nth-child(4):before {
+    content: '15';
+}
+
+.osc-time-picker[flag="minute"] .clock-face.active .flags li:nth-child(5):before {
+    content: '20';
+}
+
+.osc-time-picker[flag="minute"] .clock-face.active .flags li:nth-child(6):before {
+    content: '25';
+}
+
+.osc-time-picker[flag="minute"] .clock-face.active .flags li:nth-child(7):before {
+    content: '30';
+}
+
+.osc-time-picker[flag="minute"] .clock-face.active .flags li:nth-child(8):before {
+    content: '35';
+}
+
+.osc-time-picker[flag="minute"] .clock-face.active .flags li:nth-child(9):before {
+    content: '40';
+}
+
+.osc-time-picker[flag="minute"] .clock-face.active .flags li:nth-child(10):before {
+    content: '45';
+}
+
+.osc-time-picker[flag="minute"] .clock-face.active .flags li:nth-child(11):before {
+    content: '50';
+}
+
+.osc-time-picker[flag="minute"] .clock-face.active .flags li:nth-child(12):before {
+    content: '55';
+}
+
+.osc-time-picker .clock-face .minute-hand,
+.osc-time-picker .clock-face .hour-hand {
+    position: absolute;
+    height: calc(50% - 40px);
+    width: 2px;
+    left: calc((100% - 2px)/2);
+    bottom: 50%;
+    background: #bbb;
+    display: block;
+    transform-origin: 50% 100%;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.osc-time-picker .clock-face .minute-hand div {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #16a085;
+    position: absolute;
+    top: -24px;
+    left: calc((100% - 6px)/2);
+    opacity: .5;
+    display: none;
+}
+
+.osc-time-picker .clock-face .minute-hand.reach-flag div {
+    width: 30px;
+    height: 30px;
+    top: -36px;
+    left: calc((100% - 30px)/2);
+    box-sizing: border-box;
+}
+
+.osc-time-picker[flag="minute"] .clock-face.active .minute-hand div {
+    display: block;
+}
+
+.osc-time-picker .clock-face .hour-hand {
+    height: calc(50% - 60px);
+    width: 4px;
+    left: calc((100% - 4px)/2);
+    z-index: 4;
+    background: #aaa;
+}
+
+.osc-time-picker .clock-face .minute-hand:hover,
+.osc-time-picker .clock-face .hour-hand:hover,
+.osc-time-picker[flag="minute"] .clock-face .minute-hand,
+.osc-time-picker[flag="hour"] .clock-face .hour-hand {
+    background: #16a085;
+}

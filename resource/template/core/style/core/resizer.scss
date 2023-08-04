@@ -1,0 +1,103 @@
+.osc-resizer {
+    position: absolute;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.5);
+    box-sizing: border-box;
+
+    * {
+        box-sizing: border-box;
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,.1);
+    }
+
+    > .handler {
+        display: block;
+        position: absolute;
+        width: 25px;
+        height: 25px;
+
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 9px;
+            height: 9px;
+            top: calc((100% - 9px)/2);
+            left: calc((100% - 9px)/2);
+            background: rgba(255,255,255,.5);
+            border: 1px solid rgba(0,0,0,.5);
+        }
+    }
+
+    > .N, > .S {
+        left: calc((100% - 25px)/2);
+    }
+
+    > .W, > .E {
+        top: calc((100% - 25px)/2);
+    }
+
+    > .N, > .NW, > .NE {
+        top: -12px;
+    }
+
+    > .S, > .SW, > .SE {
+        top: calc(100% - 12px);
+    }
+
+    > .W, > .NW, > .SW {
+        left: -12px;
+    }
+
+    > .E, > .SE, > .NE {
+        left: calc(100% - 12px);        
+    }
+
+    > .NW {
+        cursor: nw-resize;
+    }
+
+    > .N {
+        cursor: n-resize;
+    }
+
+    > .NE {
+        cursor: ne-resize;
+    }
+
+    > .W {
+        cursor: w-resize;
+    }
+
+    > .E {
+        cursor: e-resize;
+    }
+
+    > .SW {
+        cursor: sw-resize;
+    }
+
+    > .S {
+        cursor: s-resize;
+    }
+
+    > .SE {
+        cursor: se-resize;
+    }
+
+    .element {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+}

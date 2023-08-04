@@ -1,0 +1,1 @@
+<input type="checkbox" name="config[<?= $params['key'] ?>]" data-insert-cb="initSwitcher"<?php if ($params['value']) : ?> checked="checked"<?php endif; ?> /><label class="label-inline ml10"><strong><?= $params['title'] ?></strong></label>

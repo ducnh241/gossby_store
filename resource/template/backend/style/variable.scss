@@ -1,0 +1,185 @@
+$colors: (
+blue #007bff 101.271,
+indigo #6610f2 67.478,
+purple #6f42c1 93.933,
+pink #e83e8c 121.722,
+red #EB5757 104.757,
+orange #fd7e14 151.889,
+yellow #FFC107 190.334,
+green #27AE60 117.855,
+teal #20c997 144.769,
+cyan #17a2b8 122.947,
+gray #9FA2B4 115.221,
+gray-dark #343a40 56.89,
+primary #007bff 86.373,
+secondary #9FA2B4 115.221,
+success #28a745 117.855,
+danger #EB5757 104.757,
+warning #FFC107 190.334,
+info #17a2b8 122.947,
+cancel #9FA2B4 122.947,
+light #E0E0E0 248.815,
+dark #212936 56.89
+);
+
+$grid-medium: 750px;
+$grid-large: 990px;
+$grid-widescreen: 1400px;
+$grid-gutter: 30px;
+$grid-gutter-mobile: 22px;
+
+$small: 'small';
+$medium: 'medium';
+$medium-down: 'medium-down';
+$medium-up: 'medium-up';
+$large: 'large';
+$large-down: 'large-down';
+$large-up: 'large-up';
+$widescreen: 'widescreen';
+
+$grid-breakpoints: (
+$small '(max-width: #{$grid-medium - 1})',
+$medium '(min-width: #{$grid-medium}) and (max-width: #{$grid-large - 1})',
+$medium-down '(max-width: #{$grid-large - 1})',
+$medium-up '(min-width: #{$grid-medium})',
+$large '(min-width: #{$grid-large}) and (max-width: #{$grid-widescreen - 1})',
+$large-down '(max-width: #{$grid-widescreen - 1})',
+$large-up '(min-width: #{$grid-large})',
+$widescreen '(min-width: #{$grid-widescreen})'
+);
+
+@function adaptiveColor($color, $brightness) {
+    @if $brightness <= 26 {
+        @return lighten($color, 25%)
+    }
+    @if $brightness <= 64 {
+        @return lighten($color, 15%)
+    } @else {
+        @return darken($color, 10%)
+    }
+}
+
+@function textColorByBrightness($brightness) {
+    @if $brightness < 125 {
+        @return #fff
+    } @else {
+        @return #333
+    }
+}
+
+@mixin media-query($media-query) {
+    $breakpoint-found: false;
+
+    @each $breakpoint in $grid-breakpoints {
+        $name: nth($breakpoint, 1);
+        $declaration: nth($breakpoint, 2);
+
+        @if $media-query == $name and $declaration {
+            $breakpoint-found: true;
+
+            @media only screen and #{$declaration} {
+                @content;
+            }
+        }
+    }
+
+    @if $breakpoint-found == false {
+        @warn 'Breakpoint "#{$media-query}" does not exist';
+    }
+}
+
+@mixin lineHeightTopCrop($line-height, $capital-letter: 1) {
+    &::before {
+        content: '';
+        display: block;
+        height: 0;
+        width: 0;
+        margin-top: calc((#{$capital-letter} - #{$line-height}) * 0.5em);
+    }
+}
+
+
+/*====================================variables============================================*/
+//Color
+$color-base: white;
+$color-block: white;
+
+$color-dark: #212936;
+$color-light: #e0e0e0;
+$color-cancel: #9fa2b4;
+$color-brown: #2b2b2b;
+$color-primary: #282364;
+$color-second: #7386A6;
+$color-third: #535b76;
+$color-fourth: #9FA2B4;
+$color-fifth: #D1D3DD;
+$color-sixth: #ECEEF6;
+$color-seventh: #CCCCCC;
+$color-eee: #eee;
+
+$color-white: #FFFFFF;
+
+
+$color-bg: $color-sixth;
+$color-bg-gray-100: #d6dee1;
+$color-bg-gray-300: #a8bbbf;
+
+$color-text: $color-primary;
+
+$color-border: $color-light;
+$color-border-secondary: #D1D3DD;
+$color-border-field: $color-light;
+$color-border-td: #F2F2F2;
+$color-border-member: #bfbfbf;
+$color-border-blue: #2F80ED;
+
+
+
+$color-red: #EB5757;
+$color-green: #27AE60;
+$color-orange: #F2994A;
+$color-blue: #2684FE;
+$color-yellow: #FFC107;
+$color-gray: #E0E0E0;
+$color-gray-second: #bdbdbd;
+
+$color-error: $color-red;
+
+$color-sidebar : #000c36;
+$color-sidebar-active: #05154C;
+
+
+//Fonts-size
+$font-size-tiny: 12px;
+$font-size-xs: 14px;
+$font-size-s: 16px;
+$font-size-m: 18px;
+$font-size-b: 20px;
+$font-size-2b: 24px;
+$font-size-3b: 32px;
+
+//Breakpoint
+$bp-xs: 425px;
+$bp-s: 576px;
+$bp-mobile: 576px;
+
+$bp-md: 768px;
+$bp-tablet: 768px;
+$bp-l: 992px;
+$bp-laptop: 992px;
+$bp-xl: 1200px;
+
+$font-regular: 400;
+$font-normal: 400;
+$font-bold: 700;
+
+// Contain floats / clearfix
+%clearfix {*zoom: 1;
+    &:before,
+    &:after {content: " ";display: table;}
+    &:after {clear: both;}
+}
+
+//Reset Ul Li
+%reset-lst {list-style: none;margin: 0;padding: 0}
+/*====================================end-variables========================================*/

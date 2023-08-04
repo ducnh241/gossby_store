@@ -1,0 +1,2 @@
+ALTER TABLE `osc_members` ADD COLUMN `sref_type` VARCHAR(45) NOT NULL DEFAULT '' AFTER `last_visited_timestamp`;
+ALTER TABLE `osc_catalog_order` ADD COLUMN `traffic_source` VARCHAR(255) NOT NULL DEFAULT '' AFTER `sref_id`;

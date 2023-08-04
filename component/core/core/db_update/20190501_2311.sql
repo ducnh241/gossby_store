@@ -1,0 +1,1 @@
+ALTER TABLE `osc_report` CHANGE COLUMN `date_key` `date_key` VARCHAR(14) NOT NULL;

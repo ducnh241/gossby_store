@@ -1,0 +1,12 @@
+Front:
+./cylinderize.sh -D displace.png -r 268 -l 660 -p 1.5 -n 100 -w 90 -e 1.4 -d both -a 270 -c multiply -v background -b none -f none -o -115+45 test.png front-.png front-output.png
+
+Back:
+./cylinderize.sh -D displace.png -r 268 -l 660 -p 1.5 -n 100 -w 90 -e 1.4 -d both -a -270 -c multiply -v background -b none -f none -o +63+45 test.png back-.png back-output.png
+
+Center:
+./cylinderize.sh -D displace.png -r 268 -l 660 -p 1.5 -n 100 -w 90 -e 1.4 -d both -a 360 -c multiply -v background -b none -f none -o +5+45 test.png center.png center-output.png
+
+Merge:
+./cylinderize.sh -D displace.png -r 183 -l 446 -p 1.5 -n 100 -w 80 -e 1.4 -d both -a -270 -c multiply -v background -b none -f none -o -192-2 test.png mockup.png mockup-1.png
+./cylinderize.sh -D displace.png -r 183 -l 446 -p 1.5 -n 100 -w 80 -e 1.4 -d both -a 270 -c multiply -v background -b none -f none -o +185-2 test.png mockup-1.png mockup-2.png

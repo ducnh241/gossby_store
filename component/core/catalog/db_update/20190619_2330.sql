@@ -1,0 +1,1 @@
+ALTER TABLE `osc_catalog_product` ADD COLUMN `views` INT NOT NULL DEFAULT 0 AFTER `solds`;

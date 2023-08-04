@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Interlocking_Heart_Necklace_x5F_line"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000"
+	 style="enable-background:new 0 0 1000 1000;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;}
+	.st1{display:inline;}
+	.st2{fill:none;stroke:#00AEEF;stroke-width:3;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#ED1C24;stroke-width:3;stroke-miterlimit:10;}
+</style>
+<g id="default" class="st0">
+	<g id="default_doc" class="st1">
+		<line class="st2" x1="17.07" y1="4.69" x2="17.07" y2="993.05"/>
+		<line class="st2" x1="257.76" y1="4.7" x2="257.76" y2="993.06"/>
+		<line class="st2" x1="498.46" y1="4.7" x2="498.46" y2="993.06"/>
+		<line class="st2" x1="739.16" y1="4.7" x2="739.16" y2="993.06"/>
+		<line class="st2" x1="979.86" y1="4.7" x2="979.86" y2="993.06"/>
+	</g>
+	<g id="default_ngang" class="st1">
+		<line class="st2" x1="8.25" y1="16.42" x2="991.91" y2="16.42"/>
+		<line class="st2" x1="8.09" y1="257.19" x2="991.75" y2="257.19"/>
+		<line class="st2" x1="8.09" y1="497.96" x2="991.75" y2="497.96"/>
+		<line class="st2" x1="8.09" y1="738.73" x2="991.75" y2="738.73"/>
+		<line class="st2" x1="8.09" y1="979.5" x2="991.75" y2="979.5"/>
+	</g>
+</g>
+<g id="moved">
+	<g id="moved_doc">
+		<path class="st3" d="M-202.12,248.76c168.29,262.69,333.32,527.45,501.68,790.1"/>
+		<path class="st3" d="M-1.43,150.11c182.36,240.44,353.28,516.78,540.79,753.22"/>
+		<path class="st3" d="M197.26,45.04C379.62,285.48,576.42,541.76,763.92,778.2"/>
+		<path class="st3" d="M395.75-59.09C578.11,181.35,782.3,427.7,969.81,664.14"/>
+		<path class="st3" d="M595.21-161.8C777.58,78.64,963.49,316.22,1151,552.66"/>
+	</g>
+	<g id="moved_ngang">
+		<path class="st3" d="M-204.16,266.52C67.75,124.11,342.76-12.25,614.68-154.65"/>
+		<path class="st3" d="M-133.97,487.53C156.2,323.89,445.79,159.16,733.09-9.49"/>
+		<path class="st3" d="M17.07,670.62C307.23,506.97,596.83,342.25,884.12,173.6"/>
+		<path class="st3" d="M153.37,853.71c290.17-163.65,579.76-328.37,867.06-497.02"/>
+		<path class="st3" d="M283.83,1036.8c290.17-163.65,579.76-328.37,867.06-497.02"/>
+	</g>
+</g>
+</svg>

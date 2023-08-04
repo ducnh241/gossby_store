@@ -1,0 +1,1 @@
+ALTER TABLE osc_catalog_order_transaction MODIFY COLUMN note varchar(1000) DEFAULT NULL AFTER transaction_data;

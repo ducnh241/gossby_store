@@ -1,0 +1,365 @@
+@import "../../../core/style/variable.scss";
+
+.pd-type {
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__state {
+    color: $color-primary;
+  }
+
+  &__toggle {
+    margin-left: 16px;
+    color: $color-shade-of-gray;
+    font-size: 12px;
+    text-decoration: underline;
+
+    &:hover {
+      color: $color-primary;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+  }
+
+  &__open-modal {
+    display: inline-block;
+    border: 1px solid $color-primary;
+    color: $color-primary;
+    padding: 4px 16px;
+    background: 0;
+    font-size: 12px;
+    line-height: 24px;
+    border-radius: 2px;
+    margin-left: auto;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      color: $color-white;
+      background: $color-primary;
+    }
+  }
+
+  &__body {
+    border: 1px solid $color-border;
+    background-color: #FAFBFF;
+    padding: 16px;
+    margin-top: 16px;
+  }
+
+  &__list {
+    max-height: 260px;
+    overflow: auto;
+    padding-right: 12px;
+    margin-right: -12px;
+  }
+
+  &__item {
+    background-color: $color-white;
+    border: 1px solid $color-border-secondary;
+    padding: 8px 16px;
+    border-radius: 2px;
+    position: relative;
+    margin-bottom: 10px;
+
+    &:hover {
+      border-color: $color-primary;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .btn-close {
+      position: absolute;
+      top: 10px;
+      right: 16px;
+    }
+
+    &-title {
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    &-caret {
+      display: inline-flex;
+      width: 10px;
+      height: 8px;
+      margin-left: 10px;
+      color: $color-shade-of-gray;
+      transition: 0.3s;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-title.active &-caret {
+      transform: rotateX(180deg);
+    }
+  }
+
+  &__variants {
+    display: none;
+  }
+
+  &__variant {
+    margin-top: 10px;
+    padding: 4px 40px 4px 16px;
+    position: relative;
+    border-radius: 4px;
+
+    .btn-close {
+      display: none;
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      transform: translateY(-50%);
+    }
+
+    &:hover {
+      background-color: #F9F9F9;
+
+      .btn-close {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.pd-type-selector {
+  &__form {
+    display: flex;
+    background-color: #F9F9F9;
+    position: relative;
+    padding: 16px;
+    margin-bottom: 16px;
+
+    input {
+      background: $color-white;
+      width: 100%;
+      border: 1px solid $color-border-secondary;
+      border-radius: 2px;
+      padding: 7px 12px 7px 36px;
+      font-size: 14px;
+      line-height: 20px;
+
+      &:focus {
+        border-color: $color-primary;
+      }
+    }
+
+    & > span {
+      box-sizing: border-box;
+      position: absolute;
+      top: 50%;
+      left: 16px;
+      transform: translateY(-50%);
+      display: flex;
+      width: 36px;
+      height: 36px;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 8px;
+
+    span {
+      font-size: 16px;
+      color: $color-shade-of-gray;
+    }
+
+    button {
+      background: 0;
+      border: 0;
+      text-decoration: underline;
+      color: $color-shade-of-gray;
+      cursor: pointer;
+
+      &:hover {
+        color: $color-primary;
+      }
+    }
+  }
+
+  &__list {
+    height: calc(100vh - 400px);
+    overflow: auto;
+    padding-right: 8px;
+  }
+
+  &__type {
+    padding: 15px 0;
+    border-bottom: 1px solid $color-border;
+
+    &-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    &-label {
+      cursor: pointer;
+    }
+
+    &-toggle {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+      transition: 0.2s;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &.is-expanded &-toggle {
+      transform: rotate(90deg);
+    }
+  }
+
+  &__variants {
+    display: none;
+  }
+
+  &__variant {
+    margin-top: 24px;
+    margin-left: 64px;
+  }
+
+  .text-primary {
+    color: $color-primary;
+  }
+
+  .indeterminate {
+    z-index: 2;
+
+    & ~ ins {
+      position: relative;
+      z-index: 1;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $osc-editor-color-a;
+      }
+    }
+  }
+}
+
+.md-type-selector {
+  padding: 16px 28px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &__footer {
+    text-align: right;
+    margin-top: 16px;
+    padding-top: 24px;
+    border-top: 1px solid $color-border;
+  }
+
+  &__submit {
+    display: inline-block;
+    padding: 8px 16px;
+    background: $color-primary;
+    border: 0;
+    color: $color-white;
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 16px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-primary;
+    }
+  }
+}
+
+.btn-close {
+  background: 0;
+  border: 0;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  color: $color-shade-of-gray;
+
+  &::before,
+  &::after {
+    content: '';
+    width: 12px;
+    height: 1px;
+    background: currentColor;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  &:hover {
+    color: $color-black;
+  }
+}
+
+.custom-scrollbar {
+  &::-webkit-scrollbar-track
+  {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    background-color: $color-gray;
+  }
+
+  &::-webkit-scrollbar
+  {
+    width: 8px;
+    border-radius: 10px;
+    background-color: $color-gray;
+  }
+
+  &::-webkit-scrollbar-thumb
+  {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.1);
+    background-color: $color-medium-dark-shade-of-gray;
+  }
+}

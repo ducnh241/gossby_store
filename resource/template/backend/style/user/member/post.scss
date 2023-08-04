@@ -1,0 +1,13 @@
+@import "../../variable";
+
+.input-password {
+    position: relative;
+}
+.btn.btn-icon-eye {
+    position: absolute;
+    right: 8px;
+    border: none;
+    padding: 0;
+    margin: 0;
+    color: $color-border-member;
+}

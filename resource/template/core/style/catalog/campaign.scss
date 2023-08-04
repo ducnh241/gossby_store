@@ -1,0 +1,960 @@
+@import "../variable.scss";
+
+.campaign-design-list {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  left: -20px;
+  width: calc(100% + 20px);
+  align-items: center;
+
+  > div {
+    margin-left: 20px;
+  }
+
+  > div {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+
+  .campaign-design-item {
+    position: relative;
+    &:before {
+      content: '';
+      display: block;
+      padding-top: 100%;
+    }
+  }
+}
+
+.campaign-design-preview-btn {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+
+  span {
+    color: #6170F7;
+    cursor: pointer;
+
+    &:hover {
+      color: #4C5AA2;
+    }
+  }
+
+  svg {
+    height: 16px;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+}
+
+[data-list="1"] {
+  .campaign-design-preview-btn {
+    text-align: left;
+  }
+}
+
+.campaign-preview {
+  max-width: 100%;
+  width: 780px;
+  position: relative;
+  box-sizing: border-box;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .design-tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+
+    &:empty {
+      display: none;
+    }
+
+    > div {
+      color: #282364;
+      padding: 10px;
+      position: relative;
+      cursor: pointer;
+
+      .counter {
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #dc3545;
+        color: #fff;
+        line-height: 18px;
+        text-align: center;
+        font-size: 10px;
+        margin-left: 10px;
+      }
+
+      &:hover {
+        color: #2684FE;
+      }
+
+      &.activated {
+        color: #2684FE;
+
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: 0;
+          background: #2F80ED;
+          height: 3px;
+          width: 100%;
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+.campaign-dynamic-mockup {
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  user-select: none;
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
+    user-select: none;
+  }
+
+  .layer {position: absolute; overflow: hidden}
+  .design-main {
+    position: absolute;
+  }
+  .segment {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    .img {
+      position: absolute;
+
+      img, svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .frame {
+    position: absolute;
+    overflow: hidden;
+
+    .image {
+      position: absolute;
+      max-width: inherit;
+      max-height: inherit;
+      mix-blend-mode: multiply;
+
+      svg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    .black,.navy,.sport_grey,.light_blue, .dark_grey_heather,.military_green,.heather_grey,.midnight_navy,.cardinal,.dark_chocolate,.gold,.irish_green,.kiwi,.light_pink,.orange,.purple,.red,.royal,.banana_cream,.kelly_green,.maroon,.purple_rush,.royal,.tahiti_blue,.asphalt,.canvas_red,.kelly,.soft_pink,.heather_royal
+    {
+      mix-blend-mode: normal;
+    }
+  }
+
+  &[data-type="canvas-8x10"] {
+    background-image: url(../../image/catalog/campaign/type/preview/canvas/8x10/canvas.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/canvas/8x10/frame.png);
+    }
+  }
+
+  &[data-type="canvas-11x14"] {
+    background-image: url(../../image/catalog/campaign/type/preview/canvas/11x14/canvas.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/canvas/11x14/frame.png);
+    }
+  }
+
+  &[data-type="canvas-16x20"] {
+    background-image: url(../../image/catalog/campaign/type/preview/canvas/16x20/canvas.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/canvas/16x20/frame.png);
+    }
+  }
+
+  &[data-type="canvas-20x24"] {
+    background-image: url(../../image/catalog/campaign/type/preview/canvas/20x24/canvas.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/canvas/20x24/frame.png);
+    }
+  }
+
+  &[data-type="canvas-10x8"] {
+    background-image: url(../../image/catalog/campaign/type/preview/canvas/10x8/canvas.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/canvas/10x8/frame.png);
+    }
+  }
+
+  &[data-type="canvas-14x11"] {
+    background-image: url(../../image/catalog/campaign/type/preview/canvas/14x11/canvas.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/canvas/14x11/frame.png);
+    }
+  }
+
+  &[data-type="canvas-20x16"] {
+    background-image: url(../../image/catalog/campaign/type/preview/canvas/20x16/canvas.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/canvas/20x16/frame.png);
+    }
+  }
+
+  &[data-type="canvas-24x20"] {
+    background-image: url(../../image/catalog/campaign/type/preview/canvas/24x20/canvas.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/canvas/24x20/frame.png);
+    }
+  }
+
+  &[data-type="canvas-12x12"] {
+    background-image: url(../../image/catalog/campaign/type/preview/canvas/12x12/canvas.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/canvas/12x12/frame.png);
+    }
+  }
+
+  &[data-type="canvas-20x30"] {
+    background-image: url(../../image/catalog/campaign/type/preview/canvas/20x30/canvas.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/canvas/20x30/frame.png);
+    }
+  }
+
+  &[data-type="canvas-8x12"] {
+    background-image: url(../../image/catalog/campaign/type/preview/canvas/8x12/canvas.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/canvas/8x12/frame.png);
+    }
+  }
+
+  &[data-type="canvas-12x18"] {
+    background-image: url(../../image/catalog/campaign/type/preview/canvas/12x18/canvas.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/canvas/12x18/frame.png);
+    }
+  }
+
+  &[data-type="canvas-12x24"] {
+    background-image: url(../../image/catalog/campaign/type/preview/canvas/12x24/canvas.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/canvas/12x24/frame.png);
+    }
+  }
+
+  &[data-type="canvas-16x16"] {
+    background-image: url(../../image/catalog/campaign/type/preview/canvas/16x16/canvas.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/canvas/16x16/frame.png);
+    }
+  }
+
+  &[data-type="canvas-24x24"] {
+    background-image: url(../../image/catalog/campaign/type/preview/canvas/24x24/canvas.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/canvas/24x24/frame.png);
+    }
+  }
+
+  &[data-type="canvas-12x8"] {
+    background-image: url(../../image/catalog/campaign/type/preview/canvas/12x8/canvas.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/canvas/12x8/frame.png);
+    }
+  }
+
+  &[data-type="canvas-18x12"] {
+    background-image: url(../../image/catalog/campaign/type/preview/canvas/18x12/canvas.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/canvas/18x12/frame.png);
+    }
+  }
+
+  &[data-type="canvas-24x12"] {
+    background-image: url(../../image/catalog/campaign/type/preview/canvas/24x12/canvas.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/canvas/24x12/frame.png);
+    }
+  }
+
+  &[data-type="canvas-30x20"] {
+    background-image: url(../../image/catalog/campaign/type/preview/canvas/30x20/canvas.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/canvas/30x20/frame.png);
+    }
+  }
+
+  &[data-type="desktopPlaque-7x5"] {
+    background-image: url(../../image/catalog/campaign/type/preview/desktopPlaque/7x5/preview/background.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/desktopPlaque/7x5/preview/frame.png);
+    }
+  }
+
+  &[data-type="desktopPlaque-10x8"] {
+    background-image: url(../../image/catalog/campaign/type/preview/desktopPlaque/10x8/preview/background.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/desktopPlaque/10x8/preview/frame.png);
+    }
+  }
+
+  &[data-type="fleeceBlanket-30x40"] {
+    background-image: url(../../image/catalog/campaign/type/preview/fleeceBlanket/30x40/preview/background.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/fleeceBlanket/30x40/preview/frame.png);
+    }
+  }
+
+  &[data-type="fleeceBlanket-50x60"] {
+    background-image: url(../../image/catalog/campaign/type/preview/fleeceBlanket/50x60/preview/background.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/fleeceBlanket/50x60/preview/frame.png);
+    }
+  }
+
+  &[data-type="fleeceBlanket-60x80"] {
+    background-image: url(../../image/catalog/campaign/type/preview/fleeceBlanket/60x80/preview/background.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/fleeceBlanket/60x80/preview/frame.png);
+    }
+  }
+
+  &[data-type="puzzles-10x14"] {
+    background-image: url(../../image/catalog/campaign/type/preview/puzzles/10x14/preview/background.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/puzzles/10x14/preview/frame.png);
+    }
+  }
+
+  &[data-type="pillow-18x18"] {
+    background-image: url(../../image/catalog/campaign/type/preview/pillow/18x18/preview/background.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/pillow/18x18/preview/frame.png);
+    }
+  }
+
+  &[data-type="pillow-16x16"] {
+    background-image: url(../../image/catalog/campaign/type/preview/pillow/16x16/preview/background.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/pillow/16x16/preview/frame.png);
+    }
+  }
+
+  &[data-type="facemask-dpi"] {
+    background-image: url(../../image/catalog/campaign/type/preview/facemask/dpi/preview/background.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/facemask/dpi/preview/frame.png);
+    }
+  }
+
+  &[data-type="facemask-dpi-kid"] {
+        background-image: url(../../image/catalog/campaign/type/preview/facemask/dpiKid/preview/background.png);
+
+        &:after {
+            background-image: url(../../image/catalog/campaign/type/preview/facemask/dpiKid/preview/frame.png);
+        }
+    }
+
+    &[data-type="facemask-cw"] {
+    background-image: url(../../image/catalog/campaign/type/preview/facemask/cw/preview/background.png);
+
+    &:after {
+      background-image: url(../../image/catalog/campaign/type/preview/facemask/cw/preview/frame.png);
+    }
+  }
+
+  &[data-type="aluminium-square-ornament"] {
+        background-image: url(../../image/catalog/campaign/type/preview/ornament/aluminiumSquare/background.png);
+        .frame {
+            .image {
+                mix-blend-mode: normal;
+            }
+        }
+
+        &:after {
+            background-image: url(../../image/catalog/campaign/type/preview/ornament/aluminiumSquare/frame.png);
+        }
+    }
+
+    &[data-type="aluminium-scalloped-ornament"] {
+        background-image: url(../../image/catalog/campaign/type/preview/ornament/aluminiumScalloped/background.png);
+        .frame {
+            .image {
+                mix-blend-mode: normal;
+            }
+        }
+
+        &:after {
+            background-image: url(../../image/catalog/campaign/type/preview/ornament/aluminiumScalloped/frame.png);
+        }
+    }
+
+    &[data-type="aluminium-medallion-ornament"] {
+        background-image: url(../../image/catalog/campaign/type/preview/ornament/aluminiumMedallion/background.png);
+        .frame {
+            .image {
+                mix-blend-mode: normal;
+            }
+        }
+        &:after {
+            background-image: url(../../image/catalog/campaign/type/preview/ornament/aluminiumMedallion/frame.png);
+        }
+    }
+
+    &[data-type="circle-ornament"] {
+        background-image: url(../../image/catalog/campaign/type/preview/ornament/circle/preview/background.png);
+        .frame {
+            .image {
+                mix-blend-mode: normal;
+            }
+        }
+        &:after {
+            background-image: url(../../image/catalog/campaign/type/preview/ornament/circle/preview/frame.png);
+        }
+    }
+
+    &[data-type="heart-ornament"] {
+        background-image: url(../../image/catalog/campaign/type/preview/ornament/heart/preview/background.png);
+        .frame {
+            .image {
+                mix-blend-mode: normal;
+            }
+        }
+        &:after {
+            background-image: url(../../image/catalog/campaign/type/preview/ornament/heart/preview/frame.png);
+        }
+    }
+
+    &[data-type="notebook-5x7"] {
+    &[data-design="front"] {
+      background-image: url(../../image/catalog/campaign/type/preview/notebook/5x7/preview/front/background.png);
+
+      &:after {
+        background-image: url(../../image/catalog/campaign/type/preview/notebook/5x7/preview/front/frame.png);
+      }
+    }
+
+    &[data-design="back"] {
+      background-image: url(../../image/catalog/campaign/type/preview/notebook/5x7/preview/back/background.png);
+
+      &:after {
+        background-image: url(../../image/catalog/campaign/type/preview/notebook/5x7/preview/back/frame.png);
+      }
+    }
+  }
+
+  &[data-type="mug-11oz"] {
+    &[data-design="front"] {
+      background-image: url(../../image/catalog/campaign/type/preview/mug/11oz/white/front.png);
+    }
+
+    &[data-design="back"] {
+      background-image: url(../../image/catalog/campaign/type/preview/mug/11oz/white/back.png);
+    }
+  }
+
+  &[data-type="mug-15oz"] {
+    &[data-design="front"] {
+      background-image: url(../../image/catalog/campaign/type/preview/mug/15oz/white/front.png);
+    }
+
+    &[data-design="back"] {
+      background-image: url(../../image/catalog/campaign/type/preview/mug/15oz/white/back.png);
+    }
+  }
+
+  &[data-type="mug-insulatedCoffee"] {
+    &[data-design="front"] {
+      background-image: url(../../image/catalog/campaign/type/preview/mug/insulatedCoffee/front.png);
+    }
+
+    &[data-design="back"] {
+      background-image: url(../../image/catalog/campaign/type/preview/mug/insulatedCoffee/back.png);
+    }
+  }
+
+  &[data-type="mug-enamelCampfire"] {
+    &[data-design="front"] {
+      background-image: url(../../image/catalog/campaign/type/preview/mug/enamelCampfire/front.png);
+    }
+
+    &[data-design="back"] {
+      background-image: url(../../image/catalog/campaign/type/preview/mug/enamelCampfire/back.png);
+    }
+  }
+
+  &[data-type="mug-twoTone"] {
+    &[data-option-value="red"] {
+      &[data-design="front"] {
+        background-image: url(../../image/catalog/campaign/type/preview/mug/twoTone/red/front.png);
+      }
+
+      &[data-design="back"] {
+        background-image: url(../../image/catalog/campaign/type/preview/mug/twoTone/red/back.png);
+      }
+    }
+
+    &[data-option-value="black"] {
+      &[data-design="front"] {
+        background-image: url(../../image/catalog/campaign/type/preview/mug/twoTone/black/front.png);
+      }
+
+      &[data-design="back"] {
+        background-image: url(../../image/catalog/campaign/type/preview/mug/twoTone/black/back.png);
+      }
+    }
+
+    &[data-option-value="blue"] {
+      &[data-design="front"] {
+        background-image: url(../../image/catalog/campaign/type/preview/mug/twoTone/blue/front.png);
+      }
+
+      &[data-design="back"] {
+        background-image: url(../../image/catalog/campaign/type/preview/mug/twoTone/blue/back.png);
+      }
+    }
+
+    &[data-option-value="navy"] {
+      &[data-design="front"] {
+        background-image: url(../../image/catalog/campaign/type/preview/mug/twoTone/navy/front.png);
+      }
+
+      &[data-design="back"] {
+        background-image: url(../../image/catalog/campaign/type/preview/mug/twoTone/navy/back.png);
+      }
+    }
+
+    &[data-option-value="pink"] {
+      &[data-design="front"] {
+        background-image: url(../../image/catalog/campaign/type/preview/mug/twoTone/pink/front.png);
+      }
+
+      &[data-design="back"] {
+        background-image: url(../../image/catalog/campaign/type/preview/mug/twoTone/pink/back.png);
+      }
+    }
+  }
+
+  &[data-type="t-shirt"] {
+    &[data-option-value="white"] {
+      &[data-design="front"] {
+        background-image: url(../../image/catalog/campaign/type/preview/tshirt/white/front/background.png);
+
+        &:after {
+          background-image: url(../../image/catalog/campaign/type/preview/tshirt/white/front/frame.png);
+        }
+      }
+}
+
+
+    &[data-option-value="black"] {
+      &[data-design="front"] {
+        background-image: url(../../image/catalog/campaign/type/preview/tshirt/black/front/background.png);
+
+        &:after {
+          background-image: url(../../image/catalog/campaign/type/preview/tshirt/black/front/frame.png);
+        }
+      }
+        }
+    }
+
+    &[data-type="classic-tee"] {
+        &[data-option-value="white"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/classicTee/white/front/background.png);
+
+                &:after {
+                    background-image: url(../../image/catalog/campaign/type/preview/classicTee/white/front/frame.png);
+                }
+            }
+        }
+        &[data-option-value="black"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/classicTee/black/front/background.png);
+
+                &:after {
+                    background-image: url(../../image/catalog/campaign/type/preview/classicTee/black/front/frame.png);
+                }
+            }
+        }
+
+        &[data-option-value="navy"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/classicTee/navy/front/background.png);
+
+                &:after {
+                    background-image: url(../../image/catalog/campaign/type/preview/classicTee/navy/front/frame.png);
+                }
+            }
+        }
+
+        &[data-option-value="light_blue"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/classicTee/light_blue/front/background.png);
+
+                &:after {
+                    background-image: url(../../image/catalog/campaign/type/preview/classicTee/light_blue/front/frame.png);
+                }
+            }
+        }
+
+        &[data-option-value="sport_grey"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/classicTee/sport_grey/front/background.png);
+
+                &:after {
+                    background-image: url(../../image/catalog/campaign/type/preview/classicTee/sport_grey/front/frame.png);
+                }
+            }
+        }
+
+        &[data-option-value="cardinal"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/classicTee/cardinal/front/background.png);
+
+                &:after {
+                    background-image: url(../../image/catalog/campaign/type/preview/classicTee/cardinal/front/frame.png);
+                }
+            }
+        }
+
+        &[data-option-value="dark_chocolate"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/classicTee/dark_chocolate/front/background.png);
+
+                &:after {
+                    background-image: url(../../image/catalog/campaign/type/preview/classicTee/dark_chocolate/front/frame.png);
+                }
+            }
+        }
+
+        &[data-option-value="gold"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/classicTee/gold/front/background.png);
+
+                &:after {
+                    background-image: url(../../image/catalog/campaign/type/preview/classicTee/gold/front/frame.png);
+                }
+            }
+        }
+
+        &[data-option-value="irish_green"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/classicTee/irish_green/front/background.png);
+
+                &:after {
+                    background-image: url(../../image/catalog/campaign/type/preview/classicTee/irish_green/front/frame.png);
+                }
+            }
+        }
+
+        &[data-option-value="kiwi"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/classicTee/kiwi/front/background.png);
+
+                &:after {
+                    background-image: url(../../image/catalog/campaign/type/preview/classicTee/kiwi/front/frame.png);
+                }
+            }
+        }
+
+        &[data-option-value="light_pink"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/classicTee/light_pink/front/background.png);
+
+                &:after {
+                    background-image: url(../../image/catalog/campaign/type/preview/classicTee/light_pink/front/frame.png);
+                }
+            }
+        }
+        &[data-option-value="orange"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/classicTee/orange/front/background.png);
+
+                &:after {
+                    background-image: url(../../image/catalog/campaign/type/preview/classicTee/orange/front/frame.png);
+                }
+            }
+        }
+
+        &[data-option-value="purple"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/classicTee/purple/front/background.png);
+
+                &:after {
+                    background-image: url(../../image/catalog/campaign/type/preview/classicTee/purple/front/frame.png);
+                }
+            }
+        }
+
+        &[data-option-value="red"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/classicTee/red/front/background.png);
+
+                &:after {
+                    background-image: url(../../image/catalog/campaign/type/preview/classicTee/red/front/frame.png);
+                }
+            }
+        }
+
+        &[data-option-value="royal"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/classicTee/royal/front/background.png);
+
+                &:after {
+                    background-image: url(../../image/catalog/campaign/type/preview/classicTee/royal/front/frame.png);
+                }
+            }
+        }
+
+        &[data-option-value="military_green"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/classicTee/military_green/front/background.png);
+
+                &:after {
+                    background-image: url(../../image/catalog/campaign/type/preview/classicTee/military_green/front/frame.png);
+                }
+            }
+        }
+
+        &[data-option-value="ash"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/classicTee/ash/front/background.png);
+
+                &:after {
+                    background-image: url(../../image/catalog/campaign/type/preview/classicTee/ash/front/frame.png);
+                }
+            }
+        }
+    }
+
+    &[data-type="bella-canvas-tee"] {
+        &[data-option-value="white"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/bellaCanvasTee/white/front/background.png);
+            }
+        }
+        &[data-option-value="black"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/bellaCanvasTee/black/front/background.png);
+            }
+        }
+
+        &[data-option-value="navy"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/bellaCanvasTee/navy/front/background.png);
+            }
+        }
+
+        &[data-option-value="light_blue"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/bellaCanvasTee/light_blue/front/background.png);
+            }
+
+        }
+
+      &[data-option-value="dark_grey_heather"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/bellaCanvasTee/dark_grey_heather/front/background.png);
+            }
+        }
+
+        &[data-option-value="asphalt"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/bellaCanvasTee/asphalt/front/background.png);
+            }
+        }
+        &[data-option-value="canvas_red"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/bellaCanvasTee/canvas_red/front/background.png);
+            }
+        }
+
+        &[data-option-value="cardinal"] {
+            &[data-design="front"] {
+          background-image: url(../../image/catalog/campaign/type/preview/bellaCanvasTee/cardinal/front/background.png);
+            }
+        }
+
+        &[data-option-value="gold"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/bellaCanvasTee/gold/front/background.png);
+            }
+
+        }
+
+        &[data-option-value="heather_royal"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/bellaCanvasTee/heather_royal/front/background.png);
+            }
+        }
+
+        &[data-option-value="kelly"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/bellaCanvasTee/kelly/front/background.png);
+            }
+        }
+
+        &[data-option-value="orange"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/bellaCanvasTee/orange/front/background.png);
+            }
+
+        }
+
+        &[data-option-value="soft_pink"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/bellaCanvasTee/soft_pink/front/background.png);
+            }
+        }
+    }
+
+    &[data-type="next-level-tee"] {
+        &[data-option-value="white"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/nextLevelTee/white/front/background.png);
+            }
+        }
+        &[data-option-value="black"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/nextLevelTee/black/front/background.png);
+            }
+        }
+
+        &[data-option-value="midnight_navy"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/nextLevelTee/midnight_navy/front/background.png);
+            }
+        }
+
+        &[data-option-value="heather_grey"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/nextLevelTee/heather_grey/front/background.png);
+
+            }
+        }
+
+        &[data-option-value="military_green"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/nextLevelTee/military_green/front/background.png);
+            }
+        }
+
+        &[data-option-value="banana_cream"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/nextLevelTee/banana_cream/front/background.png);
+            }
+        }
+        &[data-option-value="cardinal"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/nextLevelTee/cardinal/front/background.png);
+            }
+        }
+
+        &[data-option-value="kelly_green"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/nextLevelTee/kelly_green/front/background.png);
+            }
+        }
+
+        &[data-option-value="maroon"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/nextLevelTee/maroon/front/background.png);
+
+            }
+        }
+
+        &[data-option-value="purple_rush"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/nextLevelTee/purple_rush/front/background.png);
+            }
+        }
+
+        &[data-option-value="red"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/nextLevelTee/red/front/background.png);
+            }
+        }
+        &[data-option-value="royal"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/nextLevelTee/royal/front/background.png);
+            }
+        }
+
+        &[data-option-value="tahiti_blue"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/nextLevelTee/tahiti_blue/front/background.png);
+            }
+        }
+
+        &[data-option-value="light_blue"] {
+            &[data-design="front"] {
+                background-image: url(../../image/catalog/campaign/type/preview/nextLevelTee/light_blue/front/background.png);
+      }
+    }
+  }
+}

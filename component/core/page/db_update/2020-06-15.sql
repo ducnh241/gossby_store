@@ -1,0 +1,7 @@
+ALTER TABLE `osc_page` ADD COLUMN `parent_id` INT NOT NULL DEFAULT 0 AFTER `page_id`;
+ALTER TABLE `osc_page` ADD COLUMN `type` VARCHAR (45) DEFAULT NULL AFTER `page_key`;
+ALTER TABLE `osc_page` ADD COLUMN `image` VARCHAR (255) DEFAULT NULL AFTER `type`;
+ALTER TABLE `osc_page` ADD COLUMN `priority` INT NOT NULL DEFAULT 0 AFTER `type`;
+ALTER TABLE `osc_page` ADD COLUMN `heading_tag` VARCHAR (10) DEFAULT NULL AFTER `priority`;
+ALTER TABLE `osc_page` ADD COLUMN `additional_data` MEDIUMTEXT DEFAULT NULL AFTER `content`;
+ALTER TABLE `osc_page` ADD COLUMN `images` TEXT DEFAULT NULL AFTER `image`;

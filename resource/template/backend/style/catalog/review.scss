@@ -1,0 +1,286 @@
+@import "../../../core/style/variable.scss";
+
+.catalog-review-list {
+    position: relative;
+    font-size: 0;
+    text-align: center;
+    padding: 50px;
+    background: #f5f5f5;
+
+    .catalog-review-item {
+        display: block;
+        border: 1px solid #dedede;
+        border-left-width: 10px;
+        /*max-width: 850px;*/
+        margin: auto;
+        background: #fff;
+        box-sizing: border-box;
+        text-align: left;
+        font-size: 1rem;
+        border-radius: 5px;
+        box-shadow: 0 0 4px rgba(0,0,0,.15);
+        padding: 20px;
+        
+        + div {
+            margin-top: 20px;
+        }
+
+        &[data-state="hidden"] {
+            border-left-color: #ff6161;
+        }
+
+        &[data-state="pending"] {
+            border-left-color: #e8b826;
+        }
+
+        &[data-state="approved"] {
+            border-left-color: #42d57d;
+        }  
+
+        > div {
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .info {
+            flex: 1 1 auto;
+        }
+
+        .rating {
+            display: inline-block;
+            vertical-align: middle;
+            color: #fd6e7c;
+            line-height: 1;
+        }
+
+        .date {
+            vertical-align: middle;
+            font-size: 14px;
+        }
+
+        .header {
+            vertical-align: middle;
+
+            .title {                
+                font-size: 20px;
+                margin-bottom: 10px;
+
+                a {
+                    color: #1496f5;
+                    font-size: inherit;
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            svg {
+                height: 14px;
+                vertical-align: middle;
+
+                &[data-icon="osc-clock"] {
+                    margin: 0 3px;
+                    color: #999;
+                }
+            }
+        }
+
+        .body {
+            margin: 20px 0;
+        }
+    }
+
+	.list_photo {
+		display: flex;
+		flex: 1;
+		overflow-x: scroll;
+
+		.photo {
+			width: 150px;
+			background: #f9f9f9;
+			flex: 0 0 auto;
+			position: relative;
+			background-position: center center;
+			background-size: cover;
+			margin-left: 20px;
+
+			&:before {
+				content: '';
+				display: block;
+				padding-bottom: 100%;
+			}
+		}
+	}
+}
+
+.catalog-review-frm {
+    .review-vote-list {
+        .vote-item {
+            border: 1px solid #999;
+            max-width: 300px;
+            margin: auto;
+            text-align: left;
+            padding: 10px 20px;
+            line-height: 1;
+            box-sizing: border-box;
+            cursor: pointer;
+            background: #fff;
+
+            .icon {
+                display: inline-block;
+                vertical-align: middle;
+            }
+
+            svg {
+                height: 14px;
+            }
+
+            .label {
+                margin-left: 20px;
+                vertical-align: middle;
+            }
+        }  
+
+        label {
+            display: block;
+
+            input {
+                display: none;
+            }
+
+            + label {                
+                margin-top: 10px;
+            }
+
+            &:hover .vote-item, input:checked + .vote-item {
+                color: #fff;
+                background: #1496f5;
+                border-color: #333;
+            }
+        }
+    }
+
+	.review-images {
+		box-sizing: border-box;
+		position: relative;
+		left: -15px;
+		top: -15px;
+		width: calc(100% + 30px);
+		overflow: hidden;
+		font-size: 0;
+
+		&:empty:before {
+			content: '';
+			background-image: url(../../image/product/images.svg);
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: 150px 150px;
+			display: block;
+			height: 190px;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		.review-image {
+			position: relative;
+			display: inline-block;
+			width: calc((100% - (6 * 15px)) / 5);
+			margin: 15px 0 0 15px;
+			background-size: cover;
+			box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .15);
+			cursor: grab;
+
+			&:first-child {
+				width: calc((((100% - (6 * 15px)) / 5) * 2) + 15px);
+				float: left;
+			}
+
+			&:before {
+				content: "";
+				display: block;
+				padding-bottom: 100%;
+			}
+
+			&.reordering:after {
+				content: '' !important;
+				position: absolute !important;
+				top: 0 !important;
+				left: 0 !important;
+				width: 100% !important;
+				height: 100% !important;
+				z-index: 9 !important;
+				background: #ddd !important;
+			}
+
+			&:hover:after, &[data-uploader-step]:after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 2;
+				background: rgba(0,0,0,.5);
+			}
+
+			.uploader-progress-bar {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				margin: 0;
+				height: 3px;
+				border: 0;
+				background: rgba(0,0,0,.75);
+				z-index: 4;
+			}
+
+			&[data-uploader-step] .step:before {
+				content: 'Processing...';
+				position: absolute;
+				top: calc((100% - 12px)/2);
+				left: 0;
+				width: 100%;
+				font-size: 12px;
+				line-height: 12px;
+				color: rgba(255, 255, 255, 0.85);
+				z-index: 5;
+				text-align: center;
+			}
+
+			&[data-uploader-step="queue"] .step:before {
+				content: 'Waiting...';
+			}
+
+			&[data-uploader-step="upload"] .step:before {
+				content: 'Uploading...';
+			}
+
+			.controls {
+				position: absolute;
+				z-index: 6;
+				bottom: 5px;
+				left: 0;
+				width: 100%;
+				text-align: center;
+				display: none;
+
+				svg {
+					color: #fff;
+					height: 26px;
+					padding: 5px;
+					cursor: pointer;
+				}
+			}
+
+			&:hover .controls {
+				display: block;
+			}
+		}
+	}
+}

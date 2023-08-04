@@ -1,0 +1,1 @@
+ALTER TABLE osc_catalog_order_fulfillment ADD UNIQUE INDEX uq_fullfill (tracking_number ASC, shipping_carrier ASC);

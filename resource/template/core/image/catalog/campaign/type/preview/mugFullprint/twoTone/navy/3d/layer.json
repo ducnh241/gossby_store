@@ -1,0 +1,21 @@
+{
+  "layers": [
+    {
+      "id": "PrintArea",
+      "textureSize": { "width": 2264, "height": 790 },
+      "flipY": true, 
+      "segmentPreviews": [
+        {
+          "segmentKey": "design",
+          "config": { "x": 163, "y": 32, "width": 1709, "height":  726 }
+        }
+      ]
+    }
+  ],
+  "colors": [
+    {
+      "id": "Color",
+      "color": "#0a0a56"
+    }
+  ]
+}

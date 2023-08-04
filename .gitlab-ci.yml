@@ -1,0 +1,69 @@
+stages:
+  - pull-code
+  - composer-install
+  - remove-cache
+
+image: alpine:3.17
+
+default:
+  before_script:
+    - SSH_SERVER_IP=$([ "$CI_COMMIT_REF_NAME" = "master" ] && echo "$SSH_SERVER_PROD_IP" || echo "$SSH_DEV_SERVER_IP")
+    - SSH_USER=$([ "$CI_COMMIT_REF_NAME" = "master" ] && echo "$SSH_PROD_USER" || echo "$SSH_DEV_USER")
+    - SSH_PORT=$([ "$CI_COMMIT_REF_NAME" = "master" ] && echo "$SSH_PROD_PORT" || echo "$SSH_DEV_PORT")
+    - PATH_REPO=$([ "$CI_COMMIT_REF_NAME" = "master" ] && echo "$PATH_REPO_PROD" || echo "/var/www/9prints/store/site/$CI_COMMIT_REF_NAME")
+    - PATH_SECRET_KEY_GIT=$([ "$CI_COMMIT_REF_NAME" = "master" ] && echo "$PATH_SECRET_KEY_GIT_PROD" || echo "$PATH_DEV_SECRET_KEY_GIT")
+    - SSH_PRIVATE_KEY=$([ "$CI_COMMIT_REF_NAME" = "master" ] && echo "$SSH_PROD_PRIVATE_KEY" || echo "$SSH_DEV_PRIVATE_KEY")
+    - NPM_ENV=$([ "$CI_COMMIT_REF_NAME" = "master" ] && echo " --env production " || echo "")
+    - PHP_VERSION_ALIAS=$([ "$CI_COMMIT_REF_NAME" = "master" ] && echo "$PHP_PROD_VERSION_ALIAS" || echo "$PHP_DEV_VERSION_ALIAS")
+    - SITE_PATH=$([ "$CI_COMMIT_REF_NAME" = "master" ] && echo "$SITE_PATH" || echo "$PATH_REPO")
+    - apk add openssh-client
+    - apk add --update curl && rm -rf /var/cache/apk/*
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+
+pull code:
+  stage: pull-code
+  script:
+    - ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_SERVER_IP -p $SSH_PORT "cd $PATH_REPO; sudo ssh-agent bash -c 'ssh-add $PATH_SECRET_KEY_GIT; git pull origin $CI_COMMIT_REF_NAME'";
+  only:
+    refs:
+      - dev
+      - staging1
+      - staging2
+      - master
+
+composer install:
+  stage: composer-install
+  script:
+    - ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_SERVER_IP -p $SSH_PORT "cd $PATH_REPO/library; sudo $PHP_VERSION_ALIAS /usr/local/bin/composer update --no-interaction";
+  only:
+    refs:
+      - dev
+      - staging1
+      - staging2
+      - master
+    changes:
+      - library/composer.json
+
+remove cache:
+  stage: remove-cache
+  script:
+    - |
+      if [ "$CI_COMMIT_REF_NAME" = "master" ];
+      then
+        ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_SERVER_IP -p $SSH_PORT "sudo rm $SITE_PATH/*/var/core/cache.php"
+        ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_SERVER_IP -p $SSH_PORT "sudo rm $SITE_PATH/*/var/setting/cache.php"
+      else
+        echo "start clear cache $(basename $SITE_PATH)";
+        ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_SERVER_IP -p $SSH_PORT "sudo rm $SITE_PATH/var/core/cache.php";
+        ssh -o StrictHostKeyChecking=no $SSH_USER@$SSH_SERVER_IP -p $SSH_PORT "sudo rm $SITE_PATH/var/setting/cache.php";
+        echo "done clear cache $(basename $SITE_PATH)";
+      fi;
+  only:
+    refs:
+      - dev
+      - staging1
+      - staging2
+      - master

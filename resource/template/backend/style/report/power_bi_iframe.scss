@@ -1,0 +1,10 @@
+.iframe-wrapper {
+  width: 100%;
+  height: calc(100vh - 225px);
+  overflow: hidden;
+}
+
+#myFrame {
+  height: calc(100% + 37px);
+  width: 100%;
+}

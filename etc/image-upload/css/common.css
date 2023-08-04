@@ -1,0 +1,151 @@
+.personalized-config-frm {margin-bottom: 10px;position: relative;}
+.personalized-config-frm .personalized-config-comp__title {margin-bottom: 10px;height: 21px;line-height: 21px;font-family: 'ProximaNova-Bold', sans-serif;font-size: 14px;}
+.personalized-config-frm .personalized-config-comp__title .require {color: #f94343;}
+.personalized-config-frm + .personalized-config-frm,
+.personalized-config-frm + .personalized-config-comp {margin-top: 30px;}
+.personalized-config-frm .error-msg {font-style: normal;font-size: 13px;line-height: 17px;color: #f94343;margin-top: 5px;}
+
+.order-personalized-design {text-align: right;}
+.order-personalized-design .edit-btn {margin-top: 10px;cursor: pointer;display: inline-block;background: #596ace;color: #fff;padding: 0 10px;line-height: 27px;border-radius: 3px;}
+.order-personalized-design .edit-btn:hover {background: #233598;}
+
+.personalized-design-preview {background: #fff;margin-top: 10px;border: 1px solid #ddd;padding: 5px;width: 100%;position: relative;}
+.personalized-design-preview[data-doc-type^="ornament_"] {max-width: 200px;}
+.personalized-design-preview[data-doc-type^="ornament_"]:before {content: '';display: block;position: absolute;top: 0;left: 0;width: 100%;height: 100%;background-position: center center;background-repeat: no-repeat;background-size: contain;}
+.personalized-design-preview[data-doc-type^="ornament_circle"]:before {background-image: url(http:///resource/template/frontend/default2/style/personalizedDesign/../../image/personalizedDesign/preview_frame/ornament/circle.png);z-index: 2;}
+.personalized-design-preview[data-doc-type^="ornament_circle"]:after {display: block;content: '';padding-bottom: 100%;}
+.personalized-design-preview[data-doc-type^="ornament_circle"] svg {width: calc(100% / 1.237113402061856);position: absolute;left: calc(100% * 0.0933333333333333);top: calc(100% * 0.0616666666666667);z-index: 1;}
+
+.personalized-design-preview[data-doc-type^="ornament_heart"]:before {background-image: url(http:///resource/template/frontend/default2/style/personalizedDesign/../../image/personalizedDesign/preview_frame/ornament/heart.png);z-index: 2;}
+.personalized-design-preview[data-doc-type^="ornament_heart"]:after {display: block;content: '';padding-bottom: 100%;}
+.personalized-design-preview[data-doc-type^="ornament_heart"] svg {width: calc(100% / 1.190113102061856);position: absolute;left: calc(100% * 0.0883333333333333);top: calc(100% * 0.0616666666666667);z-index: 1;}
+
+.personalized-design-preview[data-doc-type^="ornament_oval"]:before {background-image: url(http:///resource/template/frontend/default2/style/personalizedDesign/../../image/personalizedDesign/preview_frame/ornament/oval.png);z-index: 2;}
+.personalized-design-preview[data-doc-type^="ornament_oval"]:after {display: block;content: '';padding-bottom: 100%;}
+.personalized-design-preview[data-doc-type^="ornament_oval"] svg {width: calc(100% / 1.224113402061856);position: absolute;left: calc(100% * 0.09);top: calc(100% * 0.01);z-index: 1;}
+
+.personalized-design-preview[data-doc-type^="ornament_star"]:before {background-image: url(http:///resource/template/frontend/default2/style/personalizedDesign/../../image/personalizedDesign/preview_frame/ornament/star.png);z-index: 2;}
+.personalized-design-preview[data-doc-type^="ornament_star"]:after {display: block;content: '';padding-bottom: 100%;}
+.personalized-design-preview[data-doc-type^="ornament_star"] svg {width: calc(100% / 1.142857142857143);position: absolute;left: calc(100% * 0.0633333333333333);top: calc(100% * -0.02);z-index: 1;}
+
+.personalized-design-preview svg {width: 100%;display: block;}
+.personalized-design-popup-preview {width: 600px;max-width: calc(100vw - 40px);}
+.personalized-design-popup-preview .preview-container {position: relative;margin: auto;}
+.personalized-design-popup-preview .preview-container[data-doc-type^="ornament_"] {max-width: 300px;}
+.personalized-design-popup-preview .preview-container[data-doc-type^="ornament_"]:before {content: '';display: block;position: absolute;top: 0;left: 0;width: 100%;height: 100%;background-position: center center;background-repeat: no-repeat;background-size: contain;}
+.personalized-design-popup-preview .preview-container[data-doc-type^="ornament_circle"]:before {background-image: url(http:///resource/template/frontend/default2/style/personalizedDesign/../../image/personalizedDesign/preview_frame/ornament/circle.png);z-index: 2;}
+.personalized-design-popup-preview .preview-container[data-doc-type^="ornament_circle"]:after {display: block;content: '';padding-bottom: 100%;}
+.personalized-design-popup-preview .preview-container[data-doc-type^="ornament_circle"] svg {width: calc(100% / 1.237113402061856);position: absolute;left: calc(100% * 0.0933333333333333);top: calc(100% * 0.0616666666666667);z-index: 1;}
+
+.personalized-design-popup-preview .preview-container[data-doc-type^="ornament_heart"]:before {background-image: url(http:///resource/template/frontend/default2/style/personalizedDesign/../../image/personalizedDesign/preview_frame/ornament/heart.png);z-index: 2;}
+.personalized-design-popup-preview .preview-container[data-doc-type^="ornament_heart"]:after {display: block;content: '';padding-bottom: 100%;}
+.personalized-design-popup-preview .preview-container[data-doc-type^="ornament_heart"] svg {width: calc(100% / 1.190113102061856);position: absolute;left: calc(100% * 0.0883333333333333);top: calc(100% * 0.0616666666666667);z-index: 1;}
+
+.personalized-design-popup-preview .preview-container[data-doc-type^="ornament_oval"]:before {background-image: url(http:///resource/template/frontend/default2/style/personalizedDesign/../../image/personalizedDesign/preview_frame/ornament/oval.png);z-index: 2;}
+.personalized-design-popup-preview .preview-container[data-doc-type^="ornament_oval"]:after {display: block;content: '';padding-bottom: 100%;}
+.personalized-design-popup-preview .preview-container[data-doc-type^="ornament_oval"] svg {width: calc(100% / 1.224113402061856);position: absolute;left: calc(100% * 0.09);top: calc(100% * 0.01);z-index: 1;}
+
+.personalized-design-popup-preview .preview-container[data-doc-type^="ornament_star"]:before {background-image: url(http:///resource/template/frontend/default2/style/personalizedDesign/../../image/personalizedDesign/preview_frame/ornament/star.png);z-index: 2;}
+.personalized-design-popup-preview .preview-container[data-doc-type^="ornament_star"]:after {display: block;content: '';padding-bottom: 100%;}
+.personalized-design-popup-preview .preview-container[data-doc-type^="ornament_star"] svg {width: calc(100% / 1.142857142857143);position: absolute;left: calc(100% * 0.0633333333333333);top: calc(100% * -0.02);z-index: 1;}
+
+.personalized-design-popup-preview .preview-container svg {width: 100%;display: block;}
+.personalized-config-comp + .personalized-config-comp,
+.personalized-config-comp + .personalized-config-frm {margin-top: 30px;}
+.personalized-config-comp .personalized-config-comp__title {margin-bottom: 10px;height: 21px;line-height: 21px;font-family: 'ProximaNova-Bold', sans-serif;font-size: 14px;}
+.personalized-config-comp .personalized-config-comp__desc {margin-bottom: 10px;font-size: 14px;line-height: 21px;color: #bdbdbd;}
+.personalized-config-comp label {line-height: 0;cursor: pointer;}
+.personalized-config-comp label + label {margin-top: 8px;}
+.personalized-config-comp .styled-checkbox + span,
+.personalized-config-comp .styled-radio + span {vertical-align: middle;line-height: 1;margin-left: 5px;}
+
+.personalized-config-comp .image-list {position: relative;width: calc(100% + 15px);left: -15px;font-size: 0;}
+.personalized-config-comp .image-list label {background: white;position: relative;width: calc((100% / 4) - 15px);display: inline-block;margin: 0 0 10px 15px;box-sizing: border-box;box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);}
+.personalized-config-comp .image-list label input {position: absolute;width: 100%;height: 100%;opacity: 0;cursor: pointer;top: 0;z-index: 2;}
+.personalized-config-comp .image-list label input:checked + span {box-shadow: 0 0 0 3px #fff, 0 0 0 4px #2f80ed;}
+.personalized-config-comp .image-list label input:checked + span + ins {display: block;}
+.personalized-config-comp .image-list label ins {background: #2f80ed;position: absolute;display: none;right: 1px;bottom: 1px;z-index: 1;width: 20px;height: 20px;opacity: 0.7;color: white;padding: 5px;font-size: 0;}
+.personalized-config-comp .image-list label ins svg {opacity: 1;}
+.personalized-config-comp .image-list label > span {position: absolute;top: 4px;left: 4px;width: calc(100% - 8px);height: calc(100% - 8px);}
+.personalized-config-comp .image-list label:before {content: '';padding-bottom: 100%;display: block;}
+.personalized-config-comp .image-list label > span {background-position: center center;background-repeat: no-repeat;background-size: contain;background-color: white;}
+
+.personalized-config-comp[data-component="imageGroupSelector"] .personalized-config-comp__content .image-list {position: relative;width: calc(100% + 15px);left: -15px;font-size: 0;margin-top: 10px;}
+.personalized-config-comp[data-component="imageGroupSelector"] .personalized-config-comp__content .image-list:not(:empty):before {content: 'Please select a image';font-size: 1rem;display: block;position: relative;left: 15px;margin-bottom: 10px;}
+.personalized-config-comp__content > .container {margin-top: 15px;padding: 0;}
+.personalized-config-comp__content > .container:empty {margin: 0;}
+
+.mrk-preview-btn {background: white;border: 1px solid #2f80ed;height: 45px;line-height: 45px;font-family: 'ProximaNova-Bold', sans-serif;font-size: 16px;color: #2f80ed;text-align: center;transition: all 0.3s ease;cursor: pointer;margin-top: 30px;}
+.mrk-preview-btn:hover {background: #2f80ed;color: white;}
+
+.personalized-config-note {font-size: 14px;margin: 20px 0 20px;line-height: 20px;}
+
+.personalized-config-comp__upload-img {}
+.personalized-config-comp__upload-img .personalized-config-frm{margin-bottom: 30px}
+.personalized-config-comp__upload-img .image-list.img_editing__group {}
+.personalized-config-comp__upload-img .image-list.img_editing__group .img_editing__item {width: calc((100% / 5) - 15px);box-shadow: none}
+.personalized-config-comp__upload-img .image-list.img_editing__group .img_editing__item  .img_editing__item-icon {position: absolute;top: 0;left: 0;width: 100%;height: 100%;display: flex;align-items: center;justify-content: center;border-radius: 3px;}
+.personalized-config-comp__upload-img .image-list.img_editing__group .img_editing__item  .img_editing__item-icon svg {width: 18px;height: 18px}
+.personalized-config-comp__upload-img .image-list.img_editing__group .img_editing__item input:checked + .img_editing__item-icon {border: solid 1px #3A8EFF;color: #3A8EFF}
+
+.personalized-config-comp__upload-img .img_editting__zoom {display: flex;align-items: center}
+.img_editting__zoom .img_editting__zoom-input {}
+.img_editting__zoom .rangeslider {}
+.img_editting__zoom .rangeslider.rangeslider--horizontal {background: #E5E7EA;margin: 0 10px 0 0;height: 2px;}
+.img_editting__zoom .rangeslider .rangeslider__fill {background: #3A8EFF}
+.img_editting__zoom .rangeslider .rangeslider__handle {width: 20px;height: 20px;box-shadow: none;background: #3A8EFF;border: none;display: flex;align-items: center;justify-content: center}
+.img_editting__zoom .rangeslider .rangeslider__handle::after {background: white;width: 8px;height: 8px}
+.img_editting__zoom .img_editting__zoom-percent {;background: white;display: block;font-size: 14px;width: 80px;text-align: center;height: 25px;line-height: 27px;box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);border-radius: 100px;}
+
+.img_preset__container {}
+.img_preset__header {margin-bottom: 15px;font-size: 14px;white-space: nowrap;overflow-x: auto}
+.img_preset__header-item {padding: 0 0 5px;display: inline-block;position: relative;color: #72849C;margin: 0 20px 0 0;}
+.img_preset__header-item:last-child {margin: 0}
+.img_preset__header-item::before {content: '';display: block;width: 100%;height: 2px;position: absolute;bottom: 0;left: 0}
+.img_preset__header-item.active {color: #3A8EFF;}
+.img_preset__header-item.active::before {background: #3A8EFF;}
+
+.img_preset__body {}
+.img_preset__body .img_preset__group {display: flex;overflow-x: scroll;margin-left: -8px;font-size: 12px}
+.img_preset__body .img_preset__group .img_preset__item-wrap{min-width: 58px;margin: 0 0 15px 8px;}
+.img_preset__body .img_preset__group .img_preset__item-wrap > span {color: #72849C}
+.img_preset__body .img_preset__group label {background: white;position: relative;display: inline-block;box-sizing: border-box;width: 100%;}
+.img_preset__body .img_preset__group label input {position: absolute;width: 100%;height: 100%;opacity: 0;cursor: pointer;top: 0;z-index: 2;}
+.img_preset__body .img_preset__group label input:checked + span {border: solid 1px #3A8EFF}
+.img_preset__body .img_preset__group label input:checked + span + ins {display: block;}
+.img_preset__body .img_preset__group label ins {background: #2f80ed;position: absolute;display: none;right: 1px;bottom: 1px;z-index: 1;width: 20px;height: 20px;opacity: 0.7;color: white;padding: 5px;font-size: 0;}
+.img_preset__body .img_preset__group label ins svg {opacity: 1;}
+.img_preset__body .img_preset__group label > span {position: absolute;top: 0;left: 0;width: 100%;height: 100%}
+.img_preset__body .img_preset__group label:before {content: '';padding-bottom: 100%;display: block;}
+.img_preset__body .img_preset__group label > span {background-position: center center;background-repeat: no-repeat;background-size: contain;background-color: white;}
+
+
+.btn_upload_image {}
+.btn_upload_image {position: relative;overflow: hidden;margin-bottom: 30px}
+.btn_upload_image input[type=file] {position: absolute;left: 0;top: 0;opacity: 0;width: 100%;height: 100%;z-index: 1;cursor: pointer}
+.btn_upload_image input[type=file]:hover + button{background: #0F5BC0 }
+.btn_upload_image button {color: white;background-color: #3A8EFF;padding: 8px 20px;border-radius: 3px;font-size: 14px;width: 140px;height: 40px;border: none;}
+
+@media (min-width: 768px) {
+    .personalized-config-comp .image-list label {width: calc((100% / 5) - 15px);}
+    .personalized-config-comp__upload-img .image-list.img_editing__group .img_editing__item {width: calc((100% / 7) - 15px);}
+
+    .img_preset__header {white-space: normal;overflow-x: auto;}
+    .img_preset__body .img_preset__group {flex-wrap: wrap;overflow: hidden;margin-left: -10px}
+    .img_preset__body .img_preset__group .img_preset__item-wrap {width: calc((100% / 5) - 10px);margin: 0 0 15px 10px}
+
+}
+
+
+
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes action {
+    from {transform: scale(0.9);}
+    to {transform: scale(1);}
+}
+/* Standard syntax */
+@keyframes action {
+    from {transform: scale(0.9);}
+    to {transform: scale(1);}
+}

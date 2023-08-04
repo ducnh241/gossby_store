@@ -1,0 +1,67 @@
+.osc-win {
+    background: #fff;
+    display: block;
+    position: absolute;
+    z-index: 2;
+    box-shadow: 0 0px 2px 0 #34495e;
+}
+
+.osc-win > .head {
+    background: #ecf0f1;
+    border-bottom: 1px solid #d8e2e4;
+    padding: 15px 20px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #2c3e50;
+    box-shadow: inset 0 -1px 0 0 #fff;
+}
+
+.osc-win > .head > .close-btn {
+    float: right;
+    cursor: pointer;
+    margin: 1px -5px 0 0;
+    background: #f37575;
+    border-radius: 2px;
+    width: 14px;
+    height: 14px;
+    position: relative;
+}
+.osc-win > .head > .close-btn:before {
+    content: "";
+    display: block;
+    position: absolute;
+    border-left: 4px solid #fff;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    top: 3px;
+    left: 4px;
+}
+.osc-win > .head > .close-btn:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-left: 2px solid #f37575;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    top: 5px;
+    left: 4px;
+}
+.osc-win > .head > .close-btn i {
+    display: block;
+    position: absolute;
+    border-right: 4px solid #fff;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    top: 3px;
+    left: 6px;
+}
+.osc-win > .head > .close-btn i:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-right: 2px solid #f37575;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    top: -2px;
+    right: -4px;
+}

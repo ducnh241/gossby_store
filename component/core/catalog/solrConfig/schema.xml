@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema name="linkhay" version="1.6">
+    <uniqueKey>pk</uniqueKey>
+    <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
+    <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true"/>
+    <fieldType name="int" class="solr.IntPointField" positionIncrementGap="0"/>
+    <fieldType name="float" class="solr.FloatPointField" positionIncrementGap="0"/>
+    <fieldType name="long" class="solr.LongPointField" positionIncrementGap="0"/>
+    <fieldType name="double" class="solr.DoublePointField" positionIncrementGap="0"/>	
+    <fieldType name="random" class="solr.RandomSortField" indexed="true" />
+    <fieldType name="text_general" class="solr.TextField" positionIncrementGap="100" multiValued="false">
+        <analyzer type="index">
+            <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="[^a-zA-Z0-9]" replacement=" " />
+            <tokenizer class="solr.StandardTokenizerFactory"/>
+            <!--<tokenizer class="solr.WhitespaceTokenizerFactory"/>-->
+            <filter class="solr.StopFilterFactory" words="stopwords.txt" ignoreCase="true"/>
+            <filter class="solr.LowerCaseFilterFactory"/>
+        </analyzer>
+        <analyzer type="query">
+            <charFilter class="solr.PatternReplaceCharFilterFactory" pattern="[^a-zA-Z0-9]" replacement=" " />
+            <tokenizer class="solr.StandardTokenizerFactory"/>
+            <!--<tokenizer class="solr.WhitespaceTokenizerFactory"/>-->
+            <filter class="solr.StopFilterFactory" words="stopwords.txt" ignoreCase="true"/>
+            <filter class="solr.SynonymGraphFilterFactory" expand="true" ignoreCase="true" synonyms="synonyms.txt"/>
+            <filter class="solr.LowerCaseFilterFactory"/>
+        </analyzer>
+    </fieldType>
+	
+    <!--<fieldType name="lowercase" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                    <tokenizer class="solr.KeywordTokenizerFactory"/>
+                    <filter class="solr.LowerCaseFilterFactory"/>
+            </analyzer>
+    </fieldType>
+    <fieldType name="text_ws" class="solr.TextField" positionIncrementGap="100">
+            <analyzer>
+                    <tokenizer class="solr.WhitespaceTokenizerFactory"/>
+            </analyzer>
+    </fieldType>
+    <fieldType name="text_email_url" class="solr.TextField">
+            <analyzer>
+                    <tokenizer class="solr.UAX29URLEmailTokenizerFactory"/>
+                    <filter class="solr.TypeTokenFilterFactory" types="email_url_types.txt" useWhitelist="true"/>
+            </analyzer>
+    </fieldType>-->
+	
+    <field name="_version_" type="long" indexed="true" stored="true" />
+    <field name="pk" type="string" indexed="true" stored="true" required="true" multiValued="false" />
+    <field name="shop" type="string" indexed="true" stored="true" required="true" multiValued="false" />
+    <field name="id" type="long" indexed="true" stored="true" required="true" multiValued="false" />
+    <field name="title" type="text_general" indexed="true" stored="true" required="true" multiValued="false" />
+    <field name="product_type" type="string" indexed="true" stored="true" required="true" multiValued="false" />
+    <field name="vendor" type="string" indexed="true" stored="true" required="true" multiValued="false" />
+    <field name="tags" type="text_general" indexed="true" stored="true" required="true" multiValued="false" />
+    <field name="keywords" type="text_general" indexed="true" stored="true" required="true" multiValued="false" />
+    <field name="data" type="text_general" indexed="false" stored="true" required="false" multiValued="false" />
+    <field name="added_timestamp" type="int" indexed="true" stored="true" required="true" multiValued="false" />
+	
+    <dynamicField name="random_*" type="random" />
+  
+    <!--<dynamicField name="data_i_*"  type="int"    	indexed="false"	stored="true" required="false" multiValued="false" />
+    <dynamicField name="data_l_*"  type="long"   		indexed="false"	stored="true" required="false" multiValued="false" />
+    <dynamicField name="data_b_*"  type="boolean"		indexed="false"	stored="true" required="false" multiValued="false" />
+    <dynamicField name="data_f_*"  type="float"  		indexed="false"	stored="true" required="false" multiValued="false" />
+    <dynamicField name="data_d_*"  type="double" 		indexed="false"	stored="true" required="false" multiValued="false" />
+    <dynamicField name="data_s_*"  type="string"  		indexed="false"	stored="true" required="false" multiValued="false" />
+    <dynamicField name="data_t_*"  type="text_general"   	indexed="false"	stored="true" required="false" multiValued="false" />-->
+</schema>

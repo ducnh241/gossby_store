@@ -1,0 +1,18 @@
+.distribution-table {
+  max-width: 50%;
+
+  .setting-table table td {
+    text-align: center;
+  }
+}
+
+.result-table {
+  .setting-table table {
+    &.render {
+      opacity: 0.3;
+    }
+    td {
+      text-align: center;
+    }
+  }
+}

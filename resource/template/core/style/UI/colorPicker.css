@@ -1,0 +1,145 @@
+.color-picker-menu-wrap {    
+    position: absolute;
+    display: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    background: #d6d6d6;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    z-index: 99999;
+}
+.color-picker-menu-wrap.active {display: block;}
+
+.color-picker-menu-wrap .popup-main {
+    margin: 5px;
+    background: #fff;
+}
+.color-picker-menu-wrap .popup-main table {width: 100%}
+.color-picker-menu-wrap .popup-main table td {width: 1px}
+.color-picker-menu-wrap .popup-main .head {
+    font-weight: bold;
+    padding: 3px 8px;
+    background: #cfddea;
+}
+.color-picker-menu-wrap .color-item {
+    width: 12px;
+    height: 12px;
+    border: 1px solid #b5b5b5;
+    margin: 3px;
+    cursor: pointer;
+}
+
+.color-picker-menu-wrap .color-item:hover {
+    border: 1px solid #f29436;    
+}
+
+.color-picker-menu-wrap .theme-color-wrap {
+    border: 1px solid #c5c5c5;
+    width: 12px;
+}
+
+.color-picker-menu-wrap .theme-color-wrap .color-item {
+    width: 12px;
+    height: 12px;
+    border: 0;
+    margin: 0;
+}
+
+.color-picker-menu-wrap .theme-color-wrap .color-item:hover {
+    width: 10px;
+    height: 10px;
+    border: 1px solid #f29436;
+}
+
+.color-picker-menu-wrap .color-picker-toggler {
+    border-top: 1px dotted #bababa;
+    padding: 3px 5px 3px 25px;
+    font-weight: bold;
+    background: url(../../image/UI/colorPicker/icon.png) 5px center no-repeat;
+    cursor: pointer;
+}
+
+.color-picker-menu-wrap .color-picker-toggler:hover {
+    color: #c00000;
+}
+
+.color-picker {overflow: hidden; padding: 20px}
+.color-picker .selector-area {background: #d40000; position: relative; width: 256px; height: 256px; float: left; border: 1px solid #bababa}
+.color-picker .selector-area .overlay {cursor: crosshair; background: url(../../image/UI/colorPicker/overlay.png) center center no-repeat; width: 100%; height: 100%; position: absolute; top: 0; left: 0}
+.color-picker .selector-area .overlay .selector {
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+.color-picker .selector-area .overlay .selector:before {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    box-shadow: inset 0 0 0 1px #fff;
+}
+.color-picker .hue-area {background: url(../../image/UI/colorPicker/slider.png) center center no-repeat; width: 19px; height: 256px; float: left; margin: 0 10px; position: relative}
+.color-picker .hue-area .slider {
+    width: 100%;
+    height: 0;
+    position: absolute;
+}
+.color-picker .hue-area .slider:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 4px solid #000;
+    border-top: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    position: absolute;
+    top: -4px;
+    left: -4px;
+}
+.color-picker .hue-area .slider:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-right: 4px solid #000;
+    border-top: 4px solid transparent;
+    border-left: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    position: absolute;
+    top: -4px;
+    right: -4px;
+}
+.color-picker .form-area {width: 223px; float: right; margin-left: 10px}
+.color-picker .form-area .section {overflow: hidden}
+.color-picker .form-area .color-preview {float: left; width: 60px}
+.color-picker .form-area .preview {width: 60px; height: 60px; background: #d40000; border: 1px solid #000;margin-bottom: 3px;}
+.color-picker .form-area input {width: 100%;}
+.color-picker .form-area .safe-color {float: left; text-align: center; margin: 28px 10px 0 10px}
+.color-picker .form-area .safe-color .icon {cursor: pointer; width: 11px; height: 12px; background: url(../../image/UI/colorPicker/safe_color.png) 0 0 no-repeat;}
+.color-picker .form-area .safe-color .icon:hover {background: url(../../image/UI/colorPicker/safe_color.png) 0 -12px no-repeat;}
+.color-picker .form-area .safe-color .preview {width: 10px; height: 10px; border: 1px solid #000; margin: 3px 0 0}
+.color-picker .form-area .action {float: right; width: 120px;}
+.color-picker .form-area .action .btn {width: 120px; margin-bottom: 10px}
+.color-picker .form-area .action .btn:last-child {margin-bottom: 0}
+.color-picker .form-area .input-group {border: 1px solid #bababa; padding: 10px; margin-top: 17px; position: relative}
+.color-picker .form-area .input-group .label {position: absolute; top: -10px; left: 5px; background: #fff; padding: 0 5px; font-weight: bold}
+.color-picker .form-area .input-element {display: inline-block; width: 60px; margin-right: 10px}
+.color-picker .form-area .input-element:last-child {margin: 0}
+.color-picker .form-area .input-element span {font-weight: bold}
+.color-picker .form-area .input-element input {width: 40px; margin-left: 5px}
+.color-picker .form-area .cmyk .input-element {display: inline-block; width: 45px; margin-right: 7px}
+.color-picker .form-area .cmyk .input-element:last-child {margin: 0}
+.color-picker .form-area .cmyk .input-element span {font-weight: bold}
+.color-picker .form-area .cmyk .input-element input {width: 25px; margin-left: 5px}
+.color-picker .dis-cursor {cursor: none !important}

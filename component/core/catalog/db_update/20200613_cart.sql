@@ -1,0 +1,1 @@
+ALTER TABLE osc_catalog_cart MODIFY billing_full_name VARCHAR(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

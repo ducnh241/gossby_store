@@ -1,0 +1,227 @@
+.osc-ui-frm-date-picker {
+    background: #fff;    
+    z-index: 2;
+    box-shadow: 0 1px 2px 0 #7f8c8d;
+    width: 251px;
+}
+
+.osc-ui-frm-date-picker .month-days {
+    
+}
+.osc-ui-frm-date-picker .top-bar {
+    padding: 10px;
+    text-align: center;
+    color: #fff;
+    background: #16a085;
+    font-weight: bold;
+    position: relative;
+}
+.osc-ui-frm-date-picker .top-bar .title {
+    cursor: pointer;
+}
+.osc-ui-frm-date-picker .prev-btn {
+    background: #fff;
+    display: block;
+    position: absolute;
+    top: 11px;
+    left: 10px;
+    width: 15px;
+    height: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.osc-ui-frm-date-picker .prev-btn:before {
+    content: "";
+    display: block;
+    position: absolute;
+    border-right: 4px solid #16a085;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    width: 0;
+    height: 0;
+    right: 6px;
+    top: 3px;
+}
+.osc-ui-frm-date-picker .prev-btn:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-right: 4px solid #fff;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    width: 0;
+    height: 0;
+    right: 4px;
+    top: 3px;
+}
+.osc-ui-frm-date-picker .prev-btn:hover {
+    background: #ecf0f1;
+}
+.osc-ui-frm-date-picker .prev-btn:hover:after {
+    border-right: 4px solid #ecf0f1;
+}
+.osc-ui-frm-date-picker .next-btn {
+    background: #fff;
+    display: block;
+    position: absolute;
+    top: 11px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.osc-ui-frm-date-picker .next-btn:before {
+    content: "";
+    display: block;
+    position: absolute;
+    border-left: 4px solid #16a085;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    width: 0;
+    height: 0;
+    left: 6px;
+    top: 3px;
+}
+.osc-ui-frm-date-picker .next-btn:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-left: 4px solid #fff;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    width: 0;
+    height: 0;
+    left: 4px;
+    top: 3px;
+}
+.osc-ui-frm-date-picker .next-btn:hover {
+    background: #ecf0f1;
+}
+.osc-ui-frm-date-picker .next-btn:hover:after {
+    border-left: 4px solid #ecf0f1;
+}
+.osc-ui-frm-date-picker .bottom-bar {
+    padding: 10px;
+    text-align: center;
+}
+.osc-ui-frm-date-picker .bottom-bar.action {
+    background: #ecf0f1;
+    border-top: 1px solid #dce5e7;
+}
+.osc-ui-frm-date-picker .month-days .row {
+    overflow: hidden;
+}
+.osc-ui-frm-date-picker .month-days .cell {
+    float: left;
+    width: 15px;
+    text-align: center;
+    border: 1px solid #dce5e7;
+    border-top: 0;
+    border-right: 0;
+}
+.osc-ui-frm-date-picker .month-days .head .cell {
+    border-color: #bdc3c7;
+    background: #bdc3c7;
+}
+.osc-ui-frm-date-picker .month-days .cell.date {
+    background: #ecf0f1;
+    border: 1px solid #dce5e7;
+    border-top: 0;
+    border-right: 0;
+}
+.osc-ui-frm-date-picker .month-days .cell.date.current {
+    background: #3498db;
+    border-color: #3498db;
+    color: #fff;
+}
+.osc-ui-frm-date-picker .month-days .cell.date.holiday {
+    background: #9b59b6;
+    border-color: #9b59b6;
+    color: #fff;
+}
+.osc-ui-frm-date-picker .month-days .cell.date.other-month.holiday {
+    background: #c998dd;
+    border-color: #c998dd;
+}
+.osc-ui-frm-date-picker .month-days .cell.date.linkable:hover {
+    background: #1abc9c;
+    border-color: #1abc9c;
+    color: #fff;
+    cursor: pointer;
+}
+.osc-ui-frm-date-picker .month-days .cell.other-month {
+    background: #fff;
+}
+.osc-ui-frm-date-picker .month-days .cell:first-child {
+    border-left: 0;
+}
+
+.osc-ui-frm-date-picker .month-year .row {
+    overflow: hidden;
+}
+.osc-ui-frm-date-picker .month-year > .row > .cell {
+    float: left;
+    width: 105px;
+    border-left: 0;
+    border-right: 0;
+    text-align: center;
+    position: relative;
+    border-right: 1px solid #bababa;
+}
+.osc-ui-frm-date-picker .month-year > .row > .cell:last-child {
+    border-right: 0;
+}
+.osc-ui-frm-date-picker .month-year > .head > .cell {
+    border: 0;
+}
+.osc-ui-frm-date-picker .months .item,
+.osc-ui-frm-date-picker .years .item {
+    float: left;
+    width: 42px;
+    padding: 5px;
+}
+.osc-ui-frm-date-picker .month-year .item:hover {
+    background: #1abc9c;
+    color: #fff;
+    cursor: pointer;
+}
+.osc-ui-frm-date-picker .month-year .item.current {
+    background: #3498db;
+    color: #fff;
+    cursor: default;
+}
+.osc-ui-frm-date-picker .years .control {
+    position: absolute;
+    bottom: -28px;
+    left: 0;
+    height: 37px;
+    width: 100%;
+}
+.osc-ui-frm-date-picker .years .control .prev-btn,
+.osc-ui-frm-date-picker .years .control .next-btn {
+    background: #bdc3c7;
+}
+.osc-ui-frm-date-picker .years .control .prev-btn:hover,
+.osc-ui-frm-date-picker .years .control .next-btn:hover {
+    background: #1abc9c;
+}
+.osc-ui-frm-date-picker .years .control .next-btn:before {
+    border-left: 4px solid #fff;
+}
+.osc-ui-frm-date-picker .years .control .next-btn:after {
+    border-left: 4px solid #bdc3c7;
+}
+.osc-ui-frm-date-picker .years .control .next-btn:hover:after {
+    border-left: 4px solid #1abc9c;
+}
+
+.osc-ui-frm-date-picker .years .control .prev-btn:before {
+    border-right: 4px solid #fff;
+}
+.osc-ui-frm-date-picker .years .control .prev-btn:after {
+    border-right: 4px solid #bdc3c7;
+}
+.osc-ui-frm-date-picker .years .control .prev-btn:hover:after {
+    border-right: 4px solid #1abc9c;
+}

@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+.osc-editor-embed-block,
+.osc-editor > .edit-area .osc-editor-embed-block {
+    margin: 25px 0;
+    clear: both;
+    display: table;
+    width: 100%;
+}
+.osc-editor-embed-block:not(.align-left):not(.align-right),
+.osc-editor > .edit-area .osc-editor-embed-block:not(.align-left):not(.align-right) {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+.osc-editor-embed-block .caption {
+    font-size: 12px;
+    color: #777;
+    font-style: italic;
+    margin-top: 10px;
+    text-align: center;
+}
+.osc-editor-embed-block .content {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+}
+.osc-editor-embed-block .content::before {
+    content: '';
+    display: block;
+    padding-top: 56.25%;
+}
+.osc-editor-embed-block .content::after {
+    display: block;
+    clear: both;
+    content: "";
+}
+.osc-editor-embed-block .content iframe {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.osc-editor-embed-block.align-left, .osc-editor-embed-block.align-right{
+    float: none;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+.osc-editor-embed-block > .content iframe,
+.osc-editor-embed-block > .content object,
+.osc-editor-embed-block > .content embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}

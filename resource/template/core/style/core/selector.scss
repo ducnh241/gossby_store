@@ -1,0 +1,97 @@
+.catalog-item-selector {
+    position: relative;
+    left: -20px;
+    width: calc(100% + 40px);
+
+    .catalog-item-browser {
+        padding: 20px;
+        border-top: 1px solid #ddd;
+        background-color: #f9f9f9;
+    }
+
+    .catalog-selected-list {
+        border-top: 1px solid #ddd;
+        overflow-y: auto;
+        max-height: 500px;
+
+        &:empty {
+            &:before {
+                content: attr(data-no-selected);
+                padding: 20px;
+                display: block;
+                text-align: center;               
+            }
+        }
+    }
+
+    .catalog-selected-item {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 10px 20px;
+        position: relative;
+
+        + .catalog-selected-item {
+            border-top: 1px solid #eaeaea;
+        }
+
+        > div {
+            + div {                
+                margin-left: 15px;
+            }
+        }
+
+        .image {
+            flex: 0 0 40px;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 2px;
+            box-shadow: inset 0 0 0 1px rgba(0,0,0,.35);
+
+            &:after {
+                content: '';
+                display: block;
+                padding-bottom: 100%;
+            }
+        }
+
+        .title {
+            flex: 0 1 auto;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .remove-btn {
+            position: absolute;
+            top: calc((100% - 16px)/2);
+            right: 20px;
+            width: 16px;
+            height: 16px;
+            transform: rotate(45deg);
+            cursor: pointer;
+
+            &:after, &:before {
+                content: '';
+                width: 100%;
+                height: 2px;
+                display: block;
+                background: #8e8e8e;
+                position: absolute;
+                top: calc((100% - 2px)/2);
+                left: 0;
+            }
+
+            &:after {
+                transform: rotate(90deg);
+            }
+
+            &:hover {
+                &:after, &:before {
+                    background: #333;
+                }
+            }
+        }
+    }
+}

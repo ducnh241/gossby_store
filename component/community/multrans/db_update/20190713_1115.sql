@@ -1,0 +1,1 @@
+ALTER TABLE `osc_catalog_order_pre_fulfillment` ADD COLUMN `requeue_counter` INT(1) NULL DEFAULT 0 AFTER `queue_flag`;

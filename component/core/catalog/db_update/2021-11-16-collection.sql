@@ -1,0 +1,1 @@
+ALTER TABLE `osc_catalog_collection` ADD COLUMN `allow_index` tinyint(1) NOT NULL DEFAULT 1 AFTER `meta_tags`;

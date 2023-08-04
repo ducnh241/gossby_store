@@ -1,0 +1,1 @@
+ALTER TABLE `osc_catalog_order_item` ADD COLUMN `design_alert_flag` TINYINT(1) NOT NULL DEFAULT 0;

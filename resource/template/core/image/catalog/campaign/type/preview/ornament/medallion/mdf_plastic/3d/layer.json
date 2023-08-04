@@ -1,0 +1,47 @@
+{
+  "layers": [
+    {
+      "id": "PrintArea",
+      "textureSize": { "width": 1275, "height": 956 },
+      "flipY": true,
+      "segmentPreviews": [
+        {
+          "segmentKey": "ornament",
+          "config": { "x": 0, "y": 0, "width": 1275 , "height": 956 }
+        }
+      ],
+      "material" : {
+        "type": "MeshStandardMaterial",
+        "params":{
+          "roughness" : 0.45
+        }
+      }
+    }
+  ],
+  "lights": [
+    {
+      "type" : "SpotLight",
+      "key" : "topLight",
+      "params" : ["#FFFFFF", 0.4,  100],
+      "position" : [0, 10, 10]
+    },
+    {
+      "type" : "SpotLight",
+      "key" : "fillLight",
+      "params" : ["#FFFFFF", 0.3,  100],
+      "position" : [6, 2, 0]
+    },
+    {
+      "type" : "SpotLight",
+      "key" : "backLight",
+      "params" : ["#FFFFFF", 0.3,  100],
+      "position" : [-6, 2, 0]
+    },
+    {
+      "type" : "SpotLight",
+      "key" : "downLight",
+      "params" : ["#FFFFFF", 0.4,  100],
+      "position" : [-6, -6, 4]
+    }
+  ]
+}

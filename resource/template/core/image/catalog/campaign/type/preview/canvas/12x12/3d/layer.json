@@ -1,0 +1,83 @@
+{
+  "layers": [
+    {
+      "id": "PrintArea",
+      "textureSize": {
+        "responsive": [
+          {
+            "break_point" : "min_width:769",
+            "width": 4800,
+            "height": 4800
+          },
+          {
+            "break_point" : "min_width:769",
+            "width": 1200,
+            "height": 1200
+          },
+          {
+            "break_point" : "max_width:768",
+            "width": 800,
+            "height": 800
+          }
+        ]
+      },
+      "flipY": true,
+      "segmentPreviews": [
+        {
+          "segmentKey": "canvas",
+          "config": {
+            "responsive" : [
+              {
+                "break_point" : "min_width:769",
+                "x": 0,
+                "y": 0,
+                "width": 4800,
+                "height": 4800
+              },
+              {
+                "break_point" : "min_width:769",
+                "x": 0,
+                "y": 0,
+                "width": 1200,
+                "height": 1200
+              },
+              {
+                "break_point" : "max_width:768",
+                "x": 0,
+                "y": 0,
+                "width": 800,
+                "height": 800
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "lights" : [
+    {
+      "type" : "SpotLight",
+      "key" : "keyLight",
+      "params" : ["#FFFFFF", 0.98,  100],
+      "position" : [0, 25, 25]
+    },
+    {
+      "type" : "SpotLight",
+      "key" : "fillLight",
+      "params" : ["#FFFFFF", 0.5,  100],
+      "position" : [6, 2, 0]
+    },
+    {
+      "type" : "SpotLight",
+      "key" : "backLight",
+      "params" : ["#FFFFFF", 0.5,  100],
+      "position" : [-6, 2, 0]
+    },
+    {
+      "type" : "SpotLight",
+      "key" : "downLight",
+      "params" : ["#FFFFFF", 0.6,  100],
+      "position" : [-6, -6, 4]
+    }
+  ]
+}

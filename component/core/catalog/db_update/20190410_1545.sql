@@ -1,0 +1,1 @@
+ALTER TABLE `osc_catalog_order_item` ADD COLUMN `product_type` VARCHAR(255) NULL DEFAULT NULL AFTER `title`;

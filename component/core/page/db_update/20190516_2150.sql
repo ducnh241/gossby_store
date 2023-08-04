@@ -1,0 +1,1 @@
+ALTER TABLE `osc_page` ADD COLUMN `page_key` VARCHAR(45) NULL DEFAULT NULL AFTER `page_id`, ADD UNIQUE INDEX `system_key_UNIQUE` (`page_key` ASC);

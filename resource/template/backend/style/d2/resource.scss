@@ -1,0 +1,12 @@
+#list-conditions > div {
+  display: flex;
+  .input-condition {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+
+    div {
+      flex-grow: 0.45;
+    }
+  }
+}

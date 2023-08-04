@@ -1,0 +1,13 @@
+ALTER TABLE `osc_report_record` ADD COLUMN `store_id` INT(10) UNSIGNED NOT NULL DEFAULT 0 AFTER `record_id`, ADD INDEX `store_id` (`store_id` ASC);
+
+ALTER TABLE `osc_report_record` DROP PRIMARY KEY, ADD PRIMARY KEY (`record_id`, `store_id`);
+
+ALTER TABLE osc_report_record PARTITION BY LIST COLUMNS(store_id) (
+    PARTITION p1 VALUES IN(1)
+);
+
+ALTER TABLE t1 ADD PARTITION (PARTITION p3 VALUES LESS THAN (2002));
+
+ALTER TABLE t1 DROP PARTITION p0, p1;
+
+ALTER TABLE t1 TRUNCATE PARTITION p1, p3;

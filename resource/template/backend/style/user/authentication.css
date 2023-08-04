@@ -1,0 +1,23 @@
+@import url(../../../core/style/font/open-sans.css);
+
+body {background: #f3f3f3}
+.body-wrap {padding: 0 !important;min-height: initial;}
+body > .body-wrap > .content-wrap {min-height: 100vh;padding-top: 150px;}
+body > .body-wrap > .content-wrap > .footer {border: 0;margin-top: 30px;color: #999}
+
+.auth-frm-wrap {margin: auto;width: 292px;}
+.auth-frm-wrap .tile {background: url(../../image/user/auth_tile.png); height: 65px; width: 292px; margin: 0 auto 20px}
+.auth-frm-wrap h2 {color: #20b3b5; font-family: 'Open Sans Condensed'; margin-bottom: 5px; font-size: 20px}
+.auth-frm-wrap .desc {color: #333; font-size: 13px; margin-bottom: 20px}
+.auth-frm-wrap .desc span {font-weight: bold}
+.auth-frm-wrap .error-wrap {background: rgba(234,105,105,.65); color: #fff; padding: 10px; margin-bottom: 20px; display: none}
+.auth-frm-wrap .success-wrap-background {background: rgb(0, 204, 102, .65)}
+.auth-frm-wrap form > div {margin-bottom: 10px}
+.auth-frm-wrap form input, .auth-frm-wrap form .btn {width: 100%}
+.auth-frm-wrap .forgot-password-link, .auth-frm-wrap .sign-in-link {text-align: center; margin-top: 20px}
+.auth-frm-wrap .forgot-password-link a, .auth-frm-wrap .sign-in-link a {color: #15a7a9; text-decoration: none}
+.auth-frm-wrap .forgot-password-link a:hover, .auth-frm-wrap .sign-in-link a:hover {text-decoration: underline}
+
+.message-info {
+    text-align: center;
+}

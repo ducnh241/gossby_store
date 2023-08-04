@@ -1,0 +1,1 @@
+ALTER TABLE `osc_catalog_product_pack` ADD COLUMN `is_pack_auto` TINYINT(1) NOT NULL DEFAULT 1 AFTER `shipping_values`;

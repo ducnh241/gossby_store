@@ -1,0 +1,59 @@
+/var
+/storage
+/library/composer.lock
+/library/vendor
+/library
+/.store_id
+/favicon.png
+/logo.png
+/register.php
+.idea
+.vscode
+/env.php
+/.python.json
+/sample
+**/__pycache__
+sitemap.xml
+robots.txt
+
+#frontend
+# dependencies
+frontend/node_modules
+frontend/.pnp
+frontend/.pnp.js
+
+# testing
+frontend/coverage
+
+# next.js
+frontend/.next/
+frontend/out/
+
+# production
+frontend/build
+
+# misc
+.DS_Store
+frontend/*.pem
+frontend/.env
+
+# debug
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# local env files
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# vercel
+frontend/.vercel
+frontend/package-lock.json
+frontend/yarn.lock
+
+frontend/ecosystem.config.js
+
+example/*
+.DS_Store

@@ -1,0 +1,2 @@
+ALTER TABLE `osc_marketing_point` ADD COLUMN `vendor` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL AFTER `point`;
+ALTER TABLE `osc_marketing_point` ADD COLUMN `vendor_point` int(11) UNSIGNED NULL DEFAULT 0 AFTER `vendor`;

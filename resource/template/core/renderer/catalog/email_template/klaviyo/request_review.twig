@@ -1,0 +1,183 @@
+<html lang="en">
+<head>
+    <title>
+        Thank you for your purchase!
+    </title>
+    <meta content="width=device-width" name="viewport"/>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        a, a:hover {
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 94% !important;
+            }
+
+            .main-action-cell {
+                float: none !important;
+                margin-right: 0 !important;
+            }
+
+            .secondary-action-cell {
+                text-align: center;
+                width: 100%;
+            }
+
+            .header {
+                margin-top: 20px !important;
+                margin-bottom: 2px !important;
+            }
+
+            .shop-name__cell {
+                display: block;
+            }
+
+            .order-number__cell {
+                display: block;
+                text-align: left !important;
+                margin-top: 20px;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+            .or {
+                margin-right: 0 !important;
+            }
+
+            .apple-wallet-button {
+                text-align: center;
+            }
+
+            .customer-info__item {
+                display: block;
+                width: 100% !important;
+            }
+
+            .spacer {
+                display: none;
+            }
+
+            .subtotal-spacer {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body style="margin: 0;">
+<table class="body"
+       style="border-spacing: 0 !important; border-collapse: collapse !important; width: 100% !important;height: 100% !important;">
+    <tr>
+        <td align="center"
+            style="font-family: arial, -apple-system !important; font-size: 0.875rem !important; background: #e0e0e0 !important;"
+            valign="center">
+            <table class="body"
+                   style="width: 100% !important; max-width: 600px !important; border-spacing: 0; border-collapse: collapse;">
+                <tr>
+                    <td align="center" style="background: #fff !important;" valign="center">
+                        <div style="padding: 30px !important;">
+                            <table style="margin-bottom: 15px !important;border-spacing: 0 !important; border-collapse: collapse !important; width: 100% !important;">
+                                <tr>
+                                    <td>
+                                        <div style="font-family: arial, -apple-system !important; font-size: 1.565rem !important; color: #282364 !important; line-height: 1 !important; margin: 0 !important; padding: 0 !important; text-align: center !important;">
+                                            Your Feedback Means A Lot To Us
+                                        </div>
+                                        <div style="margin-top: 30px !important; line-height: 1rem !important; color: #282364 !important;text-align: center !important;">
+                                            <p style="margin: 0 !important; margin-bottom: 10px !important;">
+                                                Hi
+                                                <strong>{{ event.customer_first_name }}</strong>,
+                                            </p>
+                                            <p style="margin: 0 !important; margin-bottom: 10px !important;">
+                                                Thank you for your Order: #{{ event.order_code }}
+                                            </p>
+                                            <p style="margin: 0 !important; margin-bottom: 10px !important;">
+                                                We would be grateful if you shared how things look and feel.<br/>Your
+                                                review plays a crucial role in our future development, and it only takes
+                                                a few minutes to complete.
+                                            </p>
+                                            {% if event.discount_percent &gt; 0 %}
+                                                <p style="margin: 0 !important; margin-bottom: 10px !important;">
+                                                    When writing emails for review, if possible, please insert the
+                                                    product image to be eligible for a coupon
+                                                    <b style="color:#1688FA">{{ event.discount_percent }}% OFF</b>
+                                                </p>
+                                            {% endif %}
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table style="border-spacing: 0 !important; border-collapse: collapse !important; width: 100% !important;">
+                                <tr>
+                                    <td>
+                                        {% for item in event.data_request %}
+                                        <table style="border: 1px solid #DDDDDD !important; margin-bottom: 30px !important;border-radius: 8px;width:100%;">
+                                            <tr>
+                                                <td style="padding: 20px !important">
+                                                    <table style="border-spacing: 0 !important; width: 100% !important;">
+                                                        <tr>
+                                                            <td>
+                                                                <img src="{{ item.image_url }}"
+                                                                     style="display: block !important; width: 100% !important;border: 1px solid #F2F2F2;"/>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div style="margin-top: 26px!important;"></div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top">
+                                                                <div style="margin-bottom: 10px !important; font-family: arial, -apple-system !important; font-size: 0.875rem !important; line-height: 1.075rem !important; color: #282364 !important; font-weight: bold !important;">
+                                                                    {{ item.product_title }}
+                                                                </div>
+                                                                {% if item.variant_title and item.variant_title != '' %}
+                                                                    <div style="margin-top: 3px !important; font-family: arial, -apple-system !important; font-size: 0.875rem !important; line-height: 1.075rem !important; color: #72849C !important;">
+                                                                        {{ item.variant_title }}
+                                                                    </div>
+                                                                {% endif %}
+                                                                <div style="margin-top: 3px !important; font-family: arial, -apple-system !important; font-size: 0.875rem !important; line-height: 1.075rem !important; color: #72849C !important;">
+                                                                    SKU: {{ item.variant_sku }}
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table class="body"
+                                               style="border-spacing: 0 !important; border-collapse: collapse !important; width: 100% !important;max-width: 150px !important; margin-bottom: 30px !important; margin-left: auto !important;">
+                                            <tr>
+                                                <td align="center" valign="center">
+                                                    <table class="button main-action-cell"
+                                                           style="border-spacing: 0 !important; border-collapse: collapse !important; width: 100% !important;">
+                                                        <tr>
+                                                            <td align="center"
+                                                                style="cursor: pointer !important; border-radius: 4px !important; background: #1688FA !important;">
+                                                                <a href="{{ item.review_url }}"
+                                                                   style="cursor: pointer !important; font-size: 0.875rem !important; line-height: 0.875rem !important; display: block !important; color: #fff !important; padding: 12px 30px !important;">Write
+                                                                    Review</a>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        {% endfor %}<!--Loop item - End-->
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

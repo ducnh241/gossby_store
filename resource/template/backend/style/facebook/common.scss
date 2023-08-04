@@ -1,0 +1,67 @@
+@import "../variable";
+
+.select2-container--default {
+    .select2-search--inline {
+        .select2-search__field {
+            background: transparent;
+            border: none;
+            outline: 0;
+            box-shadow: none;
+            -webkit-appearance: textfield;
+            margin-top: 4px;
+            height: 25px;
+        }
+    }
+}
+
+.select2-container {
+    .select2-selection--multiple {
+        background: $color-white;
+        width: 100%;
+        border: 1px solid $color-gray;
+        padding: 0 10px;
+        position: relative;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        background-clip: padding-box;
+    }
+}
+
+.select2-container--default {
+    .select2-selection--multiple {
+        box-shadow: none;
+        
+        .select2-selection__choice {
+            border: 0;
+            margin-top: 8px;
+        }
+    }
+}
+
+.table-choose-facebook-pixel {
+    border-spacing: 0;
+    width: 100%;
+    border-left: 1px solid $color-gray;
+    border-bottom: 1px solid $color-gray;
+    
+    .styled-select {
+        height: auto;
+    }
+    
+    tr {
+        th {
+            text-align: left;
+            border-top: 1px solid $color-gray;
+            border-right: 1px solid $color-gray;
+            padding: 7px;
+            background: $color-light;
+        }
+        
+        td {
+            text-align: left;
+            border-top: 1px solid $color-gray;
+            border-right: 1px solid $color-gray;
+            padding: 7px;
+        }
+    }
+}

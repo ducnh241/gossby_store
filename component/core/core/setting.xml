@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<setting>
+    <module>
+        <key>core</key>
+        <groups>
+            <group>
+                <key>scheduler</key>
+                <name>Scheduler</name>
+                <items>
+                    <item>
+                        <key>using_cron</key>
+                        <title>Run scheduler by crontab</title>
+                        <default>1</default>
+                        <input method="switcher" skin="onoff" />
+                    </item>
+                </items>
+            </group>
+            <group>
+                <key>email</key>
+                <name>Email</name>
+                <items>
+                    <item>
+                        <key>outgoing_email</key>
+                        <title>Outgoing email address</title>
+                        <default>webmaster@localhost</default>
+                        <input method="input">
+                            <validator type="helper" name="core/setting_validator" function="validEmail" />
+                        </input>
+                    </item>
+                    <item>
+                        <key>incoming_email</key>
+                        <title>Incoming email address</title>
+                        <default>contact@localhost</default>
+                        <input method="input">                            
+                            <validator type="helper" name="core/setting_validator" function="validEmail" />
+                        </input>
+                    </item>
+                    <item>
+                        <key>text_signature</key>
+                        <title>Email signature, using for plain text email</title>
+                        <input method="textarea" />
+                        <nullable>1</nullable>
+                    </item>
+                    <item>
+                        <key>html_signature</key>
+                        <title>Email signature, using for HTML email</title>
+                        <input method="editor">
+                            <validator type="helper" name="core/setting_validator" function="validHTML">
+                                <param>font,anchor,table,size,image,style,align,back</param>
+                            </validator>
+                        </input>
+                        <nullable>1</nullable>
+                    </item>
+                </items>
+            </group>
+            <group>
+                <key>number_format</key>
+                <name>Format number</name>
+                <scopes>
+                    <scope>section</scope>
+                    <scope>category</scope>
+                </scopes>
+                <items>
+                    <item>
+                        <key>digit_grouping_symbol</key>
+                        <title>Digit grouping symbol</title>
+                        <default>,</default>
+                        <input method="select">
+                            <source><![CDATA[a:3:{s:1:",";s:1:",";s:1:".";s:1:".";s:5:"&#39;";s:5:"&#39;";}]]></source>
+                        </input>
+                    </item>
+                    <item>
+                        <key>decimal_symbol</key>
+                        <title>Decimal symbol</title>
+                        <default>.</default>
+                        <input method="select">
+                            <source><![CDATA[a:2:{s:1:",";s:1:",";s:1:".";s:1:".";}]]></source>
+                        </input>
+                    </item>
+                </items>
+            </group>
+            <group>
+                <key>date</key>
+                <name>Date</name>
+                <items>
+                    <item>
+                        <key>timezone</key>
+                        <title>Default timezone</title>
+                        <default>0</default>
+                        <input method="select">
+                            <source type="collection" name="core/timezone" />
+                        </input>
+                    </item>
+                    <item>
+                        <key>long_format</key>
+                        <title>Date format (full format)</title>
+                        <default>D, F d, Y @ h:i A</default>
+                        <input method="input" />
+                        <scopes>
+                            <scope>section</scope>
+                            <scope>category</scope>
+                        </scopes>
+                    </item>
+                    <item>
+                        <key>short_format</key>
+                        <title>Date format (short format)</title>
+                        <default>d.m.y - H:i</default>
+                        <input method="input" />
+                        <scopes>
+                            <scope>section</scope>
+                            <scope>category</scope>
+                        </scopes>
+                    </item>
+                </items>
+            </group>
+            <group>
+                <key>metadata</key>
+                <name>Metadata tags</name>
+                <tab>SEO</tab>
+                <items>
+                    <item>
+                        <key>site_title</key>
+                        <title>Default site title</title>
+                        <default>OSECORE</default>
+                        <input method="input" />
+                    </item>
+                    <item>
+                        <key>author</key>
+                        <title>Author tag</title>
+                        <input method="input" />
+                        <nullable>1</nullable>
+                    </item>
+                    <item>
+                        <key>robots</key>
+                        <title>Robots tag</title>
+                        <input method="input" />
+                        <nullable>1</nullable>
+                    </item>
+                    <item>
+                        <key>keywords</key>
+                        <title>Keywords tag</title>
+                        <input method="input" />
+                        <nullable>1</nullable>
+                    </item>
+                    <item>
+                        <key>description</key>
+                        <title>Description tag</title>
+                        <input method="input" />
+                        <nullable>1</nullable>
+                    </item>
+                </items>
+            </group>
+            <group>
+                <key>misc</key>
+                <name>Misc.</name>
+                <tab>SEO</tab>
+                <items>
+                    <item>
+                        <key>redirect_waiting_time</key>
+                        <title>Time delay before redirect page (second)</title>
+                        <description>Apply for HTML redirect page</description>
+                        <default>3</default>
+                        <input method="input">
+                            <validator type="helper" name="core/setting_validator" function="validInteger">
+                                <param>1</param>
+                                <param>10</param>
+                            </validator>
+                        </input>
+                    </item>
+                </items>
+            </group>
+        </groups>
+    </module>
+</setting>

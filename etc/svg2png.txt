@@ -1,0 +1,80 @@
+  179  apt-get install python
+  180  apt-get update
+  181  apt-get install python
+  182  apt-get install libcairo2-dev
+  183  cd /mnt/c/Work/DLS/Store
+  184  ls
+  185  python 
+  186  python test.py
+  187  from gi.repository import cairo
+  188  cd ~
+  189  pwd
+  190  git clone https://github.com/atizo/pycairo/
+  191  cd pycairo/
+  192  run python setup.py install
+  193  python setup.py install
+  194  git clone git://git.cairographics.org/git/py2cairo
+  195  python -c "import sys; print sys.prefix"
+  196  apt-get install automake pkg-config libtool
+  197  cd py2cairo/
+  198  ./autogen.sh --prefix=/usr
+  199  env | grep PYTHON
+  200  pyenv
+  201  which python
+  202  python --version
+  203  python-config
+  204  apt-get install python-dev
+  205  ./autogen.sh --prefix=/usr
+  206  ./configure
+  207  make
+  208  make install
+  209  python
+  210  cd /mnt/c/Work/DLS/Store
+  211  python test.py
+  212  apt-get install python-rsvg
+  213  apt-get update
+  214  apt-get install python-rsvg
+  215  apt-get install -y python-rsvg
+  216  apt-get update -y
+  217  apt-get install gnome-python2-rsvg
+  218  pip3
+  219  apt install python3-pip
+  220  pip3 install cairosvg
+  221  cairosvg
+  222  cairosvg test.svg -o test.png
+  223  inkscape 
+  224  apt-get install inkscape 
+  225  inkscape
+  226  inkscape -z -e test.png -w 1024 -h 1024 test.svg
+  227  cairosvg test.svg -o test2.png
+  228  npm
+  229  apt install npm
+  230  npm install svg2png -g
+  231  svg2png
+  232  svg2png test.svg --output=test3.png
+  233  svg2png test.svg --output=test3.png --width=500
+  234  inkscape test.svg -e testt.png -w 1000
+  235  fc-list | grep "Hack"
+  236  inkscape test.svg -e testt2.png -w 1000
+  237  cd /usr/local
+  238  cd share
+  239  cd fonts
+  240  ls
+  241  ls -a -l
+  242  cd ..
+  243  ls -a -l
+  244  cd fonts
+  245  cp /mnt/c/Work/DLS/Store/Lobster-Regular.ttf .
+  246  ls
+  247  cd /mnt/c/Work/DLS/Store
+  248  ls
+  249  inkscape test.svg -e testt2.png -w 1000
+  250  cairosvg test.svg -o test.png
+  251  inkscape test.svg -e testt2.png -w 1000
+  252  inkscape test.svg -e testt2.png -w 750
+  253  cairosvg
+  254  cairosvg test.svg -o test.png -w 2000
+  255  cairosvg test.svg -o test.png -W 2000
+  256  cairosvg test.svg -o test.png
+  257  inkscape test.svg -e testt2.png -w 750
+  258  history > history.txt

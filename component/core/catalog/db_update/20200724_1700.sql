@@ -1,0 +1,1 @@
+ALTER TABLE `osc_catalog_product` ADD `topic` VARCHAR(500) NOT NULL AFTER `title`;

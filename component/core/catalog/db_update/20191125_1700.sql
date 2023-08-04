@@ -1,0 +1,1 @@
+ALTER TABLE `osc_catalog_order` ADD COLUMN `additional_data` LONGTEXT DEFAULT NULL AFTER `code`;

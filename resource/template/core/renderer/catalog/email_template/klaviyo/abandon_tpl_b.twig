@@ -1,0 +1,475 @@
+<html>
+<head>
+    <title>
+        Abandonment 1
+    </title>
+    <meta content="width=device-width" name="viewport"/>
+    <style>
+        html {
+            font-size: 16px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .mobile-24 {
+                font-size: 26px !important;
+            }
+
+            .mobile-18 {
+                font-size: 18px !important;
+            }
+
+            .mobile-16 {
+                font-size: 16px !important;
+            }
+
+            .mobile-12 {
+                font-size: 12px !important;
+            }
+
+            .mobile-10 {
+                font-size: 10px !important;
+            }
+
+            .mobile-21 {
+                font-size: 21px !important;
+            }
+
+            .mobile-pd-10 {
+                padding: 10px !important;
+            }
+
+            .mobile-logo {
+                height: 66px !important;
+            }
+
+            .mobile-logo img {
+                width: 104px;
+                max-height: none !important;
+            }
+
+            .mobile-lh-22 {
+                line-height: 25px !important
+            }
+
+            .mobile-lh-30 {
+                line-height: 15px !important
+            }
+
+            .mobile-lh-20 {
+                line-height: 20px !important
+            }
+
+            .mobile-product-img {
+                width: 109px !important;
+            }
+
+            .mobile-discount-code {
+                padding: 17px 30px !important;
+            }
+        }
+
+        body {
+            margin: 0;
+        }
+
+        a, a:hover {
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 94% !important;
+            }
+
+            .main-action-cell {
+                float: none !important;
+                margin-right: 0 !important;
+            }
+
+            .secondary-action-cell {
+                text-align: center;
+                width: 100%;
+            }
+
+            .header {
+                margin-top: 20px !important;
+                margin-bottom: 2px !important;
+            }
+
+            .shop-name__cell {
+                display: block;
+            }
+
+            .order-number__cell {
+                display: block;
+                text-align: left !important;
+                margin-top: 20px;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+            .or {
+                margin-right: 0 !important;
+            }
+
+            .apple-wallet-button {
+                text-align: center;
+            }
+
+            .customer-info__item {
+                display: block;
+                width: 100% !important;
+            }
+
+            .spacer {
+                display: none;
+            }
+
+            .subtotal-spacer {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+<table style="border-spacing: 0 !important; border-collapse: collapse !important; width: 100% !important;height: 100% !important;">
+    <tr>
+        <td align="center" style=" font-size: 1rem !important; background: #e0e0e0 !important;" valign="center">
+            <table class="body"
+                   style="width: 100% !important; max-width: 685px !important; border-spacing: 0; border-collapse: collapse;">
+                <tr>
+                    <td align="center" class="mobile-logo" style="background: #F2F2F6 !important; height: 65px"
+                        valign="center">
+                        <img alt="" data-index="0" src="{{ event.store.logo_url }}"
+                             style="display:block;border:0;outline:none;height:auto;max-height:40px"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 0;margin: 0;">
+                        <table style="font-size:24px;border-spacing: 0; border-collapse: collapse;height:51px;width: 100%;background-color:#377D3C;color: #FFFFFF">
+                            <tbody>
+                            <tr>
+                                <td align="center" class="mobile-21" style="padding: 0;margin: 0;font-weight:bold">
+                                    {{ event.DisCountCodeAutoApply.discount_b.value }} OFF: Deal Ends In 24 Hours
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 0;margin: 0;background-color: #ffffff;"><a href="{{ event.store.url }}">
+                            <img src="https://d3k81ch9hvuctc.cloudfront.net/company/JxAhTD/images/8570653f-7666-424f-a8d9-3983332f7ea2.png"
+                                 width="100%"/></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background-color: #ffffff;">
+                        <div style="color: #3a3a3a;font-size: 18px;text-align: center;line-height:23px;margin-bottom:20px;">
+                            EXP: {{ event.DisCountCodeAutoApply.discount_b.expire_time_format }}
+                        </div>
+                        <div style="color: #3a3a3a;font-size: 18px;text-align: center;line-height:23px;">
+                            Your cart is about to expire and so is your chance to enjoy
+                            <strong>{{ event.DisCountCodeAutoApply.discount_b.value }} OFF</strong>.
+                        </div>
+                        <div style="color: #3a3a3a;font-size: 18px;text-align: center;line-height:23px;">
+                            Complete your purchase before these go back on the shelf,
+                        </div>
+                        <div style="color: #3a3a3a;font-size: 18px;text-align: center;line-height:23px;">
+                            And don&rsquo;t forget &ndash; click the code below for
+                            a {{ event.DisCountCodeAutoApply.discount_b.value }} OFF at checkout!
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 0;margin: 0;background-color: #ffffff;"><a
+                                href="{{ event.DisCountCodeAutoApply.discount_b.cart_url }}">
+                            <img src="https://d3k81ch9hvuctc.cloudfront.net/company/Tz9rXx/images/26385da0-8eac-4c28-a3de-964c65286793.jpeg"
+                                 style="margin-top: 25px;" width="100%"/></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="background: #fff !important;" valign="center">
+                        <div class="mobile-pd-10" style="padding: 30px;">                  <!--Loop item - Begin-->
+                            {% for item in event.Items %}
+                            <table style="border-spacing: 0 !important; width: 100% !important;border: 1px solid #D2D2D2 !important; margin-bottom: 30px !important;margin-top: 16px !important;border-radius: 10px !important;">
+                                <tr>
+                                    <td class="mobile-pd-10" style="padding: 20px;">
+                                        <table style="border-spacing: 0 !important; border-collapse: collapse !important; width: 100% !important;">
+                                            <tr>
+                                                <td style="width: 30% !important">
+                                                    <img class="mobile-product-img" src="{{ item.ImageURL }}"
+                                                         style="display: block !important; width: 100%"/>
+                                                </td>
+                                                <td style="padding-left: 20px !important" valign="top">
+                                                    <div class="mobile-16 mobile-lh-20"
+                                                         style="margin-bottom: 10px !important;  font-size: 1.125rem; line-height: 1.375rem; color: #282364 !important; font-weight: bold !important;">
+                                                        {{ item.ProductName }}
+                                                    </div>
+                                                    <div style="margin-top: 3px !important;  font-size: 1rem !important; line-height: 1.375rem !important; color: #72849C !important;">
+                                                        {{ item.Options }}
+                                                    </div>
+                                                    <div class="mobile-10 mobile-lh-30"
+                                                         style="word-break: break-all;margin-top: 3px !important;  font-size: 1rem; line-height: 1.35rem; color: #72849C !important;">
+                                                        SKU: {{ item.SKU }}
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right" class="mobile-12"
+                                        style="background: #F6F6F9 !important;padding: 17px !important;border-bottom-left-radius: 10px !important;border-bottom-right-radius: 10px;">
+                                        {{ item.Quantity }} {% if item.PersonalizedIdx == 1 %} pcs {% endif %} x
+                                        <strong>{{ item.ItemPrice }}</strong>
+                                    </td>
+                                </tr>
+                            </table>
+                            {% endfor %}<!--Loop item - End-->
+                            <!--Subtotal - Begin-->
+                            <table style="border-spacing: 0 !important; border-collapse: collapse !important; width: 100% !important;border-top-width: 1px !important; border-top-color: #E0E0E0 !important; border-top-style: dashed !important;">
+                                <tr>
+                                    <td class="mobile-16"
+                                        style="color: #282364 !important;  font-size: 1rem; padding: 20px 0 5px 0 !important;">
+                                        Subtotal:
+                                    </td>
+                                    <td align="right" class="mobile-16"
+                                        style="color: #282364 !important;  font-size: 1rem; padding: 20px 0 5px 0 !important;">
+                                        {{ event.SubTotalPrice }}
+                                    </td>
+                                </tr>
+                                {% for discount in event.DiscountData.item %}
+                                <tr>
+                                    <td class="mobile-16"
+                                        style="color: #282364 !important;  font-size: 1rem; padding: 5px 0 !important;">
+                                        Promo Code:
+                                        <span style="color: #FF5C00 !important;">{{ discount.discount_code }}</span>
+                                    </td>
+                                    <td align="right" class="mobile-16"
+                                        style="color: #282364 !important;  font-size: 1rem; padding: 5px 0 !important;">
+                                        {{ discount.discount_price_currency }}
+                                    </td>
+                                </tr>
+                                {% endfor %}<!--Loop item - End-->
+                                {% if event.BuyDesign.price and event.BuyDesign.price != 0 %}
+                                    <tr>
+                                        <td class="mobile-16"
+                                            style="color: #282364 !important;  font-size: 1rem; padding: 5px 0 !important;">
+                                            Digital Image: ( {{ event.BuyDesign.count }}
+                                            Design{% if event.BuyDesign.count != 1 %}s{% endif %} ):
+                                        </td>
+                                        <td align="right" class="mobile-16"
+                                            style="color: #282364 !important;  font-size: 1rem; padding: 5px 0 !important;">
+                                            {{ event.BuyDesign.price }}
+                                        </td>
+                                    </tr>
+                                {% endif %}
+                                {% if event.ShippingPrice &gt; 0 %}
+                                    <tr>
+                                        <td class="mobile-16"
+                                            style="color: #282364 !important;  font-size: 1rem; padding: 5px 0 !important;">
+                                            Shipping:
+                                        </td>
+                                        <td align="right" class="mobile-16"
+                                            style="color: #282364 !important;  font-size: 1rem; padding: 5px 0 !important;">
+                                            {{ event.ShippingPrice }}
+                                        </td>
+                                    </tr>
+                                {% endif %}
+                                {% if event.Tax.price &gt; 0 %}
+                                    <tr>
+                                        <td class="mobile-16"
+                                            style="color: #282364 !important;font-size: 1rem; padding: 5px 0 !important;">
+                                            Tax:
+                                        </td>
+                                        <td align="right" class="mobile-16"
+                                            style="color: #282364 !important;font-size: 1rem; padding: 5px 0 !important;">
+                                            {{ event.Tax.value }}
+                                        </td>
+                                    </tr>
+                                {% endif %}
+                                {% if event.DiscountData.price_without_format > event.DiscountData.auto_apply_b.price_without_format %}
+                                {% if event.DiscountData.price_without_format > 0 %}
+                                    <tr>
+                                        <td class="mobile-16"
+                                            style="color: #FF4848!important;  font-size: 1rem; padding: 5px 0 !important;">
+                                            Discount ({{ event.DiscountData.value }})
+                                        </td>
+                                        <td align="right" class="mobile-16"
+                                            style="color: #FF4848 !important;  font-size: 1rem; padding: 5px 0 !important;">
+                                            - {{ event.DiscountData.price }}
+                                        </td>
+                                    </tr>
+                                {% endif %}
+                                {% else %}
+                                {% if event.DiscountData.auto_apply_b.price_without_format > 0 %}
+                                    <tr>
+                                        <td class="mobile-16"
+                                            style="color: #FF4848!important;  font-size: 1rem; padding: 5px 0 !important;">
+                                            Discount ({{ event.DisCountCodeAutoApply.discount_b.value }})
+                                        </td>
+                                        <td align="right" class="mobile-16"
+                                            style="color: #FF4848 !important;  font-size: 1rem; padding: 5px 0 !important;">
+                                            - {{ event.DiscountData.auto_apply_b.price }}
+                                        </td>
+                                    </tr>
+                                {% endif %}
+                                {% endif %}
+                            </table>
+                            <!--Subtotal - End-->
+                            <!--Total - Begin-->
+                            <table style="border-spacing: 0 !important; border-collapse: collapse !important; width: 100% !important;border-top-width: 1px !important; border-top-color: #E0E0E0 !important; border-top-style: dashed !important; margin: 15px 0 !important">
+                                <tr>
+                                    <td class="mobile-18"
+                                        style=" font-size: 1.125rem; color: #282364 !important; font-weight: bold !important; padding: 20px 0 5px 0 !important;">
+                                        Total:
+                                    </td>
+                                    <td align="right" class="mobile-18"
+                                        style=" font-size: 1.125rem; color: #282364 !important; font-weight: bold !important; padding: 20px 0 5px 0 !important;">
+                                        {% if event.DiscountData.price_without_format > event.DiscountData.auto_apply_b.price_without_format %}
+                                            {{ event.TotalPrice }}
+                                        {% else %}
+                                            {{ event.DisCountCodeAutoApply.discount_b.total_price }}
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="body"
+                                   style="border-spacing: 0 !important; border-collapse: collapse !important;margin-top: 30px !important; margin-bottom: 30px !important">
+                                <tr>
+                                    <td align="center" valign="center">
+                                        <table class="button main-action-cell"
+                                               style="border-spacing: 0 !important; border-collapse: collapse !important;height: 50px;width: 260px;">
+                                            <tr>
+                                                <td align="center"
+                                                    style="cursor: pointer !important; border-radius: 8px !important; background-color: #70be54;">
+                                                    {% if event.DiscountData.price_without_format > event.DiscountData.auto_apply_b.price_without_format %}
+                                                        <table style="width: 100%;">
+                                                            <tbody>
+                                                            <tr>
+                                                                <td style="text-align: center;">
+                                                                    <a href="{{ event.CartUrl }}"
+                                                                       style="display:block;line-height:50px;font-weight:bold;text-decoration:none;font-size: 1.125rem;color:#fff;"
+                                                                       target="_blank">
+                                                                        Complete Your Order
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    {% else %}
+                                                        <table style="width: 100%;">
+                                                            <tbody>
+                                                            <tr>
+                                                                <td style="text-align: center;">
+                                                                    <a href="{{ event.DisCountCodeAutoApply.discount_b.cart_url }}"
+                                                                       style="display:block;line-height:50px;font-weight:bold;text-decoration:none;font-size: 1.125rem;color:#fff;"
+                                                                       target="_blank">
+                                                                        Complete Your Order
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    {% endif %}
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                        <img alt="" data-index="0" src="{{ event.store.logo_url }}"
+                                             style="margin-top:15px;margin-bottom: 15px;" width="100"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                        <table>
+                                            <tbody>
+                                            <tr>
+                                                <td>
+                                                    <a href="{{ event.store.url_facebook }}">
+                                                        <div style="width:32px; height: 32px;background-color: #F2F2F6;border-radius: 8px;text-align: center;box-sizing:border-box;margin-right: 2px;">
+                                                            <img height="12.8"
+                                                                 src="https://d3k81ch9hvuctc.cloudfront.net/company/JxAhTD/images/0d8750a8-9473-48fb-aa1a-c6dc662b51f7.png"
+                                                                 style="margin-top: 9px;"/></div>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="{{ event.store.url_pinterest }}">
+                                                        <div style="width:32px; height: 32px;background-color: #F2F2F6;border-radius: 8px;text-align: center;box-sizing:border-box;margin-right: 2px;">
+                                                            <img height="12.8"
+                                                                 src="https://d3k81ch9hvuctc.cloudfront.net/company/JxAhTD/images/2e06da98-2f30-4fb4-8e83-7694d1f237c5.png"
+                                                                 style="margin-top: 9px;"/></div>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="{{ event.store.url_instagram }}">
+                                                        <div style="width:32px; height: 32px;background-color: #F2F2F6;border-radius: 8px;text-align: center;box-sizing:border-box;margin-right: 2px;">
+                                                            <img height="12.8"
+                                                                 src="https://d3k81ch9hvuctc.cloudfront.net/company/JxAhTD/images/f6eaadcf-1327-40d2-9bbf-ddb6af37e13e.png"
+                                                                 style="margin-top: 9px;"/></div>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a href="{{ event.store.url_twitter }}">
+                                                        <div style="width:32px; height: 32px;background-color: #F2F2F6;border-radius: 8px;text-align: center;box-sizing:border-box;">
+                                                            <img height="12.8"
+                                                                 src="https://d3k81ch9hvuctc.cloudfront.net/company/JxAhTD/images/839592ea-cc40-4b5b-a352-fb833d87e6d5.png"
+                                                                 style="margin-top: 9px;"/></div>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <!--Total - End-->
+                            <!--Footer Begin-->
+                            <table style="border-spacing: 0 !important; border-collapse: collapse !important; width: 100% !important;border-top-width: 1px !important; border-top-color: #E0E0E0 !important; border-top-style: dashed !important; margin-top: 30px !important">
+                                <tr>
+                                    <td style="padding: 20px 0 !important">
+                                        <div class="mobile-12 mobile-lh-30"
+                                             style="text-align: center !important; font-size: 0.75rem; line-height: 1.075rem; color: #AEB2BF !important">
+                                            If you have any questions or need any help, don't hesitate to contact me
+                                            directly via
+                                            <a class="mobile-12" href="mailto:{{ event.store.support_email }}"
+                                               style="color: #2f80ed !important;  font-size: 0.75rem; line-height: 1.075rem !important; text-decoration: underline !important">
+                                                {{ event.store.support_email }}
+                                            </a>
+                                        </div>
+                                        <div class="mobile-12 mobile-lh-30"
+                                             style="text-align: center !important; font-size: 0.75rem;color: #AEB2BF !important;">
+                                            <br/>
+                                            P.S: You are receving this newsletter because you subscribed to our mailing
+                                            list via:
+                                            <a class="mobile-12" href="{{ event.store.url }}"
+                                               style="color: #2f80ed !important;  font-size: 0.75rem; line-height: 1.075rem; text-decoration: underline !important"
+                                               target="_blank">{{ event.store.name }}</a>
+                                        </div>
+                                        <div class="mobile-12 mobile-lh-30"
+                                             style="text-align: center !important; font-size: 0.75rem;color: #AEB2BF !important;">
+                                            {% unsubscribe %}
+                                            |
+                                            <a class="mobile-12" href="{{ event.store.faq_url }}"
+                                               style="text-align: center !important; font-size: 0.75rem; line-height: 1.075rem; color: #AEB2BF !important"
+                                               target="_blank">Visit FAQ</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <!--Footer End-->
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

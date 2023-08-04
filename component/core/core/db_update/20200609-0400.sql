@@ -1,0 +1,1 @@
+ALTER TABLE osc_cron_queue ADD COLUMN estimate_timestamp int(10) NOT NULL DEFAULT 0 AFTER running_timestamp;

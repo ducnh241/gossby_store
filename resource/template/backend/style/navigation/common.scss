@@ -1,0 +1,343 @@
+$add-item-btn-color-bg: #f4f5fa;
+$add-item-btn-color-hover-bg: #5c6ac4;
+$add-item-btn-color-text: #5c6ac4;
+$add-item-btn-color-hover-text: #fff;
+
+.nav-item-back-to-main-btn {
+    padding: 10px;
+    box-shadow: inset 0 -1px rgba(0,0,0,.075);
+    cursor: pointer;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+
+    &:hover {
+        background: #f5f5f5;
+    }
+
+    svg {
+        height: 14px;
+        vertical-align: middle;
+        margin: 0 15px 0 6px;
+    }
+}
+
+.nav-item-preview {
+    width: 100%;
+    height: 36px;
+    border-radius: 2px;
+    border: 1px solid #bfbfbf;
+    background: #fff;
+    padding: 0 35px 0 10px;
+    line-height: 34px;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+
+    svg {
+        height: 16px;
+        vertical-align: middle;
+        margin-right: 7px;
+        color: #6485b7;
+    }
+
+    ins {
+        display: block;
+        width: 21px;
+        height: 21px;
+        position: absolute;
+        top: calc((100% - 20px)/2);
+        right: 7px;
+        background: linear-gradient(to top, #f5f5f5, #fff);
+        border: 1px solid #d0d0d0;
+        border-radius: 2px;
+        box-sizing: border-box;
+        cursor: pointer;
+
+        &:before, &:after {
+            content: '';
+            display: block;
+            width: calc(100% - 8px);
+            height: 1px;
+            background: #828282;
+            position: absolute;
+            top: calc((100% - 1px)/2);
+            left: 4px;
+            transform: rotate(45deg);
+        }
+
+        &:after {
+            transform: rotate(135deg);
+        }
+
+        &:hover {
+            border-color: #afafaf;
+            background: linear-gradient(to top, #e8e8e8, #fbfbfb);
+
+            &:before, &:after {
+                background: #313131;
+            }
+        }
+    }
+}
+
+.nav-item-dragging {
+    display: block;
+    background: #fff;
+    padding: 10px 20px;
+    padding-left: 0;
+    position: fixed;
+    box-shadow: 0 0 0 1px #dfdfdf;
+    margin-bottom: 1px;
+    white-space: nowrap;
+
+    > * {
+        display: inline-block;
+        vertical-align: middle;
+
+        + * {
+            margin-left: 10px;
+        }
+    }
+
+    .dragger {
+        position: relative;
+        width: 38px;
+        height: 29px;
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 8px;
+            top: calc((100% - 2px)/2);
+            width: 3px;
+            height: 3px;
+            background: transparent;
+            border-radius: 50%;
+            box-shadow: -3px 0 #b3b3b3, -3px 6px #b3b3b3, -3px -6px #b3b3b3, 3px 0 #b3b3b3, 3px 6px #b3b3b3, 3px -6px #b3b3b3;
+        }
+    }
+
+    .title {
+        font-size: 15px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 200px;
+        white-space: nowrap;
+        line-height: 1;
+    }
+}
+
+.navigation-items {
+    background: #f9fafb;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+
+    > .item-list:empty:before {
+        content: attr(data-placeholder);
+        padding: 20px;
+        display: block;
+        text-align: center;
+        box-shadow: 0 0 0 1px #ddd;
+    }
+
+    .item-list {
+        .nav-item-container {
+            margin-left: 31px;
+
+            &:not(.toggled) {
+                > .nav-item {
+                    .toggler svg {
+                        transform: rotate(-90deg);
+                    }
+                }
+
+                > .item-list {
+                    display: none;
+                }
+
+                > .add-new-item-btn {
+                    display: none;
+                }
+            }
+
+            &.reordering {
+                position: relative;
+                padding: 0;
+                margin: 0;
+                z-index: 2;
+
+                * {
+                    display: none !important;
+                }
+
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: -2px;
+                    right: 0;
+                    width: calc(100% - 6px);
+                    height: 3px;
+                    background: #1e6cd0;
+                }
+
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: -6px;
+                    left: -6px;
+                    width: 12px;
+                    height: 12px;
+                    border: 2px solid #1e6cd0;
+                    background: #fff;
+                    box-sizing: border-box;
+                    border-radius: 50%;
+                }
+
+                > * {
+                    display: none;
+                }
+            }
+        }
+
+        .nav-item {
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            background: #fff;
+            padding: 10px 0;
+            position: relative;
+            left: -31px;
+            width: calc(100% + 31px);
+            box-shadow: 0 0 0 1px #dfdfdf;
+            margin-bottom: 1px;
+
+            > * + * {
+                margin-left: 10px;
+            }
+
+            .dragger {
+                position: relative;
+                flex: 0 0 38px;
+                height: 29px;
+                cursor: grab;
+
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    right: 8px;
+                    top: calc((100% - 2px)/2);
+                    width: 3px;
+                    height: 3px;
+                    background: transparent;
+                    border-radius: 50%;
+                    box-shadow: -3px 0 #b3b3b3, -3px 6px #b3b3b3, -3px -6px #b3b3b3, 3px 0 #b3b3b3, 3px 6px #b3b3b3, 3px -6px #b3b3b3;
+                }
+            }
+
+            .toggler {
+                flex: 0 0 24px;
+                cursor: pointer;
+
+                svg {
+                    height: 24px;
+                    width: 24px;
+                    box-sizing: border-box;
+                    display: block;
+                    padding: 7px;
+                }
+
+                &:hover {
+                    color: #384496;
+                }
+            }
+
+            .title {
+                font-size: 15px;
+                flex-basis: 0;
+                flex-grow: 1;
+                max-width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .control {
+                flex: 0 0 100px;
+                text-align: right;
+                padding-right: 10px;
+
+                svg {
+                    cursor: pointer;
+                    height: 16px;
+                    color: #999;
+
+                    &:hover {
+                        color: #5c6ac4;
+                    }
+                }
+            }
+        }
+    }
+
+    .add-new-item-btn {
+        padding: 15px 20px;
+        box-shadow: 0 0 0 1px #dfdfdf;
+        background: $add-item-btn-color-bg;
+        line-height: 1;
+        color: $add-item-btn-color-text;
+        cursor: pointer;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+
+        ins {
+            display: inline-block;
+            position: relative;
+            width: 18px;
+            height: 18px;
+            vertical-align: middle;
+            border-radius: 50%;
+            background: $add-item-btn-color-text;
+            margin-right: 14px;
+            position: relative;
+            z-index: 2;
+
+            &:before, &:after {
+                content: '';
+                display: block;
+                width: calc(100% - 8px);
+                height: 2px;
+                background: $add-item-btn-color-hover-text;
+                position: absolute;
+                top: calc((100% - 2px)/2);
+                left: 4px;
+            }
+
+            &:after {
+                transform: rotate(90deg);
+            }
+        }
+
+        &:hover {
+            background: $add-item-btn-color-hover-bg;
+            color: $add-item-btn-color-hover-text;
+            box-shadow: 0 0 0 1px $add-item-btn-color-hover-bg;
+
+            ins {
+                background: $add-item-btn-color-hover-text;
+
+                &:before, &:after {
+                    background: $add-item-btn-color-text;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,95 @@
+{
+  "layers": [
+    {
+      "id": "PrintArea",
+      "textureSize": {
+        "responsive" : [
+          {
+            "break_point" : "min_width:1024",
+            "width": 4000,
+            "height": 4800
+          },
+          {
+            "break_point" : "min_width:768",
+            "width": 2000,
+            "height": 2400
+          },
+          {
+            "break_point" : "min_width:414",
+            "width": 600,
+            "height": 720
+          },
+          {
+            "break_point": "max_width:413",
+            "width": 545,
+            "height": 655
+          }
+        ]
+      },
+      "flipY": true,
+      "segmentPreviews": [
+        {
+          "segmentKey": "canvas",
+          "config": {
+            "responsive": [
+              {
+                "break_point": "min_width:1024",
+                "x": -20,
+                "y": -6.7,
+                "width": 4040,
+                "height": 4813.4
+              },
+              {
+                "break_point" : "min_width:768",
+                "x": -10,
+                "y": -3.3,
+                "width": 2020,
+                "height": 2406.6
+              },
+              {
+                "x": -3,
+                "y": -1.005,
+                "break_point" : "min_width:414",
+                "width": 606,
+                "height": 722.01
+              },
+              {
+                "break_point": "max_width:413",
+                "x": -2.7,
+                "y": -0.9,
+                "width": 550.4,
+                "height": 656.8
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "lights" : [
+    {
+      "type" : "SpotLight",
+      "key" : "keyLight",
+      "params" : ["#FFFFFF", 0.98,  100],
+      "position" : [0, 25, 25]
+    },
+    {
+      "type" : "SpotLight",
+      "key" : "fillLight",
+      "params" : ["#FFFFFF", 0.5,  100],
+      "position" : [6, 2, 0]
+    },
+    {
+      "type" : "SpotLight",
+      "key" : "backLight",
+      "params" : ["#FFFFFF", 0.5,  100],
+      "position" : [-6, 2, 0]
+    },
+    {
+      "type" : "SpotLight",
+      "key" : "downLight",
+      "params" : ["#FFFFFF", 0.6,  100],
+      "position" : [-6, -6, 4]
+    }
+  ]
+}

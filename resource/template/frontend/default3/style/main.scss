@@ -1,0 +1,108 @@
+@import "variables.scss";
+// Vendors and external stylesheets
+* {
+  -webkit-text-size-adjust: none;
+  touch-action: manipulation;
+}
+
+html {
+  height: -webkit-fill-available;
+
+}
+
+body {
+  // scroll-behavior: smooth;
+  background-color: $color-base;
+  font-weight: $font-base;
+  font-family: $font-family;
+  color: $color-text;
+  font-size: $font-size-s;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: auto;
+  //font-smoothing: antialiased;
+  // font-weight: 400
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+}
+
+html.mm-wrapper {overflow: inherit;
+  &.mm-wrapper_blocking,
+  &.mm-wrapper_opened {overflow: hidden}
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: $font-semi-bold;
+}
+
+h1 {
+  font-size: $font-size-xl;
+}
+
+h2 {
+  font-size: $font-size-l;
+}
+
+h3 {
+  font-size: $font-size-m;
+}
+
+h4 {
+  font-size: $font-size-s;
+}
+
+h5 {
+  font-size: $font-size-xs;
+}
+
+h6 {
+  font-size: $font-size-tiny;
+}
+
+body.lock {overflow: hidden !important;}
+
+#mobile-checker {position: absolute;z-index: -1;width: 1px;height: 1px;opacity: 0;display: block;}
+@media only screen and (max-width: 991px) {
+  #mobile-checker {display: none;}
+}
+
+#google-survey-result iframe {
+  max-width: 100% !important;
+}
+
+#trustpilot-widget {
+  width: 50%;
+  margin: 1rem auto;
+}
+
+@media only screen and (min-width: 768px) {
+  #trustpilot-widget {
+    width: 60%;
+    margin: 1rem 0;
+  }
+}
+
+//Fix Jquery modal
+.jquery-modal {
+  &.blocker {z-index: 1112;padding: 10px;}
+}
+
+
+//Fix Font bold on Firefox
+@-moz-document url-prefix() {
+  strong,
+  b,
+  .persistent_timer__item > div,
+  .product_item_name a,
+  .block_title,
+  .cart_list_title,
+  .cart_name,
+  .checkout_title,
+  .checkout_order_name,
+  .frm_common .frm_label,
+  .button_secondary.button_xlarge,
+  .subcribe_title {
+    font-weight: normal !important;
+  }
+}

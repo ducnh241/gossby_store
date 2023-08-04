@@ -1,0 +1,63 @@
+.collection-post-form .osc-switcher {
+    width: 50px;
+}
+.collection-post-form .osc-switcher .on:before {
+    content: "Yes";
+}
+.collection-post-form .osc-switcher .off:before {
+    content: "No";
+}
+.meta-image-uploader .preview {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-color: #fff;
+    color: #ddd;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,.15);
+    border-radius: 2px;
+}
+.meta-image-uploader .preview svg {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.meta-image-uploader .preview:before {
+    content: '';
+    display: block;
+    padding-bottom: 60%;
+}
+.meta-image-uploader .osc-uploader{
+    display: block;
+}
+.meta-image-uploader .osc-uploader .browser-btn {
+    display: block;
+}
+.meta-image-uploader .osc-uploader .browser-btn > div {
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    text-shadow: none;
+    background: transparent;
+    border-radius: 0;
+}
+.meta-image-uploader .osc-uploader .browser-btn input:hover  + div {
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+    text-shadow: none;
+    background: transparent;
+    border-radius: 0;
+}
+.meta-image-uploader .btn {
+    display: block;
+}
+
+.custom-style-search .styled-search button.filter::before {
+    display: none;
+}

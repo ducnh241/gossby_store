@@ -1,0 +1,1 @@
+ALTER TABLE osc_catalog_product ADD COLUMN upc VARCHAR(15) NULL DEFAULT NULL AFTER product_id, ADD UNIQUE INDEX upc_UNIQUE (upc ASC);

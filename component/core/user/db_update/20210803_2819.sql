@@ -1,0 +1,1 @@
+ALTER TABLE `osc_members` MODIFY COLUMN `username` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL AFTER `group_id`

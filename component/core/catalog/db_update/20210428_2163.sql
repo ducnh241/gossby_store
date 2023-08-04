@@ -1,0 +1,1 @@
+ALTER TABLE `osc_catalog_product` ADD COLUMN `seo_status` TinyInt DEFAULT 0 AFTER `listing`;

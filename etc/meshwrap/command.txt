@@ -1,0 +1,7 @@
+./cylinderize.sh -D displace.png -r 224 -l 440 -p 9 -n 93 -w 40 -v background -b none -f none -o +25+10 sharks.jpg mug.jpg output.png
+
+#Note
+-o: Offset, ảnh sẽ được đặt từ center to center, xê dịch position của center để di chuyển ảnh
+
+Front:
+./cylinderize.sh -D displace.png -r 268 -l 660 -p 1.5 -n 100 -w 90 -e 1.4 -d both -a 260 -c multiply -v background -b none -f none -o -115+45 test.png bg2.png output.png

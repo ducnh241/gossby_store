@@ -1,0 +1,1 @@
+ALTER TABLE `osc_catalog_order` ADD COLUMN `sref_id` INT(11) NULL DEFAULT NULL AFTER `client_info`;

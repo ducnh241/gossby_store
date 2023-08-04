@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS `osc_backend_bookmark`;

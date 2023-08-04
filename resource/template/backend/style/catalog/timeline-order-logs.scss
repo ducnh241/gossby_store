@@ -1,0 +1,18 @@
+.timeline_order_comment {display: flex;margin-bottom: 15px}
+.timeline_order_comment_input {flex: 1;margin: 0 5px 0 0;padding: 5px 10px}
+.timeline_order_container {position: relative;
+  &::before {content: '';background: #b1b1b1;position: absolute;top: 10px;left: 5px;height: 100%;width: 1px;}
+}
+.timeline_order_log {margin-bottom: 15px;position: relative;padding: 0 120px 0 20px}
+.timeline_order_action {}
+.timeline_order_title {margin: 0 0 5px;font-weight: normal}
+.timeline_order_time {position: absolute;top: 4px;right: 0;color: #b1b1b1;}
+
+.timeline_order_icon {background: #b1b1b1;position: absolute;left: 0;top: 5px;width: 10px;height: 10px;border-radius: 50%;
+  &.success {background: cornflowerblue}
+}
+.error__message{
+  margin-top: -11px;
+  color: red;
+  margin-bottom: 10px;
+}

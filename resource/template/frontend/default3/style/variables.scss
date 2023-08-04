@@ -1,0 +1,394 @@
+/*====================================mixin=====================================*/
+//Border Radius
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+//Center Block
+@mixin center-block ($width) {
+  width: $width;
+  display: block;
+  margin: 0 auto;
+}
+
+// Single side border-radius
+@mixin border-top-radius($radius) {
+  -webkit-border-top-right-radius: $radius;
+  border-top-right-radius: $radius;
+  -webkit-border-top-left-radius: $radius;
+  border-top-left-radius: $radius;
+  background-clip: padding-box;
+}
+@mixin border-right-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+  -webkit-border-top-right-radius: $radius;
+  border-top-right-radius: $radius;
+  background-clip: padding-box;
+}
+@mixin border-bottom-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+  -webkit-border-bottom-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+  background-clip: padding-box;
+}
+@mixin border-left-radius($radius) {
+  -webkit-border-bottom-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+  -webkit-border-top-left-radius: $radius;
+  border-top-left-radius: $radius;
+  background-clip: padding-box;
+}
+
+// CSS Triangles Mixin
+@mixin css-triangle($direction, $color, $height, $width) {
+  // Base styles for all triangles
+  border-style: solid;
+  height: 0;
+  width: 0;
+  // Cardinal Directions - can't be scalene this way
+  @if($direction == 'top') {
+    border-color: transparent transparent $color transparent;
+    border-width: 0 ($width/2) $height ($width/2);
+  }
+  @if ($direction == 'bottom') {
+    border-color: $color transparent transparent transparent;
+    border-width: $height ($width/2) 0 ($width/2);
+  }
+  @if ($direction == 'right') {
+    border-color: transparent transparent transparent $color;
+    border-width: ($height/2) 0 ($height/2) $width;
+  }
+  @if ($direction == 'left') {
+    border-color: transparent $color transparent transparent;
+    border-width: ($height/2) $width ($height/2) 0;
+  }
+  // Ordinal Directions - can be scalene this way!
+  @if ($direction == 'top-left') {
+    border-color: $color transparent transparent transparent;
+    border-width: $height $width 0 0;
+  }
+  @if ($direction == 'top-right') {
+    border-color: transparent $color transparent transparent;
+    border-width: 0 $width $height 0;
+  }
+  @if ($direction == 'bottom-left') {
+    border-color: transparent transparent transparent $color;
+    border-width: $height 0 0 $width;
+  }
+  @if ($direction == 'bottom-right') {
+    border-color: transparent transparent $color transparent;
+    border-width: 0 0 $height $width;
+  }
+}
+
+
+
+//Box shadow
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+//Text Shadow
+@mixin text-shadow($top, $left, $blur, $color) {
+  -webkit-text-shadow: $top $left $blur $color;
+  -moz-text-shadow: $top $left $blur $color;
+  text-shadow: $top $left $blur $color;
+}
+
+/*Placeholders*/
+@mixin input-placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+@mixin placeholder-color($color) {
+  &.placeholder {
+    color: $color
+  }
+
+  &:-moz-placeholder {
+    color: $color
+  }
+
+  &::-webkit-input-placeholder {
+    color: $color
+  }
+
+  &:-ms-input-placeholder {
+    color: $color
+  }
+}
+
+/*Truncate*/
+@mixin truncate($truncation-boundary) {
+  max-width: $truncation-boundary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+//Clearfix
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin limit-line ($number) {
+  overflow: hidden;text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  //line-height: 18px;
+  -webkit-line-clamp: $number; /* number of lines to show */
+  //line-height: 16px;        /* fallback */
+}
+
+/*--------------------------------
+	Responsive ratio
+	Used for creating scalable elements that maintain the same ratio
+	example: .element { @include responsive-ratio(400, 300); }
+*/
+@mixin responsive-ratio($x,$y, $pseudo: false) {
+  $padding: unquote( ( $y / $x ) * 100 + '%' );
+
+  @if $pseudo {
+    &::before {
+      @include pseudo($pos: relative);
+      width: 100%;
+      padding-top: $padding;
+    }
+  } @else {
+    padding-top: $padding;
+  }
+}
+@mixin responsive-ratio-img(){
+  position: absolute;left: 0;top: 0;width: 100%;height: 100%;object-fit: cover;
+}
+
+//Transition
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  transition: $args;
+}
+
+// Browser Prefixes
+@mixin transform($transforms) {
+  -webkit-transform: $transforms;
+  -moz-transform: $transforms;
+  transform: $transforms;
+}
+
+// Rotate
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+// Scale
+@mixin scale($scale) {
+  @include transform(scale($scale));
+}
+
+// Translate
+@mixin translate ($x, $y) {
+  @include transform(translate($x, $y));
+}
+
+// Skew
+@mixin skew ($x, $y) {
+  @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+// Transform Origin
+@mixin transform-origin ($origin) {
+  -webkit-transform-origin: $origin;
+  -moz-transform-origin: $origin;
+  transform-origin: $origin;
+}
+
+//Backgroud Gradien Vertical Y
+@mixin linear-gradient-v ($from, $to) {
+  background-color: $from;
+  background-image: -webkit-linear-gradient(top, $from, $to); /* Chrome 10-25, iOS 5+, Safari 5.1+ */
+  background-image:         linear-gradient(to bottom, $from, $to); /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+}
+
+//Backgroud Gradien Horizontal X
+@mixin linear-gradient-h ($from, $to) {
+  background-color: $from;
+  background-image: -webkit-linear-gradient(left, $from, $to); /* Chrome 10-25, iOS 5+, Safari 5.1+ */
+  background-image:         linear-gradient(to right, $from, $to); /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+}
+
+//Color RGBA
+@mixin transparent-backgound($color: #000, $value:0.5){
+  $start: "rgb(";
+  $end: ")";
+  background: #{$start}red($color), green($color), blue($color)#{$end};
+  background: rgba($color, $value);
+}
+
+// Define vertical, horizontal, or both position
+@mixin center($position) {
+  position: absolute;
+
+  @if $position == 'vertical' {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  @else if $position == 'horizontal' {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translate(-50%);
+  }
+  @else if $position == 'both' {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+
+@mixin pseudo{
+  content: '';
+  display: block;
+  position: absolute;
+}
+/*====================================end-mixin============================================*/
+
+/*====================================variables============================================*/
+//Color
+$color-base: white;
+$color-bg: #F2F2F2;
+$color-bg-secondary: #F6F6F9;
+$color-bg-third: #F0F0F0;
+
+$color-link: #292929;
+$color-link-secondary: #72849C;
+
+$color-title: #292929;
+
+$color-text: #3A3A3A;
+$color-text-light: #A7ABB9;
+
+$color-text-secondary: #4F4F4F;
+$color-text-third: #8A8A8A;
+$color-text-input: #72849C;
+
+$color-border: #D6D6D6;
+$color-border-input: #D6D6D6;
+$color-border-secondary: #707070;
+$color-border-third: #E0E0E0;
+$color-border-button: #BDBDBD;
+
+$color-input: #999999;
+$color-input-placeholder: #BDBDBD;
+$color-input-placeholder-focus: #E0E0E0;
+$color-disable: #999999;
+
+$color-red: #FF5656;
+$color-red-secondary: #F42D39;
+$color-error: $color-red;
+
+$color-green: #70BE54;
+$color-green-secondary: #377D3C;
+$color-yellow: #FFC439;
+$color-orange-highlight: #FF5C00;
+
+$color-blue: #6170F7;
+$color-blue-secondary: #4C5AA2;
+$color-orange: #FFAA45;
+$color-gray: #DDDDDD;
+$color-gray-light: #F2F2F6;
+
+$color-theme-primary: $color-green;
+$color-theme-button: $color-green;
+$color-theme-button-hover: $color-green-secondary;
+
+$color-brand: $color-green;
+
+//Fonts-size
+$font-size-tiny: 12px;
+$font-size-xs: 14px;
+$font-size-s: 16px;
+$font-size-m: 18px;
+$font-size-l: 20px;
+$font-size-xl: 24px;
+$font-size-b: 20px;
+$font-size-2b: 26px;
+$font-size-3b: 32px;
+
+
+//Url base
+//url(#{$url-img}/site/background.jpg)
+$url-img: "../images";
+
+//Breakpoint
+$bp-xxs: 320px;
+$bp-xs: 425px;
+$bp-s: 576px;
+$bp-mobile: 576px;
+
+$bp-md: 768px;
+$bp-tablet: 768px;
+$bp-l: 992px;
+$bp-laptop: 992px;
+$bp-xl: 1200px;
+
+/*
+$font-base: 'ProximaNova-Regular', sans-serif;
+$font-regular: 'ProximaNova-Regular', sans-serif;
+$font-bold: 'ProximaNova-Bold', sans-serif;
+*/
+
+$font-base: 400;
+$font-regular: 400;
+$font-semi-bold: 600;
+$font-bold: 700;
+
+$font-family: 'Poppins',sans-serif;
+
+$border-radius: 8px;
+
+// Contain floats / clearfix
+%clearfix {*zoom: 1;
+  &:before,
+  &:after {content: " ";display: table;}
+  &:after {clear: both;}
+}
+
+//Reset Ul Li
+%reset-lst {list-style: none;margin: 0;padding: 0}
+/*====================================end-variables========================================*/
+
+@keyframes animatezoom {
+  from {
+    transform: scale(0)
+  }
+  to {
+    transform: scale(1)
+  }
+}

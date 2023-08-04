@@ -1,0 +1,1 @@
+<?= OSC::core('template')->build('core/address_form', ['input_name_prefix' => 'config[' . $params['key'] . ']', 'skip_contact_frm' => true, 'data' => $params['value'], 'require' => $params['empty_allowed_flag'] ? false : true]) ?>

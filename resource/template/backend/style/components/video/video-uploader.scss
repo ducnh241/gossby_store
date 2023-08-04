@@ -1,0 +1,474 @@
+@import "../../../../core/style/variable.scss";
+
+.video-uploader {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 24px;
+  position: relative;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  .video-item {
+    width: 152px;
+    height: 152px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-color: white;
+    border-radius: 4px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    border: 1px solid $color-border-secondary;
+    cursor: pointer;
+    position: relative;
+
+    .btn-remove-video {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      right: 8px;
+      top: 8px;
+      background: $color-gray-second;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 2;
+      transition: all 0.45s cubic-bezier(0.25, 1, 0.33, 1);
+      -webkit-transition: all 0.45s cubic-bezier(0.25, 1, 0.33, 1);
+      &:before,
+      &:after {
+        position: absolute;
+        width: 9px;
+        height: 1px;
+        background: $color-white;
+        content: "";
+        display: block;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+      &:after {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+      &:hover {
+        background: $color-red;
+        transform: rotate(180deg);
+      }
+    }
+
+    .video-tag {
+      background: $color-medium-dark-shade-of-gray;
+      border-radius: 18px;
+      height: 20px;
+      line-height: 20px;
+      padding: 0 7px;
+      top: 8px;
+      left: 8px;
+      position: absolute;
+      color: $color-white;
+      font-size: 10px;
+      min-width: 20px;
+      text-align: center;
+    }
+
+    .checked {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      right: 8px;
+      top: 8px;
+      background: $color-primary;
+      border-radius: 50%;
+      z-index: 3;
+      &:before, &:after {
+        position: absolute;
+        background: $color-white;
+        content: "";
+        display: block;
+      }
+      &:before {
+        width: 5px;
+        height: 2px;
+        left: 5px;
+        top: 11px;
+        transform: rotate(-140deg);
+      }
+      &:after {
+        width: 2px;
+        height: 9px;
+        left: 10px;
+        top: 6px;
+        transform: rotate(40deg);
+      }
+    }
+
+    .uploader-progress-bar {
+      display: none;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 0;
+      border: 1px solid $color-gray;
+      border-radius: 4px;
+      margin-top: 0;
+      height: 100%;
+      z-index: 1;
+      background: transparent !important;
+      > div {
+        border-radius: 4px;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        background: transparent !important;
+        &:before {
+          content: "";
+          position: absolute;
+          top: 5px;
+          left: 5px;
+          bottom: 0;
+          right: 0;
+          background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0.25, rgba(255, 255, 255, 0.2)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.2)), color-stop(0.75, rgba(255, 255, 255, 0.2)), color-stop(0.75, transparent), to(transparent));
+          background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+          z-index: 2 !important;
+          -webkit-background-size: 50px 50px;
+          -moz-background-size: 50px 50px;
+          -webkit-animation: uploader-file-process 2s linear infinite;
+          overflow: hidden;
+          width: calc(100% - 10px);
+          height: 8px;
+          background-color: $color-green;
+          border-radius: 4px;
+        }
+        &:after {
+          display: block;
+          content: "";
+          background: rgba(255, 255, 255, 0.5);
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 1 !important;
+        }
+      }
+    }
+
+    .btn-uploading-thumbnail,
+    .btn-remove-thumbnail,
+    .thumbnail-uploader {
+      display: block;
+      width: 100%;
+      border: 0;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 8px 12px;
+      text-align: center;
+      color: $color-white;
+      background: $color-primary;
+      font-size: 13px;
+      line-height: 20px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken($color-primary, 10%);
+      }
+    }
+
+    .btn-uploading-thumbnail {
+      display: none;
+      z-index: 20;
+      background-color: $color-primary;
+      cursor: unset;
+      pointer-events: none;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 10px;
+        height: 10px;
+        border: 1px solid $color-white;
+        border-top: 0;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        transform: translateY(-50%);
+        animation: video-uploading-btn-animate linear 1s infinite;
+      }
+    }
+
+    .btn-remove-thumbnail {
+      display: none;
+      background: $color-red;
+      z-index: 10;
+
+      &:hover {
+        background-color: darken($color-red, 10%);
+      }
+    }
+
+    .uploader-error {
+      display: none;
+    }
+
+    .btn-preview-video {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      bottom: 44px;
+      right: 8px;
+      z-index: 10;
+      border: 1px solid $color-border-secondary;
+      border-radius: 50%;
+      background-color: rgba(0,0,0,0.3);
+
+      &:hover {
+        background-color: rgba(0,0,0,0.6);
+        border-color: $color-shade-of-gray;
+      }
+
+      &::before {
+        content: '';
+        border-style: solid;
+        border-width: 4px 6px;
+        border-color: transparent transparent transparent $color-white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-20%, -50%);
+      }
+    }
+
+    &.has-thumbnail {
+      .btn-remove-thumbnail {
+        display: block;
+      }
+
+      .thumbnail-uploader {
+        display: none !important;
+      }
+    }
+
+    &.selected {
+      border-color: $color-primary;
+
+      &:before {
+        display: block;
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: $color-primary;
+        opacity: .2;
+      }
+
+      &::after {
+        content: '✔';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $color-primary;
+        color: $color-white;
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+        padding: 1px 1px 0 0;
+        border-radius: 50%;
+        position: absolute;
+        right: 8px;
+        top: 8px;
+        z-index: 20;
+      }
+    }
+
+    &.uploading {
+      .uploader-progress-bar,
+      .btn-uploading-thumbnail {
+        display: block;
+      }
+
+      .btn-remove-video,
+      .thumbnail-uploader,
+      .btn-remove-thumbnail {
+        display: none !important;
+      }
+    }
+
+    .video-position-input {
+      display: none;
+      width: 100%;
+      height: 24px;
+      border: 1px solid $color-border-secondary;
+      border-radius: 4px;
+      padding: 0 6px;
+      font-size: 12px;
+      position: absolute;
+      bottom: -30px;
+      left: 0;
+
+      &::placeholder {
+        color: $color-gray-second;
+      }
+    }
+
+    &.position-input {
+      margin-bottom: 40px;
+
+      .video-position-input {
+        display: block;
+      }
+    }
+  }
+
+  .video-frame {
+    width: 100%;
+    height: calc(100% - 36px);
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    img,
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: 50% 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .video-thumbnail-upload {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    border: 0;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 8px 10px;
+    cursor: pointer;
+    color: $color-white;
+    background: $color-primary;
+  }
+
+  .video-uploader-btn {
+    width: 152px;
+    height: 152px;
+    border: 1px solid $color-border-secondary;
+    border-radius: 4px;
+    color: $color-primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+    span {
+      width: 100%;
+      position: absolute;
+      top: 112px;
+      text-align: center;
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: $color-primary;
+    }
+    .icon-plus {
+      display: block;
+      width: 46px;
+      height: 46px;
+      position: absolute;
+      left: 50%;
+      top: 54px;
+      transform: translateX(-50%);
+      &:before, &:after {
+        display: block;
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $color-primary;
+      }
+      &:before {
+        width: 46px;
+        height: 3px;
+      }
+      &:after {
+        height: 46px;
+        width: 3px;
+      }
+    }
+
+  }
+
+  .osc-uploader .browser-btn input + div {
+    padding: 0 !important;
+    border: none !important;
+  }
+}
+
+.preview-video-modal {
+  border-radius: 4px;
+  overflow: hidden;
+
+  .preview-video-frame {
+    position: relative;
+    width: 100%;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      padding-bottom: 100%;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .preview-video-close {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 12px;
+    color: $color-shade-of-gray;
+    border-radius: 12px;
+    border: 1px solid $color-border-secondary;
+    cursor: pointer;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 10;
+    transition: 0.3s;
+
+    &:hover {
+      color: $color-red;
+      border-color: $color-red;
+    }
+  }
+}
+
+@keyframes video-uploading-btn-animate {
+  0% {
+    transform: translateY(-50%) rotate(0);
+  }
+  100% {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}

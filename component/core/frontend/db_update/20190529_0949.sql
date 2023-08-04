@@ -1,0 +1,1 @@
+ALTER TABLE `osc_tracking_footprint` ADD COLUMN `ip` VARCHAR(19) NULL DEFAULT NULL AFTER `request`, ADD COLUMN `user_agent` VARCHAR(255) NULL DEFAULT NULL AFTER `ip`;

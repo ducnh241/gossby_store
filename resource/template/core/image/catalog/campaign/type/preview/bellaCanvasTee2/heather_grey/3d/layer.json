@@ -1,0 +1,82 @@
+{
+  "layers": [
+    {
+      "id": "Front",
+      "textureSize": { "width": 840, "height": 960 },
+      "flipY": true,
+      "segmentPreviews": [
+        {
+          "segmentKey": "front",
+          "config": { "x": 0, "y": 0, "width": 840 , "height": 960 }
+        }
+      ],
+      "material" : {
+        "type": "MeshStandardMaterial",
+        "params":{
+          "roughness" : 0.55
+        }
+      }
+    },
+    {
+      "id": "Back",
+      "textureSize": { "width": 840, "height": 960 },
+      "flipY": true,
+      "segmentPreviews": [
+        {
+          "segmentKey": "back",
+          "config": { "x": 0, "y": 0, "width": 840 , "height": 960}
+        }
+      ],
+      "material" : {
+        "type": "MeshStandardMaterial",
+        "params":{
+          "roughness" : 0.55
+        }
+      }
+    }
+  ],
+  "lights": [
+    {
+      "type" : "SpotLight",
+      "key" : "highLight",
+      "params" : ["#FFFFFF", 0.3,  100],
+      "position" : [0, 10, 10]
+    },
+    {
+      "type" : "SpotLight",
+      "key" : "fillLight",
+      "params" : ["#FFFFFF", 0.2,  100],
+      "position" : [6, 2, 0]
+    },
+    {
+      "type" : "SpotLight",
+      "key" : "backLight",
+      "params" : ["#FFFFFF", 0.2,  100],
+      "position" : [-6, 2, 0]
+    },
+    {
+      "type" : "SpotLight",
+      "key" : "downLight",
+      "params" : ["#FFFFFF", 0.25,  100],
+      "position" : [-6, -6, 4]
+    }
+
+  ],
+  "colors": [
+    {
+      "id": "Front",
+      "type": "RGBValues",
+      "color" : [0.3685969, 0.3736171, 0.4098268]
+    },
+    {
+      "id": "Back",
+      "type": "RGBValues",
+      "color" : [0.3685969, 0.3736171, 0.4098268]
+    },
+    {
+      "id": "Shirt",
+      "type": "RGBValues",
+      "color" : [0.3685969, 0.3736171, 0.4098268]
+    }
+  ]
+}

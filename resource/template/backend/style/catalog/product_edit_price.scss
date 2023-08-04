@@ -1,0 +1,120 @@
+@import "../../../core/style/variable.scss";
+
+.product-type-variant-price-setting-table {
+    // th {
+    //     position: absolute;
+    //     top: 0;
+    //     z-index: 10;
+    // }
+}
+
+.switch6 {
+    max-width: 230px;
+    margin: 0 auto;
+    margin-right: 0  !important;
+    border-radius: 20px;
+    background: #E5E7F2;
+    margin-bottom: 16px;
+}
+
+.switch6-light {
+    margin-bottom: 0px !important;
+    >span {
+        color: $color-dark;
+        line-height: 30px;
+        vertical-align: middle;
+        position: absolute;
+        left: -100px;
+        width: 100%;
+        margin: 0px;
+        padding-right: 100px;
+        text-align: left;
+        span {
+            position: absolute;
+            top: 3px;
+            left: 0px;
+            z-index: 5;
+            display: block;
+            width: 50%;
+            margin-left: 100px;
+            text-align: center;
+            color: $color-block;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            &:last-child {
+                left: 50%;
+            }
+        }
+    }
+    span {
+        span {
+        }
+    }
+    label {
+        color: $color-brown;
+        line-height: 30px;
+        vertical-align: middle;
+        font-weight: 700;
+        margin-bottom: 0;
+        max-width: 100%;
+    }
+    display: block;
+    height: 36px;
+    position: relative;
+    overflow: visible;
+    padding: 0px;
+    margin-left: 0px;
+    * {
+        box-sizing: border-box;
+    }
+    a {
+        display: block;
+        transition: all 0.3s ease-out 0s;
+        position: absolute;
+        right: 50%;
+        top: 0px;
+        z-index: 4;
+        border-radius: 20px;
+        display: block;
+        width: 50%;
+        height: 100%;
+        padding: 0px;
+    }
+    input {
+        &:focus {
+            ~ {
+                a {
+                    border-radius: 20px;
+                }
+            }
+            + {
+                label {
+                    outline: 1px dotted rgb(136, 136, 136);
+                }
+            }
+        }
+        position: absolute;
+        opacity: 0;
+        z-index: 5;
+        &:checked {
+            ~ {
+                a {
+                    right: 0%;
+                }
+            }
+        }
+    }
+}
+
+.no_select{
+    color: $color-cancel !important;
+}
+.select_now{
+    color: $color-block !important;
+}
+.select_now:before {
+    content:'\2713';
+    display:inline-block;
+    margin-right: 0.3em;
+}

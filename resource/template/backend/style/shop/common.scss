@@ -1,0 +1,247 @@
+@import "../variable.scss";
+@import "../mixin.scss";
+a.link {
+  color: #2684FE;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.profit-badge {
+  display: inline-block;
+  padding: 4px 16px 6px;
+  font-size: .75rem;
+  font-weight: bold;
+  line-height: 1;
+  color: $color-base;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 8px;
+  &.pending {
+    color: $color-yellow !important;
+    background-color: #FFF9E5! important;
+  }
+  &.withdraw, &.resolved {
+    color: $color-green !important;
+    background-color: #EAFAF1!important;
+  }
+  &.partially_withdraw, &.processing {
+    color: $color-blue !important;
+    background-color: #E8F1FD !important;
+  }
+  &.cancelled {
+    color: $color-red !important;
+    background-color: #FCE8E8!important;
+  }
+}
+td.profit-note {
+  position:relative;
+}
+td.profit-note:before {
+  display:none;
+  content: attr(data-note);
+  position:absolute;
+  left: 50%;
+  bottom:50px;
+  transform: translateX(-50%);
+  width: 120px;
+  height:auto;
+  background: #666;
+  color: $color-base;
+  padding: 10px;
+  border-radius: 5px;
+  zindex:1;
+}
+td.profit-note:hover:before  {
+  display: block;
+}
+td.profit-note:after {
+  display:none;
+  content: "";
+  width:0;
+  height :0;
+  border-left:5px solid transparent;
+  border-right:5px solid transparent;
+  border-bottom:5px solid transparent;
+  border-top:5px solid #666;
+  position: absolute;
+  bottom:40px;
+  left: 50%;
+  transform: translateX(-50%);
+  zindex: 1;
+
+}
+td.profit-note:hover:after {
+  display: block;
+}
+.profit-analytics-items {
+  margin: auto;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -20px;
+
+  .section-item {
+    background: white;
+    flex: 0 0 calc((100% / 2) - 42px);
+    margin: 0 20px 20px 20px;
+    border: solid 1px transparent;
+    @include border-radius(5px);
+    @include transition(all .3s ease);
+
+    &:hover {
+      border-color: $color-blue;
+
+      .title {
+        color: $color-blue
+      }
+    }
+    .content_box {
+      padding: 15px;
+      display: flex;
+      align-items: flex-start;
+    }
+    .w-50 {
+      width: 50%;
+    }
+
+    .icon {
+      position: relative;
+      margin-right: 35px;
+      flex: 0 0 90px;
+      color: $color-blue;
+      border: dashed 1px $color-blue;
+      @include border-radius(5px);
+
+      &:before {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+      }
+
+      svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 38px;
+        @include translate(-50%, -50%);
+      }
+    }
+
+    .info {
+    }
+
+    .title {
+      font-weight: $font-bold;
+      color: $color-text;
+      margin-bottom: 3px;
+    }
+
+    .count {
+      line-height: 1.5;
+      color: $color-text;
+      font-size: 24px;
+    }
+
+    .desc {
+      line-height: 1.35;
+      color: $color-second;
+      ul {
+        padding-left: 15px;
+        li {
+          span:first-child {
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+  }
+}
+
+.btn.btn-payment {
+  width: 100px;
+  height: 40px;
+  background: #20B3B5;
+  color:$color-base;
+}
+.btn.btn-payment:hover{
+  background: #1b9496;
+}
+
+.list-payout-provider{
+  display: flex;
+}
+.payout_provider{
+  width: 50%;
+  height: 58px;
+  margin: 5px;
+  border: 1px solid $color-border-member;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.payout_provider.payoneer{
+  background-image: url(../../../backend/image/shop/logo_payoneer.png);
+  background-repeat: no-repeat;
+  background-size: 60% auto;
+  background-position: center;
+}
+.payout_provider.pingpong{
+  background-image: url(../../../backend/image/shop/logo_pingpong.png);
+  background-repeat: no-repeat;
+  background-size: 45% auto;
+  background-position: center;
+}
+.payout_provider.choose{
+  border: 1px solid $color-blue;
+}
+.amount-payout{
+  text-align: right;
+  margin: 10px 5px 10px 5px;
+}
+.list-account{
+  padding-top: 20px;
+  margin: 5px;
+  height: 45px;
+}
+
+.close {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid $color-light;
+  border-radius: 50%;
+  top: -11px;
+}
+.close:hover {
+  opacity: 1;
+  border: 2px solid $color-cancel;
+}
+.close:hover:before, .close:hover:after {
+  background-color: $color-cancel;
+}
+.close:before, .close:after {
+  position: absolute;
+  top: 3px;
+  left: 9px;
+  content: ' ';
+  height: 14px;
+  width: 2px;
+  background-color: $color-light;
+  text-align: center;
+  vertical-align: middle;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
+}
+
+
+.refresh-top {
+  text-align: center;
+  background: $color-base;
+  box-shadow: 0px 0px 15px rgb(0 0 0 / 10%);
+  height: 45px;
+  line-height: 45px;
+}

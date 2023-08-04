@@ -1,0 +1,63 @@
+.osc-input {
+    border: 1px solid #cecece;
+    border-radius: 2px;
+    cursor: text;
+    display: inline-block;
+    width: 150px;
+    box-shadow: 0 1px #ebebeb;
+}
+.osc-input div {
+    padding: 3px 5px;
+}
+.osc-input.large div {
+    padding: 10px 5px 10px 10px;
+}
+
+.osc-input:hover {
+    border-color: #b2b2b2;
+}
+
+.osc-input * {
+    opacity: .6;
+}
+
+.osc-input:hover *,
+.osc-input.focus * {
+    opacity: 1;
+}
+
+.osc-input.focus {
+    border-color: #4b93ff;
+}
+
+.osc-input input {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    width: 100%;
+    background: transparent;
+    color: #7f8c8d;
+    height: 20px;
+}
+.osc-input.large input {
+    font-size: 16px;
+}
+
+.osc-input.focus input {
+    color: #4b93ff;
+}
+
+.osc-input i {
+    float: right;
+    margin: 10px 10px 0 0;
+}
+
+.osc-input.has-icon > div {
+    margin-right: 35px;
+}
+
+.osc-input input.pre-enter {
+    font-style: italic;
+    color: #c7c7c7;
+}

@@ -1,0 +1,1 @@
+ALTER TABLE `osc_marketing_point` ADD COLUMN  `convert_status` int(1) NOT NULL DEFAULT 0 AFTER `meta_data`;

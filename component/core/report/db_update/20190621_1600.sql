@@ -1,0 +1,1 @@
+ALTER TABLE `osc_tracking` ADD COLUMN `visit_timestamp` INT NOT NULL DEFAULT 0 AFTER `unique_timestamp`;

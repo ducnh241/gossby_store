@@ -1,0 +1,1 @@
+ALTER TABLE osc_product_type CHANGE COLUMN `short_title` `custom_title` varchar(255) NULL DEFAULT NULL AFTER `title`;

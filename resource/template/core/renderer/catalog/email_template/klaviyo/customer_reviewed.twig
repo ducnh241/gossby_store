@@ -1,0 +1,211 @@
+<html lang="en">
+<head>
+    <title>
+        Thank you for your purchase!
+    </title>
+    <meta content="width=device-width" name="viewport"/>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        a, a:hover {
+            text-decoration: none;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .darkLogo {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 94% !important;
+            }
+
+            .main-action-cell {
+                float: none !important;
+                margin-right: 0 !important;
+            }
+
+            .secondary-action-cell {
+                text-align: center;
+                width: 100%;
+            }
+
+            .header {
+                margin-top: 20px !important;
+                margin-bottom: 2px !important;
+            }
+
+            .shop-name__cell {
+                display: block;
+            }
+
+            .order-number__cell {
+                display: block;
+                text-align: left !important;
+                margin-top: 20px;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+            .or {
+                margin-right: 0 !important;
+            }
+
+            .apple-wallet-button {
+                text-align: center;
+            }
+
+            .customer-info__item {
+                display: block;
+                width: 100% !important;
+            }
+
+            .spacer {
+                display: none;
+            }
+
+            .subtotal-spacer {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body style="margin: 0;">
+<table class="body"
+       style="border-spacing: 0 !important; border-collapse: collapse !important; width: 100% !important;height: 100% !important;">
+    <tr>
+        <td align="center"
+            style="font-family: arial, -apple-system !important; font-size: 0.875rem !important; background: #e0e0e0 !important;"
+            valign="center">
+            <table class="body"
+                   style="width: 100% !important; max-width: 600px !important; border-spacing: 0; border-collapse: collapse;">
+                <tr>
+                    <td align="center" style="background: #fff !important;" valign="center">
+                        <div style="padding: 30px !important;">
+                            <table style="margin-bottom: 15px !important;border-spacing: 0 !important; border-collapse: collapse !important; width: 100% !important;">
+                                <tr>
+                                    <td>
+                                        <div style="font-family: arial, -apple-system !important; font-size: 1.565rem !important; color: #282364 !important; line-height: 1 !important; margin: 0 !important; padding: 0 !important; text-align: center !important;">
+                                            Thank You For Your Review<br/>
+                                        </div>
+                                        <div style="margin-top: 30px !important; line-height: 1rem !important; color: #282364 !important;text-align: center !important">
+                                            <p style="margin: 0 !important; margin-bottom: 10px !important;">
+                                                Hi
+                                                <strong>{{ event.customer_name }}</strong>,
+                                            </p>
+                                            <p style="font-style: normal;font-weight: normal;font-size: 14px;line-height: 16px;text-align: center;color: #282364;">
+                                                Has anyone stopped to actually say those two powerful words to you
+                                                today?<br/>Thank You.
+                                                <br/>We wanted to thank you so much for being a valued part of our brand
+                                                and community, so we&rsquo;re sending you this brand new coupon code
+                                                <span style="color: #1688FA !important; font-weight: bold !important;">{{ event.discount_code.value }} OFF</span>
+                                                for your next purchase.<br/>
+                                                But hurry! This % off coupon code expires in 2 weeks so don&rsquo;t
+                                                delay.
+                                            </p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table style="border-spacing: 0 !important; border-collapse: collapse !important; width: 100% !important;">
+                                <tr>
+                                    <td style="padding: 20px !important; text-align: center !important; background-image: url('https://d3k81ch9hvuctc.cloudfront.net/company/Ttvxxe/images/42fad029-2c6a-422c-a9b6-7eb6788d55f2.png') !important; background-repeat: no-repeat !important; background-position: center center !important; background-size: cover !important; border-radius: 10px !important;">
+                                        <div style="font-family: arial, -apple-system !important; font-size: 0.875rem !important; line-height: 1rem !important;font-size: 1rem !important; line-height: 1.1875rem !important; color: #fff !important;">
+                                            Discount
+                                        </div>
+                                        <div style="font-family: arial, -apple-system !important; font-size: 0.875rem !important; line-height: 1rem !important;font-size: 3.125rem !important; line-height: 3.8125rem !important; color: #fff !important;">
+                                            {{ event.discount_code.value }} OFF
+                                        </div>
+                                        <div style="font-family: arial, -apple-system !important; font-size: 0.875rem !important; line-height: 1rem !important;font-size: 1.25rem !important; line-height: 1.5rem !important; padding: 8px !important; color: #fff !important; border: 1px dashed !important; border-radius: 20px !important; max-width: 300px !important; margin: auto !important;">
+                                            {{ event.discount_code.code }}
+                                        </div>
+                                        <div style="font-family: arial, -apple-system !important; font-size: 0.875rem !important; line-height: 1rem !important;line-height: 1.0625rem !important; color: #fff !important; margin-top: 14px !important;">
+                                            {{ event.discount_code.expire_time }}
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table style="border-spacing: 0 !important; border-collapse: collapse !important; width: 100% !important;max-width: 200px !important; margin-top: 30px !important; margin-bottom: 30px !important">
+                                <tr>
+                                    <td align="center" valign="center">
+                                        <table class="button main-action-cell"
+                                               style="border-spacing: 0 !important; border-collapse: collapse !important; width: 100% !important;">
+                                            <tr>
+                                                <td align="center"
+                                                    style="cursor: pointer !important; border-radius: 4px !important; background: #1688FA !important;">
+                                                    <a href="{{ event.store.url }}"
+                                                       style="cursor: pointer !important; font-size: 0.875rem !important; line-height: 0.875rem !important; display: block !important; color: #fff !important; padding: 12px 30px !important;">SHOP
+                                                        NOW</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div style="padding-top: 15px !important; border-top: 1px dashed #E0E0E0 !important; text-align: left !important; margin-top: 30px !important;">
+                                <div style="font-family: arial, -apple-system !important; font-size: 0.875rem !important; line-height: 1rem !important;font-size: 1.125rem !important; line-height: 1.5rem !important; color: #282364 !important; font-weight: bold !important;">
+                                    You might also like...
+                                </div>
+                                <div style="font-family: arial, -apple-system !important; font-size: 0.875rem !important; line-height: 1rem !important;line-height: 1.5rem !important; color: #282364 !important;">
+                                    Check out these awesome products just waiting for you in our store.
+                                </div>
+                            </div>
+                            <table style="border-spacing: 0 !important; border-collapse: collapse !important; width: 100% !important;margin-top: 30px !important;">
+                                {% for items in event.recommended_items %}
+                                    <tr>
+                                        {% for item in items %}
+                                            <td align="center"
+                                                style="width: 48% !important; text-align: center; padding-bottom: 30px !important;"
+                                                valign="top">
+                                                <div style="text-align: center;">
+                                                    <div style="background-image: url({{ item.image_url }}) !important; background-repeat: no-repeat !important; background-position: center center !important; background-size: contain !important;">
+                                                        <a href="{{ item.detail_url }}" rel="noopener noreferrer"
+                                                           style="outline: 0 !important; border: none !important; text-decoration: none !important; display: block !important; height: 250px;"
+                                                           target="_blank">&nbsp;</a>
+                                                    </div>
+                                                    <div style="margin: 10px 0 !important;">
+                                                        <a href="{{ item.detail_url }}" rel="noopener noreferrer"
+                                                           style="text-decoration: none !important; color: #282364 !important; font-family: arial, -apple-system !important; font-size: 0.875rem !important; line-height: 1rem !important;"
+                                                           target="_blank">{{ item.title }}</a>
+                                                    </div>
+                                                    <table style="border-spacing: 0 !important; border-collapse: collapse !important; width: 100% !important;max-width: 130px !important; margin: auto !important; margin-top: 10px !important;">
+                                                        <tr>
+                                                            <td align="center" valign="center">
+                                                                <table class="button main-action-cell"
+                                                                       style="border-spacing: 0 !important; border-collapse: collapse !important; width: 100% !important;">
+                                                                    <tr>
+                                                                        <td align="center"
+                                                                            style="cursor: pointer !important; border-radius: 4px !important; background: #1688FA !important;">
+                                                                            <a href="{{ item.detail_url }}"
+                                                                               style="cursor: pointer !important; font-size: 0.875rem !important; line-height: 0.875rem !important; display: block !important; color: #fff !important; padding: 12px 30px !important;">Shop
+                                                                                Now</a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </td>
+                                            <td style="width: 4%">
+                                                &nbsp;
+                                            </td>
+                                        {% endfor %}
+                                    </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

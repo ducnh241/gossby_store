@@ -1,0 +1,225 @@
+/*
+ * Note that this is toastr v2.1.3, the "latest" version in url has no more maintenance,
+ * please go to https://cdnjs.com/libraries/toastr.js and pick a certain version you want to use,
+ * make sure you copy the url from the website since the url may change between versions.
+ * */
+.toast-title {
+  font-weight: bold;
+}
+.toast-message {
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+  font-size: 16px;
+}
+.toast-message a,
+.toast-message label {
+  color: #FFFFFF;
+}
+.toast-message a:hover {
+  color: #CCCCCC;
+  text-decoration: none;
+}
+.toast-close-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 16px;
+  font-size: 32px;
+  color: currentColor;
+  opacity: 0.8;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  filter: alpha(opacity=80);
+  line-height: 1;
+  text-transform: uppercase;
+}
+.toast-close-button:hover,
+.toast-close-button:focus {
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.4;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  filter: alpha(opacity=40);
+}
+.rtl .toast-close-button {
+  left: -0.3em;
+  float: left;
+  right: 0.3em;
+}
+/*Additional properties for button version
+ iOS requires the button element instead of an anchor tag.
+ If you want the anchor version, it requires `href="#"`.*/
+button.toast-close-button {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+.toast-top-center {
+  top: 12px;
+  right: 0;
+  width: 100%;
+}
+.toast-bottom-center {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+.toast-top-full-width {
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+.toast-bottom-full-width {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+.toast-top-left {
+  top: 12px;
+  left: 12px;
+}
+.toast-top-right {
+  top: 12px;
+  right: 12px;
+}
+.toast-bottom-right {
+  right: 12px;
+  bottom: 12px;
+}
+.toast-bottom-left {
+  bottom: 12px;
+  left: 12px;
+}
+#toast-container {
+  position: fixed;
+  z-index: 999999;
+  pointer-events: none;
+  /*overrides*/
+}
+#toast-container * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#toast-container > div {
+  position: relative;
+  pointer-events: auto;
+  overflow: hidden;
+  margin: 0 0 6px;
+  padding: 16px 40px 16px 56px;
+  width: 540px;
+  -moz-border-radius: 8px 8px 8px 8px;
+  -webkit-border-radius: 8px 8px 8px 8px;
+  border-radius: 8px 8px 8px 8px;
+  background-position: 20px center;
+  background-repeat: no-repeat;
+  -moz-box-shadow: 0px 2px 10px rgba(25, 1, 52, 0.12);;
+  -webkit-box-shadow: 0px 2px 10px rgba(25, 1, 52, 0.12);;
+  box-shadow: 0px 2px 10px rgba(25, 1, 52, 0.12);
+}
+#toast-container > div.rtl {
+  direction: rtl;
+  padding: 15px 50px 15px 15px;
+  background-position: right 15px center;
+}
+#toast-container > div:hover {
+  cursor: pointer;
+}
+#toast-container > .toast-info {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAUCAYAAABiS3YzAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHcSURBVHgBrZRNTsJQEMdnppSFibFHqDtjFNsbyAmU+BGtG2+gnkC9gZ5A3QhRDN5APIGFGMPO3kDixqSFN85DaABbCgn/RT+Geb8+5j/zEFK0dvC4iUhbiGoTEG1gsAChzQp8APQjDq9blcMgaS2OB+ztG2txYfFGftiGDDHgbaTCy3H4CHTVe3ByYNQk3YaphUGowuIwOIauHJTtPOVfZgPGaocqcgdgGkQnAZmhLv/1Wi9OgVp5ytUGLz3ouvdwPGmHRkedNcu7p1LDOqQKnYL3eBFDEYxzmCBlGrV170nM4wzz8KR3Xd0Tc0x6gzmJIuWSkSM7NYMxUIqLoTKWO6BcifiQoa4JDiGyk5qBbHWgE7QqpeDjft8XxxqQIQS0KSNHXDU/N6SeMIOIgQOYozSPulFmnXxm1eivCBilZyfIEF5vogpe9UtuVhKweb/rjgcLR9U3+cB/L8TYZnlnOdd/k2nBpF51CofVKzEsniRmWpJLornM3Ut9j2dfdqt7Nb0TstTfpX6M3ScVlSB9tjOBxGExZg0efDlhBOzqBJhFGojdkj909I30aQ+sv8h8NwVO1+6Zfr5dXw/GaDxZjpyvCs1TJtjAP6d1d+jyBOL8q2J+fq/s1ZPW/gI4A8gj3fLpqgAAAABJRU5ErkJggg==") !important;
+}
+#toast-container > .toast-error {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAUCAYAAABiS3YzAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHWSURBVHgBpVRBUgIxEJxJKE8eYrHc14sWJ5cXqC9QXyC+QH2B8ARfALwAfqC+gL1ZwIU7UO7JA5CNM2tlXbaSAqQvSWZnOkmndxA8mATBlQG4oekVGhMaREVjQmNMsViv16/1JJm6arEcGCqljqXsUPEtbIMxXa11u0y+QTpWKgIp+4AYwq4wZkrE10XinPRTqVBK+bYX4R8SkqNhiYWNHkDIULJS6dtFRjquVpsHEFpEoyBo5aSEF1dWmqbP9OKDYozXGqDtyictH7Mxe5xKZejISc7m8xOejGq1LpHdkyN657NZk2OTavWLbVYuWiI2hJEyBDcUydLhCRNpYx4s4bhW67gIGUdpGgnSMgIfEJuWuL5YdC0h2ajpK6HNQgFbYITY8LJx/DBlCEScgn/XXMPMIfArBcd9NaT9VMBqFXu+J0UNSYpOUWPuA66ipRBxdhXfS7KlJOJlsQ/Q9QekWUxjq5xv6JTni8VpRsqmRY9X9wE7hB80F30cBOzVCP4Je0qe569PDeHOp9MuhCl1KrvOSbnDrLVucALsAc5Hre+KrW/Dp/yBd6TE3i6E3Ae+6SBnSbLhIK+Rub+ilE9k5As6TgTsDpaHfJ0a80GOGNTn83dX7Q8invIXADAenQAAAABJRU5ErkJggg==") !important;
+}
+#toast-container > .toast-success {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAUCAYAAABiS3YzAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAIGSURBVHgBpVXBbtNAEJ3ZdaXmgChSD0hIyBwQgQvOrUKplHDjBPkCyheQI0K0sSEHbqhfAHxBwxfgqkHqrTkauFhVj5XqYyt7dzrrxFbr2nWTvst6Z3bezszOjBEq0PzU7hDiayDqCASbAFYQIOJ1QoATjOPt4Ot+WGaLRYHd76w07iTf2fgN1AJ/QBx7RfJLpM8+vnC0xB0W23BjUAix6l4kzkmbH9ZsWJK/5yPMSSKKk1ZGLHLNgoSpr5xvsqydbC9TLzfXN3jZgFsAEe6vdh7i8e6hP/NUD+Yi4HDTXBblBO/T9TE/jpTiAG6INH8yaZ3CcrSskpOiXindEiikDXNAEb4L3P2woZO3ZXrOpyMEkFOmJILRlRARvH/DvVFaKQRumR0IYQuowN/huHcql1qEMJldsh18HrtZ6ZkXr7IVoDEsUzzdXP8Wun50JqwuM/7kS/qm22pLT+vQUqAmEq46TED95lY7Clzfg1m5Ne6qAelrCBmKZwNOvWqfVIaD4HLYHg+YgfmGa0Fh8OXPo9RFk6/qc+CaS+sJ08Pe1I8Znmy1D7h4HVgYUy/NV55MFElv2imLEYJU3WyXk5qCNp1S1n51hEJSz9hnEnlRfewfRasvH/ziMrvHE6I2FRzZiGv51X93LyzIy9F012xKrD4feM4TyMl+J5rAEOwawmA49stszwFfL9Cjwc0oLwAAAABJRU5ErkJggg==") !important;
+}
+#toast-container > .toast-warning {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAUCAYAAABiS3YzAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAF3SURBVHgBtZXfTQJBEMa/WfzzeiXsJWJ886hAqUCoQOlAK3ApwQqECtAKoAP20aAJW4LPEG6c5ZC/t3eYnF9C9nL55nezOzsDIaCpubhVpG6YuQWQlleR/L4BtgTYFPOX2DiXF0uHMB0Rzl8luIUSSXAvxay7D6ddYD0h0EAeNY6XY8ya22C1AV7pEqANvJe4s7HsUB9ACekwBGRwR5tJg5meAmA5stPBDlS2/YDCLbPLvrywYQ8lU3Np1lDZ9jMqkBTofgn1xcHfClMk7XmSaapRrTy0lqBSkVb4B6l1ZQtNtbvlKm2LclladdEYFUnudEPF5lPuHrkSq/UNgHBX/cp5nlrR+4VIoCPmHkO1i33c9esSGpuJKc6Co2ydJyVZ9vzDyeYrqi3978822ncT1NCZul3N1Vygn1Qb/5aySRUeLGEgt7PaZNq5p7H5EINqyhn2j+PRm2TY2AYeZLqfNbB4FMO1n0BY/534zPAu7T2KzdcoL/YHUmaJVPAANwsAAAAASUVORK5CYII=") !important;
+}
+#toast-container.toast-top-center > div,
+#toast-container.toast-bottom-center > div {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#toast-container.toast-top-full-width > div,
+#toast-container.toast-bottom-full-width > div {
+  width: 96%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.toast {
+  background-color: #030303;
+}
+.toast-success {
+  background-color: #EDF9F0;
+  color: #287D3C;
+}
+.toast-error {
+  background-color: #FEEFEF;
+  color: #DA1414;
+}
+.toast-info {
+  background-color: #EEF2FA;
+  color: #2E5AAC;
+}
+.toast-warning {
+  background-color: #FFF4EC;
+  color: #E08026;
+}
+.toast-progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  background-color: #000000;
+  opacity: 0.4;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  filter: alpha(opacity=40);
+}
+/*Responsive Design*/
+@media all and (max-width: 240px) {
+  #toast-container > div {
+    padding: 8px 8px 8px 50px;
+    width: 11em;
+  }
+  #toast-container > div.rtl {
+    padding: 8px 50px 8px 8px;
+  }
+  #toast-container .toast-close-button {
+    right: -0.2em;
+    top: -0.2em;
+  }
+  #toast-container .rtl .toast-close-button {
+    left: -0.2em;
+    right: 0.2em;
+  }
+}
+@media all and (min-width: 241px) and (max-width: 480px) {
+  #toast-container > div {
+    padding: 8px 8px 8px 50px;
+    width: 18em;
+  }
+  #toast-container > div.rtl {
+    padding: 8px 50px 8px 8px;
+  }
+  #toast-container .toast-close-button {
+    right: -0.2em;
+    top: -0.2em;
+  }
+  #toast-container .rtl .toast-close-button {
+    left: -0.2em;
+    right: 0.2em;
+  }
+}
+@media all and (min-width: 481px) and (max-width: 768px) {
+  #toast-container > div {
+    padding: 15px 15px 15px 50px;
+    width: 25em;
+  }
+  #toast-container > div.rtl {
+    padding: 15px 50px 15px 15px;
+  }
+}

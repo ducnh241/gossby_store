@@ -1,0 +1,1 @@
+ALTER TABLE `osc_catalog_order` ADD COLUMN `cart_ukey` VARCHAR(27) NULL DEFAULT NULL AFTER `cart_id`, DROP INDEX `cart_id_UNIQUE`, ADD INDEX `cart_id` (`cart_id` ASC), ADD INDEX `cart_ukey` (`cart_ukey` ASC);

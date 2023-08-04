@@ -1,0 +1,65 @@
+{
+    "db": {
+        "host":"localhost",
+        "port":"3306",
+        "username":"root",
+        "password":"1q23456",
+        "database":"osc_shop_master"
+    },
+    "db_master": {
+        "host":"localhost",
+        "port":"3306",
+        "username":"root",
+        "password":"1q23456",
+        "database":"osc_shop_master"
+    },
+    "mongodb": {
+        "host": "localhost",
+        "port": 27017,
+        "username": "",
+        "password": "",
+        "dbname": "osecore",
+        "tls_enable": true,
+        "tls_dir": "/var/www/9prints/rds-combined-ca-bundle.pem",
+        "auth_dbname": "admin",
+        "env": "production"
+    },
+    "db_bak": {
+        "host": "",
+        "port": "",
+        "username": "",
+        "password": "",
+        "database": ""
+    },
+    "email": {
+        "username":"",
+        "password":"",
+        "smtp_host":"",
+        "smtp_port":""
+    },
+    "aws": {
+        "s3": {
+            "bucket_backup": "",
+            "bucket":"demo",
+            "region":"ap-southeast-1",
+            "client_id":"123",
+            "client_secret":"456"
+        }
+    },
+    "redis": {
+        "host":"localhost",
+        "port":"6379",
+        "password":""
+    },
+    "kafka_d2": {
+        "host": "localhost",
+        "port": "9092",
+        "topic": "d2-flows"
+    },
+    "kafka_d2_reply": {
+        "host": "localhost",
+        "port": "9092",
+        "topic": "d2-flows.reply",
+        "group": "d2-flows"
+    }
+}

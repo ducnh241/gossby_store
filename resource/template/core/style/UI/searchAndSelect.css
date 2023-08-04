@@ -1,0 +1,104 @@
+.search-and-select-popup {
+    border: 1px solid #000;
+    background: #fff;
+    min-width: 250px;
+    display: none;
+}
+.search-and-select-popup .result-list-wrap {
+    max-height: 250px;
+    overflow-y: scroll;
+}
+.search-and-select-popup .result-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+.search-and-select-popup .result-list li {
+    border-bottom: 1px solid #dfdfdf;
+    position: relative;
+    cursor: pointer;
+}
+.search-and-select-popup .result-list li.active,
+.search-and-select-popup .result-list li:hover {
+    border-color: #333;
+}
+.search-and-select-popup .result-list li.active:not(:first-child),
+.search-and-select-popup .result-list li:hover:not(:first-child) {
+    box-shadow: 0 -1px 0 0 #333;
+}
+.search-and-select-popup .result-list li:last-child {
+    border-bottom: 0;
+}
+.search-and-select-popup .result-list li .list-item-info {
+    padding: 5px 10px;
+}
+.search-and-select-popup .pager-bar {
+    padding: 5px;
+    border-top: 1px solid #bababa;
+    background: #f5f5f5;
+}
+
+.search-and-select {
+    display: inline-block;
+    width: 200px;
+    height: 30px;
+    position: relative;
+    vertical-align: middle;
+    background: #fff;
+    cursor: pointer;
+}
+.search-and-select .label {
+    display: block;
+    color: rgb(0, 0, 0);
+    text-align: left;
+    padding: 8px 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: calc(100% - 30px);
+    background: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 30px);
+    height: 100%;
+    z-index: 2;
+}
+.search-and-select input {
+    border: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 30px);
+    height: 100%;
+    padding: 5px 10px;
+    background: inherit;
+    z-index: 1;
+}
+.search-and-select input:focus {
+    z-index: 3;
+}
+.search-and-select:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 100%;
+    border-left: 1px solid #bababa;
+}
+.search-and-select:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 5px solid #000;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    position: absolute;
+    top: calc((100% - 5px)/2);
+    right: calc((30px - 10px)/2);
+}

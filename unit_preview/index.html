@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <meta name="robots" content="index, follow" />
+        <script src="../resource/script/community/jquery/jquery-1.7.2.js"></script>
+    </head>
+    <body>
+        <div id="scene"></div>
+        <script src="./script.js"></script>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+            }
+            
+            #scene {
+                padding: 100px;
+            }
+            
+            .segment {
+                position: absolute;
+                overflow: hidden;
+            }
+            
+            .img {
+                position: absolute;
+            }
+            
+            .img img, .img svg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+            
+            #scene > div {
+                background: url(./background.png) no-repeat center center;
+                position: relative;
+            }    
+        </style>
+    </body>
+</html>

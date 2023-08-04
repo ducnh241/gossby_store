@@ -1,0 +1,15 @@
+{
+  "layers": [
+    {
+      "id": "PrintArea",
+      "textureSize": { "width": 2154, "height": 790 },
+      "flipY": true, 
+      "segmentPreviews": [
+        {
+          "segmentKey": "design",
+          "config": { "x": 90, "y": 35, "width": 1678, "height": 719 }
+        }
+      ]
+    }
+  ]
+}

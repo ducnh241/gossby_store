@@ -1,0 +1,50 @@
+@import "../variable.scss";
+.select2-container {
+    z-index: 99999 !important;
+}
+.osc-modal {
+    padding: 0 20px;
+}
+.display--inline-block {
+    display: inline-block;
+}
+.tooltip-info {
+    position: relative;
+    .tooltip-text {
+        position: absolute;
+        bottom: calc(100% + 12px);
+        left: 50%;
+        transform: translateX(-50%);
+        display: none;
+        white-space:nowrap;
+        background-color: $color-blue;
+        color: #fff;
+        border-radius: 3px;
+        box-shadow: 0 15px 15px rgba(8, 100, 224, 0.15);
+        text-align: left;
+        padding: 10px 10px 10px 20px;
+        z-index: 1;
+
+        &:before {
+            width: 0;
+            height: 0;
+            border-top: 6px $color-blue solid ;
+            border-right: 6px transparent solid;
+            border-bottom: 6px transparent solid;
+            border-left: 6px transparent solid;
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    &:hover {
+        .tooltip-text {
+            display: block;
+        }
+    }
+}
+

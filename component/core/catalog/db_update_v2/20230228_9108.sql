@@ -1,0 +1,1 @@
+ALTER TABLE osc_catalog_collection ADD COLUMN relative_range smallint(6) NULL DEFAULT NULL, ADD COLUMN top smallint(3) NULL DEFAULT NULL;

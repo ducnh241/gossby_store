@@ -1,0 +1,1 @@
+ALTER TABLE `osc_print_template_mockup_rel` ADD COLUMN `additional_data` TEXT NULL AFTER `print_template_id_default`;

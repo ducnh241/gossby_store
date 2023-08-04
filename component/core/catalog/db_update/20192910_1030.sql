@@ -1,0 +1,1 @@
+ALTER TABLE `osc_catalog_product` ADD COLUMN `show_review` TINYINT(1) NOT NULL DEFAULT 0 COMMENT 'Show all review in product detail';

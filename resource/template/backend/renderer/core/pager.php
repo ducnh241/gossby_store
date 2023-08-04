@@ -1,0 +1,1 @@
+<?= OSC::core('template')->build('pager', $params); ?>

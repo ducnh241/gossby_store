@@ -1,0 +1,2 @@
+ALTER TABLE `osc_catalog_cart` ADD COLUMN `shipping_address_id` INT(11) NULL DEFAULT 0 AFTER `client_info`;
+ALTER TABLE `osc_catalog_cart` ADD COLUMN `billing_address_id` INT(11) NULL DEFAULT 0 AFTER `shipping_zip`;

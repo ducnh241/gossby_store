@@ -1,0 +1,1 @@
+ALTER TABLE `osc_catalog_order_bulk_queue` CHANGE COLUMN `action` `action` VARCHAR(100) NOT NULL;

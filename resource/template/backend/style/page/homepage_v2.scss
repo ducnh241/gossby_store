@@ -1,0 +1,11 @@
+.post-form-homepage-v2 {
+    .frm-image-uploader {
+        .preview {
+            &:before {
+                content: '';
+                display: block;
+                padding-bottom: 50%;
+            }
+        }
+    }
+}

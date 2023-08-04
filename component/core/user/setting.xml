@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<setting>
+    <module>
+        <key>user</key>
+        <groups>
+            <group>
+                <key>avatar</key>
+                <name>Avatar</name>
+                <items>
+                    <item>
+                        <key>width</key>
+                        <title>Avatar width (px)</title>
+                        <default>100</default>
+                        <input method="input">
+                            <validator type="helper" name="core/setting_validator" function="validInteger">
+                                <param>100</param>
+                                <param>500</param>
+                            </validator>
+                        </input>
+                    </item>
+                    <item>
+                        <key>height</key>
+                        <title>Avatar height (px)</title>
+                        <default>100</default>
+                        <input method="input">
+                            <validator type="helper" name="core/setting_validator" function="validInteger">
+                                <param>100</param>
+                                <param>500</param>
+                            </validator>
+                        </input>
+                    </item>
+                    <item>
+                        <key>jpg_quality</key>
+                        <title>JPG quality</title>
+                        <description>Only effect to JPG file. Range of value between 50 to 100 (higher is better)</description>
+                        <default>100</default>
+                        <input method="input">
+                            <validator type="helper" name="core/setting_validator" function="validInteger">
+                                <param>50</param>
+                                <param>100</param>
+                            </validator>
+                        </input>
+                    </item>
+                    <item>
+                        <key>auto_crop</key>
+                        <title>Auto crop avatar</title>
+                        <description><![CDATA[Effect when the avatar original image is exceeds config size]]></description>
+                        <input method="switcher" skin="onoff" />
+                        <default>1</default>
+                    </item>
+                    <item>
+                        <key>auto_mode</key>
+                        <title>Auto crop method</title>
+                        <default>scale</default>
+                        <input method="select">
+                            <source><![CDATA[a:2:{s:11:"fit_to_size";s:11:"Fit to size";s:5:"scale";s:5:"Scale";}]]></source>
+                        </input>
+                        <depends>
+                            <auto_crop>1</auto_crop>
+                        </depends>
+                    </item>
+                </items>
+            </group>
+        </groups>
+    </module>
+</setting>

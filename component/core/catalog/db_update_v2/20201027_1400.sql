@@ -1,0 +1,2 @@
+ALTER TABLE `osc_product_type_option` ADD COLUMN `is_show_option` TINYINT(1) NOT NULL DEFAULT 0 AFTER `status`;
+ALTER TABLE `osc_product_type_option_value` ADD COLUMN `position` SMALLINT(6) NOT NULL DEFAULT 0 AFTER `status`;

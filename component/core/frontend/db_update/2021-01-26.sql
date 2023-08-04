@@ -1,0 +1,1 @@
+ALTER TABLE osc_homepage ADD COLUMN additional_data VARCHAR(500) NULL DEFAULT NULL AFTER `description`;

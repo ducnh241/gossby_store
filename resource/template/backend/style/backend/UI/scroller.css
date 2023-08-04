@@ -1,0 +1,38 @@
+.osc-scroller {
+    overflow: hidden;
+    position: relative;
+}
+
+.osc-scroller .content {
+    position: relative;
+}
+
+.osc-scroller > .track {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 2px;
+}
+
+.osc-scroller > .track .thumb {
+    background: #000;
+    width: 5px;
+    position: relative;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=25)";
+    filter: alpha(opacity=25);
+    -moz-opacity: 0.25;
+    -khtml-opacity: 0.25;
+    opacity: 0.25;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.osc-scroller > .track .thumb:hover {
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+    -moz-opacity: 0.50;
+    -khtml-opacity: 0.50;
+    opacity: 0.50;
+}

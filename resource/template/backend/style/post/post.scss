@@ -1,0 +1,98 @@
+.post-image-preview {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.35);
+
+    &::before {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+    }
+}
+
+.collection-image-uploader, .cta-image-uploader {
+    margin-top: 0;
+
+    .preview {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        background-color: #fff;
+        color: #ddd;
+        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+        border-radius: 2px;
+
+        svg {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        &[data-image-src^='http'] {
+            svg {
+                display: none;
+            }
+        }
+
+        &:before {
+            content: '';
+            display: block;
+            padding-bottom: 100%;
+        }
+    }
+
+    .osc-uploader {
+        display: block;
+
+        .browser-btn {
+            display: block;
+
+            > div,
+            input:hover + div {
+                padding: 0;
+                border: 0;
+                box-shadow: none;
+                text-shadow: none;
+                background: transparent;
+                border-radius: 0;
+            }
+        }
+    }
+
+    .btn {
+        display: block;
+    }
+}
+
+.cta-image-uploader {
+    .preview {
+        &:before {
+            padding-bottom: 50%;
+        }
+    }
+}
+.osc-editor-style {
+    font-size: 14px !important;
+    h2 {
+        font-size: 20px !important;
+    }
+    h2:not(:first-child) {
+        margin-top: 24px !important;
+        margin-bottom: 16px !important;
+    }
+    h3 {
+        font-size: 16px !important;
+    }
+    h4 {
+        font-size: 14px !important;
+        font-weight: bold !important;
+    }
+}

@@ -1,0 +1,1 @@
+ALTER TABLE osc_catalog_discount_code ADD COLUMN member_id INT(11) NOT NULL DEFAULT 0 COMMENT '0:system';
